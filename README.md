@@ -1,2 +1,2 @@
 # HetBureau
-opdrachten voor het bureau
+Alle opdrachten voor het bureau
