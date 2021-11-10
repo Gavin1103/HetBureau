@@ -1,0 +1,20 @@
+#fase_2_container {
+
+    display: none;
+    background-color: red;
+}
+
+#fase_1_container {
+    display: none;
+    background-color: green;
+}
+
+#fase_4_container {
+    display: none;
+    background-color: pink;
+}
+
+#fase_3_container {
+    display: none;
+    background-color: orange;
+}
