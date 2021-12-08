@@ -37,21 +37,11 @@ function kiesFase4() {
     fase4_container.style.display = "block";
 }
 
+function generatePDF() {
 
-// download as pdf functie
+    const element = document.getElementById("form-container");
 
-// let downloadbtn = document.getElementById("download");
-// let body = document.getElementById("body");
-
-
-// function generatePDF() {
-
-
-//     // Default export is a4 paper, portrait, using millimeters for units
-//     const doc = new jsPDF();
-
-//     doc.text("Hello world!", 10, 10);
-//     doc.save("a4.pdf");
-
-
-// }
+    html2pdf()
+    .from(element)
+    .save()   
+}
