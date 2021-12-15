@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 dec 2021 om 22:05
--- Serverversie: 10.4.21-MariaDB
--- PHP-versie: 8.0.12
+-- Gegenereerd op: 15 dec 2021 om 13:26
+-- Serverversie: 10.4.19-MariaDB
+-- PHP-versie: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `assesment_form1` (
   `id` int(11) NOT NULL,
-  `fase1` varchar(50) NOT NULL,
-  `intro_tekst` varchar(200) NOT NULL,
-  `checklist` varchar(50) NOT NULL,
+  `AF1` varchar(50) NOT NULL,
+  `tekst_intro` varchar(200) NOT NULL,
+  `checklist_titel` varchar(50) NOT NULL,
   `student` varchar(20) NOT NULL,
   `leerling_nummer` varchar(20) NOT NULL,
   `coach` varchar(20) NOT NULL,
@@ -58,8 +58,8 @@ CREATE TABLE `assesment_form1` (
 -- Gegevens worden geëxporteerd voor tabel `assesment_form1`
 --
 
-INSERT INTO `assesment_form1` (`id`, `fase1`, `intro_tekst`, `checklist`, `student`, `leerling_nummer`, `coach`, `datum`, `checkboxen_id`, `Review_fase_1`, `review_fase_1_tekst`, `Vormgeven_beoordeling`, `techniek_beoordeling`, `ondernemend_beoordeling`, `softskills_beoordeling`, `AVO_beoordeling`, `evt_kwaliteiten`, `terug_koppelingsfase_1`, `deel_c_tekst_1`, `deel_c_tekst_2`, `deel_c_tekst_3`, `Doorgroei_advies`, `handtekening_assessor`, `handtekening_student`) VALUES
-(1, 'Afsluiting Fase 1', 'Dit formulier gaat je helpen om te komen tot een assessment voor fase 1. Als je deel A samen met je coach \r\nhebt doorlopen laat je op deel B de vakdocenten hun feedback invullen. Pas als beide delen c', '1', 'student:', 'Leerling nummer:', 'coach', '2021-11-30 11:16:24', 1, 'Review Fase 1', 'Maak op school of tijdens de les een afspraak met de desbetrefende docent en laat hem de \r\nbeoordeling en feedback invullen. Bespreek deze zodat je ook begrijpt hoe de feedback tot stand \r\nis gekomen.', 'vormgeven:', 'techniek:', 'ondernemend:', 'softskills:', 'AVO:', 'evt. kwaliteiten', 'Terug Koppling Fase 1', 'je hebt jezelf voorgesteld en het is duidelijk wat je ambities zijn', 'Je hebt inzicht in de medestudenten, docenten, opleiding en vakgebied.\r\n', 'Je hebt laten zien welke skills je kan toepassen en beheerst.\r\n', 'Doorgroei advies', '', '');
+INSERT INTO `assesment_form1` (`id`, `AF1`, `tekst_intro`, `checklist_titel`, `student`, `leerling_nummer`, `coach`, `datum`, `checkboxen_id`, `Review_fase_1`, `review_fase_1_tekst`, `Vormgeven_beoordeling`, `techniek_beoordeling`, `ondernemend_beoordeling`, `softskills_beoordeling`, `AVO_beoordeling`, `evt_kwaliteiten`, `terug_koppelingsfase_1`, `deel_c_tekst_1`, `deel_c_tekst_2`, `deel_c_tekst_3`, `Doorgroei_advies`, `handtekening_assessor`, `handtekening_student`) VALUES
+(1, 'Afsluiting Fase 1', 'Dit formulier gaat je helpen om te komen tot een assessment voor fase 1. Als je deel A samen met je coach \r\nhebt doorlopen laat je op deel B de vakdocenten hun feedback invullen. Pas als beide delen c', 'checklist', 'student:', 'Leerling nummer:', 'coach', '2021-11-30 11:16:24', 1, 'Review Fase 1', 'Maak op school of tijdens de les een afspraak met de desbetrefende docent en laat hem de \r\nbeoordeling en feedback invullen. Bespreek deze zodat je ook begrijpt hoe de feedback tot stand \r\nis gekomen.', 'vormgeven:', 'techniek:', 'ondernemend:', 'softskills:', 'AVO:', 'evt. kwaliteiten', 'Terug Koppling Fase 1', 'je hebt jezelf voorgesteld en het is duidelijk wat je ambities zijn', 'Je hebt inzicht in de medestudenten, docenten, opleiding en vakgebied.\r\n', 'Je hebt laten zien welke skills je kan toepassen en beheerst.\r\n', 'Doorgroei advies', '', '');
 
 -- --------------------------------------------------------
 

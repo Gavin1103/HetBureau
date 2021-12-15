@@ -1,7 +1,13 @@
 <?php
-
 include("./core/databaseConnection.php");
-$db = new Database()
+include("./functions/function.php");
+
+$database = new Database();
+$db = $database->getConnection();
+
+$getForm = new retrieveFormFase1($db);
+$executeForm = $getForm->getFormFase1();
+
 
 ?>
 <!DOCTYPE html>
@@ -27,7 +33,7 @@ $db = new Database()
         
         <div id="form-container">
             <p>tekst komt hier</p>
-            <h1>Checklist</h1>
+            <h1><?php echo $executeForm["checklist_titel"]; ?></h1>
             <label for="naam">Naam:</label>
             <input type="text" name="" id="naam">
             <br>
