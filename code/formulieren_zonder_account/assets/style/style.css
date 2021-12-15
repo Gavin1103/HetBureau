@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  margin: 0;
+}
+#container_1 {
+  margin: auto;
+  width: 60%;
+  background-color: rgb(116, 187, 232);
+  border-bottom-right-radius: 50px;
+}
+#container_2 {
+  margin: auto;
+  width: 60%;
+  border-bottom-right-radius: 50px;
+  color: black;
+}
+#container_2 input{
+  border:rgb(116, 187, 232) solid 1px;
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+}
+#container_2 p{
+ font-weight: 700;
+ font-size: 30px;
+}
+.innerContainer {
+  padding: 50px;
+  width: 80%;
+  margin: auto;
+}
+header p {
+  line-height: 150%;
+  font-size: 15px;
+}
+
+#checklist {
+  display: flex;
+  border-bottom: white thin solid;
+}
+
+#checklist p {
+  margin-top: 55px;
+  margin-left: 10px;
+}
+h2 {
+  margin: 50px 0px 15px;
+}
+form input {
+  height: 30px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+.circle {
+  width: 13px;
+  height: 13px;
+  background-color: rgb(116, 187, 232);
+  border-radius: 50%;
+  border: 1px solid white;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 30px;
+  
+}
+.circle:checked {
+  background-color: gray;
+}
+ul{
+ list-style: none;
+ padding: 0;
+}
+li{
+  display: flex;
+}
+li p{
+  width: 80%;
+  padding-top: 10px;
+  padding-left: 30px;
+}
+#prestaties p{
+  line-height: 150%;
+}

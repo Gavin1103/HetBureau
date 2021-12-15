@@ -17,6 +17,8 @@
 <br>
 <input type="text" placeholder="E-mail">
 <br>
+<input type="text" placeholder="klas">
+<br>
 <input type="text" placeholder="wachtwoord">
 <br>
 <input type="text" placeholder="bevestig wachtwoord">

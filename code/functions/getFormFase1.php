@@ -9,7 +9,7 @@ class retrieveFormFase1
     public function getFormFase1()
     {
         $selectForm1_QRY = $this->con->prepare("
-        SELECT id, AF1, tekst_intro, checklist_titel, student, leerling_nummer, coach, datum, checkboxen_id, Review_fase_1, review_fase_1_tekst, Vormgeven_beoordeling, techniek_beoordeling, ondernemend_beoordeling, softskills_beoordeling, AVO_beoordeling, evt_kwaliteiten, terug_koppelingsfase_1, deel_c_tekst_1, deel_c_tekst_2, deel_c_tekst_3, Doorgroei_advies, handtekening_assessor, handtekening_student FROM `assesment_form1` ");
+        SELECT id, AF1, tekst_intro, checklist_titel, veld_student, veld_leerlingnummer, veld_coach, datum, checkboxen_id, review_fase_1, review_fase_1_tekst, vormgeven_beoordeling, techniek_beoordeling, ondernemend_beoordeling, softskills_beoordeling, avo_beoordeling, bijzondere_kwaliteiten, terug_koppelingsfase_1, deel_c_tekst_1, deel_c_tekst_2, deel_c_tekst_3, doorgroei_advies, handtekening_assessor, handtekening_student FROM `assesment_form1` ");
         if ($selectForm1_QRY === false) {
             echo mysqli_error($this->con);
         } else {
