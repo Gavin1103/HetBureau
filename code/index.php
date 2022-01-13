@@ -15,7 +15,7 @@
     <input type="text" placeholder="wachtwoord">
     <input type="submit">
 </form>
-<p>Nog geen account? <a href="./create_account.php">klik</a> dan hier</p>
+<p>Nog geen account? <a href="create_account.php">klik</a> dan hier</p>
 <p>wachtwoord vergeten? <a href="#">klik</a> dan hier</p>
 <p>inloggen als admin/docent <a href="inlog_admin_docent.php">klik</a> dan hier</p>
 <p>assesment formulier invullen zonder account?<a href="./formulieren_zonder_account/index.html">klik</a> dan hier.<br>

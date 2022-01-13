@@ -13,8 +13,8 @@ class Database{
    
    public function getConnection(){
       $this->con = null;
-      // echo "je bent verbonden met de database";
-      // echo "<br>";
+      echo "je bent verbonden met de database";
+      echo "<br>";
       try{
          $this->con = new mysqli($this->host, $this->username, $this->password, $this->db_name);
          

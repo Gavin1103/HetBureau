@@ -1,7 +1,7 @@
 <?php
 
 include("../core/databaseConnection.php");
-include("../functions/getFormFase1.php");
+include("..//functions/getForms/getFormFase1.php");
 
 $database = new Database();
 $db = $database->getConnection();
