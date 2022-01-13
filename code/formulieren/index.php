@@ -1,7 +1,19 @@
 <?php
-$student = $_GET["studentNumber"];
-echo $student;
 
+include("../core/databaseConnection.php");
+include("../functions/verifyLogin.php");
+include("../functions/verifySignUp.php");
+
+if (isset($_POST["submit_login"])) {
+    $executeFunction = new verifyLogin();
+    $checkLoginFunction = $executeFunction->CheckInputs();
+    exit();
+}
+
+if (isset($_POST["submit_createAcc"])) {
+    $verfySignUp = new classVerifySignUp();
+    $checkSignUpFucntion = $verfySignUp->checkSignUp();
+}
 ?>
 
 <!DOCTYPE html>

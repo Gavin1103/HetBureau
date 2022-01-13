@@ -10,10 +10,10 @@
 
 <!-- inloggen voor studenten -->
 <h1>leerling</h1>
-<form action="">
-    <input type="text" placeholder="Leerling nummer">
-    <input type="text" placeholder="wachtwoord">
-    <input type="submit">
+<form action="./formulieren/index.php" method="POST">
+    <input name="leerlingNummer_login" type="text" placeholder="Leerling nummer">
+    <input name="wachtwoord_login" type="text" placeholder="wachtwoord">
+    <input name="submit_login" type="submit">
 </form>
 <p>Nog geen account? <a href="create_account.php">klik</a> dan hier</p>
 <p>wachtwoord vergeten? <a href="#">klik</a> dan hier</p>

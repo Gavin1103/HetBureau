@@ -11,7 +11,7 @@
 <body>
 
 
-    <form action="./functions/verifySignUp.php" method="POST">
+    <form action="./formulieren/index.php" method="POST">
 
         <input type="text" name="leerling_nummer" placeholder="leerling nummer">
         <br>
@@ -28,7 +28,7 @@
         <input type="text" name="wwopnieuw" placeholder="bevestig wachtwoord">
         <br>
         <br>
-        <input type="submit" name="submit" value="maak account">
+        <input type="submit" name="submit_createAcc" value="maak account">
     </form>
 
 </body>

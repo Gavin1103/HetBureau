@@ -1,6 +1,6 @@
 <?php
 
-include("../core/databaseConnection.php");
+// include("../core/databaseConnection.php");
 
 class classVerifySignUp
 {
@@ -8,7 +8,7 @@ class classVerifySignUp
     function checkSignUp()
     {
 
-        if (isset($_POST["submit"])) {
+        if (isset($_POST["submit_createAcc"])) {
 
             $leerlingNummer = $_POST["leerling_nummer"];
             $naam = $_POST["naam"];
@@ -31,43 +31,31 @@ class classVerifySignUp
             }
         } else {
             header("location: ../create_account.php");
-            // $_GET["error"];
-            // echo $_GET["error"];
-            // echo $error;
             exit();
         };
     }
 
-    function hashWachtwoord(){
-
-    }
-
-
     function addUser()
     {
-        
-            $leerlingNummer = $_POST["leerling_nummer"];
-            $naam = $_POST["naam"];
-            $achternaam = $_POST["achternaam"];
-            $email = $_POST["email"];
-            $klas = $_POST["klas"];
-            $wwopnieuw = $_POST["wwopnieuw"];
-            $db = new Database();
-            $liqry = $db->con->prepare("INSERT INTO `studenten`(`leerlingnummer`, `naam`, `achternaam`, `wachtwoord`, `email`, `klas`) VALUES ('$leerlingNummer','$naam','$achternaam','$wwopnieuw','$email','$klas')");
-            if ($liqry === false) {
-                echo mysqli_error($db->con);
-            } else {
-                // $liqry->bind_param('s', $name);
-                if ($liqry->execute()) {
-                    echo "woord is toegevoegd";
-                }
-            }
-    }
+        $db = new Database();
 
-    // function getCreatedAccount(){
-    //     echo $_GET["studentID"];
-    // }
+        $leerlingNummer = $_POST["leerling_nummer"];
+        $naam = $_POST["naam"];
+        $achternaam = $_POST["achternaam"];
+        $email = $_POST["email"];
+        $klas = $_POST["klas"];
+        $wwopnieuw = $_POST["wwopnieuw"];
+        $hashWachtwoord = hash("sha256", $wwopnieuw);
+        $liqry = $db->con->prepare("INSERT INTO `studenten`(`leerlingnummer`, `naam`, `achternaam`, `wachtwoord`, `email`, `klas`) VALUES ('$leerlingNummer','$naam','$achternaam','$hashWachtwoord','$email','$klas')");
+        if ($liqry === false) {
+            echo mysqli_error($db->con);
+        } else {
+            if ($liqry->execute()) {
+                echo "gebruiker is toegevoegd";
+            }
+        }
+    }
 }
 
-$verfySignUp = new classVerifySignUp();
-$checkSignUpFucntion = $verfySignUp->checkSignUp();
+
+
