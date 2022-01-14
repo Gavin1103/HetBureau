@@ -4,9 +4,8 @@ include("../core/databaseConnection.php");
 include("../functions/getForms/getFormFase4.php");
 
 $database = new Database();
-$db = $database->getConnection();
 
-$getForm = new retrieveFormFase4($db);
+$getForm = new retrieveFormFase4();
 $executeForm = $getForm->getFormFase4();
 
 echo "<pre>";

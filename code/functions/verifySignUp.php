@@ -5,6 +5,7 @@
 class classVerifySignUp
 {
     public $con;
+    // public $leerlingNummer;
     function checkSignUp()
     {
 
@@ -30,7 +31,7 @@ class classVerifySignUp
                 exit();
             }
         } else {
-            header("location: ../create_account.php");
+            header("location: ../create_account.php?moetRegistreren");
             exit();
         };
     }
