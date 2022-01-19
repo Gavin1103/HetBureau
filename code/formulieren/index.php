@@ -36,8 +36,7 @@ $getAccountFunction = $getAccountClass->getStudentAccount();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
-<h1>Welkom <?php echo $getAccountFunction["naam"];;
- ?></h1>
+<h1>Welkom <?php echo $getAccountFunction["naam"];?></h1>
 
 <body>
     <a href="../formulieren/formulieren_fase_1.php">Formulier fase 1</a>

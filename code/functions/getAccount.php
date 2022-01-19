@@ -3,49 +3,57 @@ class getAccountInfo
 {
 
     public $con;
-    private $getLeerlingnummer;
-    // public $leerlingNummer = $_GET['studentNumber'];
-    private $id;
     private $leerlingNummer;
     public $naam;
-    private $achternaam;
-    private $wachtwoord;
-    private $email;
-    private $klas;
-
-    function getStudentNumber()
-    {
-        echo $this->getLeerlingnummer = $_GET["studentNumber"];
-        
-    }
+    private $afkorting_admin;
 
     function getStudentAccount()
     {
         $db = new Database();
+        $this->leerlingNummer = $_GET["studentNumber"];
 
-        $this->getLeerlingnummer = $_GET["studentNumber"];
-
-        $getUserInfo_qry = $db->con->prepare("SELECT id, leerlingnummer, naam, achternaam, wachtwoord, email, klas FROM `studenten` WHERE leerlingnummer = '$this->getLeerlingnummer'");
-        if ($getUserInfo_qry === false) {
-            echo mysqli_error($db->con);
-        } else {
-            $getUserInfo_qry->bind_result($this->id, $this->leerlingNummer, $this->naam, $this->achternaam, $this->wachtwoord, $this->email, $this->klas);
-            if ($getUserInfo_qry->execute()) {
-                $getUserInfo_qry->store_result();
-                while ($getUserInfo_qry->fetch()) {
-                    $userInfo_array = [
-                        "id" => $this->id,
-                        "leerling nummer" => $this->leerlingNummer,
-                        "naam" => $this->naam,
-                        "achternaam" => $this->achternaam,
-                        "wachtwoord" => $this->wachtwoord,
-                        "email" => $this->email,
-                        "klas" => $this->klas
-                    ];
-                    return $userInfo_array;
-                }
-            }
-            $getUserInfo_qry->close();
+        if(!isset($_GET["studentNumber"])){
+            echo "fout";
+            header("location: ../index.php?error=fout22");
         }
+
+        $getUserInfo_qry = mysqli_query($db->con, "SELECT id, leerlingnummer, naam, achternaam, wachtwoord, email, klas FROM `studenten` WHERE leerlingnummer = '$this->leerlingNummer'");
+        $results = mysqli_fetch_assoc($getUserInfo_qry);
+        $result_array = [
+            "id" => $results["id"],
+            "leerling nummer" =>$results["leerlingnummer"],
+            "naam" => $results["naam"],
+            "achternaam" => $results["achternaam"],
+            "wachtwoord" => $results["wachtwoord"],
+            "email" => $results["email"],
+            "klas" => $results["klas"]
+        ];
+        return $result_array;
+    }
+
+
+    function getAdminAccount()
+    {
+
+        $db = new Database();
+        $this->afkorting_admin = $_GET["admin"];
+
+        if(!isset($_GET["admin"])){
+            echo "fout";
+            header("location: ../inlog_admin.php?error=fout22");
+        }
+
+        $getAdminInfo_sql = mysqli_query($db->con, "SELECT `id`, `naam`, `achternaam`, `email`, `wachtwoord`, `functie`, `afkorting` FROM `admin_docent` WHERE afkorting = '$this->afkorting_admin'");
+        $results = mysqli_fetch_assoc($getAdminInfo_sql);
+        $result_array = [
+            "naam" => $results["naam"],
+            "afkorting" => $results["afkorting"],
+            "achternaam" => $results["achternaam"],
+            "email" => $results["email"],
+            "wachtwoord" => $results["wachtwoord"],
+            "functie" => $results["functie"],
+            "id" => $results["id"],
+        ];
+        return $result_array;
     }
 }

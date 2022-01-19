@@ -10,10 +10,10 @@
 
 <body>
     <h1>admin/docent</h1>
-    <a href="index.php">terug</a>
+    <a href="./index.php">terug</a>
     <!-- inloggen voor docenten -->
-    <form action="./admin/index.php">
-        <input type="text" name="email_admin" placeholder="email">
+    <form action="./admin/index.php" method="POST">
+        <input type="text" name="afkorting_admin" placeholder="afkorting">
         <input type="text" name="ww_admin" placeholder="wachtwoord">
         <input name="submit_admin" type="submit">
     </form>

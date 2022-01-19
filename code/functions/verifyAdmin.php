@@ -3,50 +3,48 @@
 class verifyAdminLoginClass
 {
     public $con;
-    private $hashWachtwoord_login;
-    private $admin_email;
+    private $hashwachtwoord;
+    private $admin_afkorting;
     private $admin_wachtwoord;
 
     function CheckInputAdmin()
     {
         if (isset($_POST["submit_admin"])) {
-            $this->admin_email = $_POST["email_admin"];
+            $this->admin_afkorting = $_POST["afkorting_admin"];
             $this->admin_wachtwoord = $_POST["ww_admin"];
 
-            if (!empty($this->admin_email) && !empty($this->admin_wachtwoord)) {
+            if (!empty($this->admin_afkorting) && !empty($this->admin_wachtwoord)) {
                 // inlog functie...
-                header("location: ../formulieren/inlog_admin.php?admin=$this->admin_email");
+
+                header("location: ../admin/index.php?admin=$this->admin_afkorting");
                 $this->verifyUser();
                 exit();
             } else {
-                header("location: ../inlog_admin.php?error=nietallesingevuld");
+                header("location: ../inlog_admin.php?error=geenWachtwoordOfLeerlingnummer");
                 exit("Please fill both the username and password fields!");
             }
-        } else {
-            header("location: ../inlog_admin.php?error=moetInloggen");
-            exit();
-        }
+        } 
     }
-
-
     function verifyUser()
     {
         $db = new Database();
 
-        $this->admin_email = $_POST["email_admin"];
+        $this->admin_afkorting = $_POST["afkorting_admin"];
         $this->admin_wachtwoord = $_POST["ww_admin"];
 
-        $this->hashWachtwoord_login = hash("sha256", $this->admin_wachtwoord);
+        $this->hashwachtwoord = hash("sha256", $this->admin_wachtwoord);
+        $verifyAdminUser = mysqli_query($db->con, "SELECT afkorting, wachtwoord FROM `admin_docent` WHERE afkorting = '$this->admin_afkorting' AND wachtwoord = '$this->hashwachtwoord'");
 
-        $verifyUser = mysqli_query($db->con, "");
-        $checkInDataBase = mysqli_fetch_array($verifyUser);
+        $checkInDataBase = mysqli_fetch_array($verifyAdminUser);
 
         if (is_array($checkInDataBase)) {
-            $_SESSION[$this->admin_email] = $checkInDataBase['leerlingnummer'];
-            $_SESSION[$this->hashWachtwoord_login] = $checkInDataBase['wachtwoord'];
+            $_SESSION[$this->admin_afkorting] = $checkInDataBase['afkorting'];
+            $_SESSION[$this->hashwachtwoord] = $checkInDataBase['wachtwoord'];
+            // exit();
         } else {
             echo 'fout';
             header("location: ../inlog_admin.php?error=foutLogin");
         }
     }
 }
+
