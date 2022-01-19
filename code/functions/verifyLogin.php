@@ -11,8 +11,6 @@ class verifyLogin
     function CheckInputs()
     {
         if (isset($_POST["submit_login"])) {
-
-            
             $this->leerlingNummer_login = $_POST["leerlingNummer_login"];
             $this->wachtwoord_login = $_POST["wachtwoord_login"];
 
