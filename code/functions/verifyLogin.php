@@ -13,6 +13,7 @@ class verifyLogin
         if (!empty($this->leerlingNummer_login) && !empty($this->wachtwoord_login)) {
             // inlog functie...
             header("location: ../formulieren/index.php?studentNumber=$this->leerlingNummer_login");
+            // header("location: ".BASEHREF."formulieren/index.php?studentNumber=$this->leerlingNummer_login");
             $this->verifyUser();
             exit();
         } else {

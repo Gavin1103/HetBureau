@@ -1,5 +1,7 @@
 <!-- verbinding maken met database -->
 <?php
+
+// define("BASEHREF","http://localhost/programming/HetBureau/code/");
 class Database{
    private $host = "localhost";
    private $db_name = "assesment_formulieren";

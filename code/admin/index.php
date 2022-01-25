@@ -4,7 +4,6 @@ include("../functions/getAccount.php");
 include("../functions/verifyAdmin.php");
 include("../core/databaseConnection.php");
 
-
 $verifyAdminLogin = new verifyAdminLoginClass();
 $verifyAdmin = $verifyAdminLogin->checkInputAdmin();
 
