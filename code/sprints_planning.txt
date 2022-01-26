@@ -11,13 +11,16 @@ daarna:
 -Crud voor studenten hun formulieren
 -wachtwoord vergeten
 
+
 daarna:
 
 -back-end design namaken
 -Admin gebruikers overzicht
 -formulieren van leerlingen aanpassen
 -formulieren CRUD
+-fout meldingen vormgeven
 
 daarna:
 
 -formulier als PDF downloaden
+-klassen dynamisch maken

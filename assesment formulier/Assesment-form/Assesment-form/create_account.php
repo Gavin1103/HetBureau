@@ -21,15 +21,7 @@
         <br>
         <input type="text" name="email" placeholder="E-mail">
         <br>
-        <!-- <input type="text" name="klas" placeholder="klas"> -->
-        <select name="klas">
-            <option value="1WDS1">1WDS1</option>
-            <option value="1WDS2">1WDS2</option>
-            <option value="2WDS1">2WDS1</option>
-            <option value="2WDS2">2WDS2</option>
-            <option value="3WDS1">3WDS1</option>
-            <option value="3WDS2">3WDS2</option>
-        </select>
+        <input type="text" name="klas" placeholder="klas">
         <br>
         <input type="text" name="wachtwoord" placeholder="wachtwoord">
         <br>
@@ -38,5 +30,7 @@
         <br>
         <input type="submit" name="submit_createAcc" value="maak account">
     </form>
+
 </body>
+
 </html>

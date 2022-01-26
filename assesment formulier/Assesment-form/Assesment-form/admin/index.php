@@ -4,6 +4,7 @@ include("../functions/getAccount.php");
 include("../functions/verifyAdmin.php");
 include("../core/databaseConnection.php");
 
+
 $verifyAdminLogin = new verifyAdminLoginClass();
 $verifyAdmin = $verifyAdminLogin->checkInputAdmin();
 
@@ -27,17 +28,6 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
 
 
     <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
-    <br>
-    <a href="#">klassen wijzigen</a>
-    <br>
-    <a href="#">formulier inhoud wijzigen</a>
-    <hr>
-
-    <h2>Formulieren van studenten</h2>
-    
-
-
-    
 
 </body>
 
