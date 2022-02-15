@@ -1,13 +1,10 @@
 <!-- verbinding maken met database -->
 <?php
-<<<<<<< HEAD
 
 // define("BASEHREF","http://localhost/programming/HetBureau/code/");
-=======
 require_once "../../vendor/autoload.php";
 $dotenv = Dotenv\Dotenv::createImmutable("../../");
 $dotenv->load();
->>>>>>> feature/dotenv
 class Database{
    public $con;
 
@@ -25,7 +22,7 @@ class Database{
       {
          echo "Fout tijdens verbinden: " . $e->getMessage();
       }
-      echo $con;
+      // echo $con;
       return $this->con;
    }
 }
