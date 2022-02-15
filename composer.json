@@ -1,0 +1,17 @@
+{
+    "name": "het-bureau/formulier",
+    "autoload": {
+        "psr-4": {
+            "HetBureau\\Formulier\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "constantijn",
+            "email": "constantijn@vanhartesveldt.nl"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

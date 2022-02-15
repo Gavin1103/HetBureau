@@ -1,35 +1,36 @@
 <!-- verbinding maken met database -->
 <?php
+<<<<<<< HEAD
 
 // define("BASEHREF","http://localhost/programming/HetBureau/code/");
+=======
+require_once "../../vendor/autoload.php";
+$dotenv = Dotenv\Dotenv::createImmutable("../../");
+$dotenv->load();
+>>>>>>> feature/dotenv
 class Database{
-   private $host = "localhost";
-   private $db_name = "assesment_formulieren";
-   private $username = "root";
-   private $password = "";
    public $con;
 
    public function __construct(){
-    $this->getConnection();
+    $this->getConnection($_ENV["host"],$_ENV["username"],$_ENV["password"],$_ENV["db"]);
    }
    
-   public function getConnection(){
+   public function getConnection($host,$username,$password,$db_name){
       $this->con = null;
-      // echo "je bent verbonden met de database";
-      // echo "<br>";
       try{
-         $this->con = new mysqli($this->host, $this->username, $this->password, $this->db_name);
+         $this->con = new mysqli($host, $username, $password, $db_name);
          
       }
       catch(Exception $e)
       {
          echo "Fout tijdens verbinden: " . $e->getMessage();
       }
+      echo $con;
       return $this->con;
    }
 }
 
-// $db = new Database();
+$db = new Database();
 // $con = $db->getConnection();
 
 ?>
