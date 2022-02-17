@@ -1,19 +1,24 @@
 <?php
 
 include("../core/databaseConnection.php");
-include("../functions/getForms/getFormFase2.php");
 require_once "../../vendor/autoload.php";
 $dotenv = Dotenv\Dotenv::createImmutable("../../");
 $dotenv->load();
 
-$database = new Database();
-$con = $database->getConnection($_ENV["host"],$_ENV["username"],$_ENV["password"],$_ENV["db"]);
-
-
-$data = mysqli_query($con,"SELECT * FROM form_questions WHERE form_id = 3");
-header('Content-type: application/json; charset=utf-8');
-while ($row = mysqli_fetch_assoc($data)) {
-    $kaas[]=json_decode($row["vraagen"]);
+class GetFormFunction
+{
+    public $con;
+    function __construct()
+    {
+        $database = new Database();
+        $this->con = $database->getConnection($_ENV["host"], $_ENV["username"], $_ENV["password"], $_ENV["db"]);
+    }
+    function get_formulieren($id)
+    {
+        $data = mysqli_query($this->con, "SELECT id, vraagen FROM form_questions WHERE form_id = 3;");
+        // list($id) = mysqli_fetch_array(mysqli_query($this->con, "SELECT vraagen FROM form_questions WHERE form_id = 3"));
+        $form = mysqli_fetch_array($data);
+        $new_form_data = (json_decode($form["vraagen"]));
+        return $new_form_data;
+    }
 }
-echo json_encode($kaas, JSON_PRETTY_PRINT);
-?>

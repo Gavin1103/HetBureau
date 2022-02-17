@@ -10,17 +10,12 @@ if (isset($_POST["submit_login"])) {
     $checkLoginFunction = $executeFunction->CheckInputs();
     exit();
 }
-// else{
-//     header("location: ../index.php?moetInloggen");
-// }
+
 
 if (isset($_POST["submit_createAcc"])) {
     $verfySignUp = new classVerifySignUp();
     $checkSignUpFucntion = $verfySignUp->checkSignUp();
 }
-// else{
-//     header("location: ../create_account.php?moetRegistreren");
-// }
 
 $getAccountClass = new getAccountInfo();
 $getAccountFunction = $getAccountClass->getStudentAccount();
@@ -39,10 +34,10 @@ $getAccountFunction = $getAccountClass->getStudentAccount();
 <h1>Welkom <?php echo $getAccountFunction["naam"];?></h1>
 
 <body>
-    <a href="../formulieren/formulieren_fase_1.php">Formulier fase 1</a>
-    <a href="../formulieren/formulieren_fase_2.php">Formulier fase 2</a>
-    <a href="../formulieren/formulieren_fase_3.php">Formulier fase 3</a>
-    <a href="../formulieren/formulieren_fase_4.php">Formulier fase 4</a>
+    <a href="../formulieren/form.php">Formulier fase 1</a>
+    <a href="../formulieren/form.php">Formulier fase 2</a>
+    <a href="../formulieren/form.php">Formulier fase 3</a>
+    <a href="../formulieren/form.php">Formulier fase 4</a>
 </body>
 
 </html>
