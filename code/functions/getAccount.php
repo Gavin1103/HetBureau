@@ -31,8 +31,6 @@ class getAccountInfo
         ];
         return $result_array;
     }
-
-
     function getAdminAccount()
     {
 

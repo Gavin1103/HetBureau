@@ -5,16 +5,11 @@ include("../functions/verifyAdmin.php");
 include("../core/databaseConnection.php");
 include("../functions/getklassen.php");
 
-
 $verifyAdminLogin = new verifyAdminLoginClass();
 $verifyAdmin = $verifyAdminLogin->checkInputAdmin();
 
 $getAdminAccountClass = new getAccountInfo();
 $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
-
-
-
-// echo $getKlassenFunction['klas'];
 
 ?>
 
