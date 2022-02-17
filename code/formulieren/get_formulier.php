@@ -7,6 +7,7 @@ $dotenv->load();
 
 class GetFormFunction
 {
+    
     public $con;
     function __construct()
     {
@@ -15,8 +16,8 @@ class GetFormFunction
     }
     function get_formulieren($id)
     {
-        $data = mysqli_query($this->con, "SELECT id, vraagen FROM form_questions WHERE form_id = 3;");
-        // list($id) = mysqli_fetch_array(mysqli_query($this->con, "SELECT vraagen FROM form_questions WHERE form_id = 3"));
+        $formID = $_GET["formID"];
+        $data = mysqli_query($this->con, "SELECT id, vraagen FROM form_questions WHERE form_id = $formID;");
         $form = mysqli_fetch_array($data);
         $new_form_data = (json_decode($form["vraagen"]));
         return $new_form_data;

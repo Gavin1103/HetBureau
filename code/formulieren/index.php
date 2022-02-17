@@ -18,7 +18,7 @@ if (isset($_POST["submit_createAcc"])) {
 }
 
 $getAccountClass = new getAccountInfo();
-$getAccountFunction = $getAccountClass->getStudentAccount();
+$getStudentAccountFunction = $getAccountClass->getStudentAccount();
 
 ?>
 
@@ -31,13 +31,14 @@ $getAccountFunction = $getAccountClass->getStudentAccount();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
-<h1>Welkom <?php echo $getAccountFunction["naam"];?></h1>
+<h1>Welkom <?php echo $getStudentAccountFunction["naam"];?> <?php echo $getStudentAccountFunction["leerling nummer"];?></h1>
 
+<p>Kies hier welk formulier u wilt invullen.</p>
 <body>
-    <a href="../formulieren/form.php">Formulier fase 1</a>
-    <a href="../formulieren/form.php">Formulier fase 2</a>
-    <a href="../formulieren/form.php">Formulier fase 3</a>
-    <a href="../formulieren/form.php">Formulier fase 4</a>
+    <a href="../formulieren/form.php?formID=1">Formulier fase 1</a>
+    <a href="../formulieren/form.php?formID=2">Formulier fase 2</a>
+    <a href="../formulieren/form.php?formID=3">Formulier fase 3</a>
+    <a href="../formulieren/form.php?formID=4">Formulier fase 4</a>
 </body>
 
 </html>

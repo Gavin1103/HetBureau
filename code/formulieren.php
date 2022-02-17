@@ -3,11 +3,6 @@ include("./core/databaseConnection.php");
 include("./functions/function.php");
 
 $database = new Database();
-$db = $database->getConnection();
-
-$getForm = new retrieveFormFase1($db);
-$executeForm = $getForm->getFormFase1();
-
 
 ?>
 <!DOCTYPE html>

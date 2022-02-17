@@ -11,7 +11,6 @@ foreach($form_data as $key => $value) {
     echo "<br/>";
     foreach($value->antwoorden as $key2 => $value2) {
         echo $value2->label;
-        echo $value2->type;
         echo "<br/>";
         echo "<br>";    
     }
