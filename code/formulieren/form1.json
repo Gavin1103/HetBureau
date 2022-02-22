@@ -1,0 +1,31 @@
+[
+    {
+        "titel": "Afsluiting Fase 1",
+        "info": [
+            {
+                "element": "h1",
+                "beschrijving": "Dit formulier gaat je helpen om te komen tot een assesment voor fase 1. "
+            }
+        ],
+        "titelChecklist": "Checklist",
+        "infoChecklist": [
+            {
+                "beschrijving": "Samen met coach invullen (deel A)"
+            }
+        ],
+        
+        "naam_veld_student": "Student:",
+        "inputTypeStudent": [
+            {
+                "inputTypeText": "text"
+            }
+        ],
+
+        "coach_veld_student": "Student:",
+        "inputTypeCoach": [
+            {
+                "inputTypeText": "text"
+            }
+        ]
+    }
+]
