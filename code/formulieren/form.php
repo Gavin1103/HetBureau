@@ -16,6 +16,7 @@ foreach ($form_data as $key => $form) {
         echo "<br/>";
     }
 }
+
 echo "<br>";
 
 foreach ($form_data as $key => $form) {
@@ -23,26 +24,6 @@ foreach ($form_data as $key => $form) {
     echo "<br/>";
     foreach ($form->infoChecklist as $key2 => $infoForm) {
         echo $infoForm->beschrijvingChecklist;
-        echo "<br/>";
-    }
-}
-
-echo "<br>";
-
-foreach ($form_data as $key => $form) {
-    echo $form->naam_veld_student;
-    echo "<br/>";
-    foreach ($form->inputTypeStudent as $key2 => $infoForm) {
-        echo $infoForm->inputTypeText;
-        echo "<br/>";
-    }
-}
-
-foreach ($form_data as $key => $form) {
-    echo $form->coach_veld_student;
-    echo "<br/>";
-    foreach ($form->inputTypeText as $key2 => $infoForm) {
-        echo $infoForm->inputTypeText;
         echo "<br/>";
     }
 }

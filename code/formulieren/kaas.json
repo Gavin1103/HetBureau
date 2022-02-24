@@ -49,7 +49,7 @@
     
     "coach": {
         "title": "Review Fase 1",
-        "subtitel_B": "In te vullen door coach",
+        "subtitel": "In te vullen door coach",
         "beschrijving": "Maak op school of tijdens de les een afspraak met de desbetrefende docent en laat hem de beoordeling en feedback invullen. Bespreek deze zodat je ook begrijpt hoe de feedback tot stand is gekomen.",
         "vraagen": [
             {
@@ -63,72 +63,35 @@
                 ]
             },
             {
-                "vraag": "techniek input veld",
+                "vraag": "coach",
                 "antwoorden": [
                     {
-                        "label": "Techniek:",
-                        "name": "techniek_name",
+                        "label": "Coach",
+                        "name": "coach_name",
                         "type": "text"
                     }
                 ]
             },
             {
-                "vraag": "Ondernemend input veld",
+                "vraag": "datum",
                 "antwoorden": [
                     {
-                        "label": "Ondernemend:",
-                        "name": "ondernemend_name",
-                        "type": "text"
+                        "label": "datum",
+                        "name": "date_name",
+                        "type": "date"
                     }
                 ]
             },
             {
-                "vraag": "softskills input veld",
+                "vraag": "datum",
                 "antwoorden": [
                     {
-                        "label": "softskills",
-                        "name": "softskills_name",
-                        "type": "text"
-                    }
-                ]
-            },
-
-            {
-                "vraag": "AVO input veld",
-                "antwoorden": [
-                    {
-                        "label": "AVO: (Nederlands, Engels, rekenen)",
-                        "name": "AVO_name",
-                        "type": "text"
-                    }
-                ]
-            },
-
-            {
-                "vraag": "vul hier je bijzondere kwaliteiten in",
-                "antwoorden": [
-                    {
-                        "label": "Evt. bijzondere kwaliteiten",
-                        "name": "kwaliteiten_name",
-                        "type": "text"
+                        "label": "datum",
+                        "name": "date_name",
+                        "type": "date"
                     }
                 ]
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         ]
     }
 }
