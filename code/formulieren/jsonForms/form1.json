@@ -1,12 +1,14 @@
 {
-    
-    "student": {
+    "formulier": {
         "titel": "afsluiting fase 1",
         "beschrijving": "dit formulier gaat je helpen om te komen tot een a",
         "subtitel_A": "Checklist",
         "subtitel_A_info": "samen met coach invullen",
+        "subtitel_B": "Review Fase 1",
+        "subtitel_B_info": "In te vullen door vakdocent: <br> Maak op school of tijdens de les een afspraak met de desbetrefende docent en laat hem de beoordeling en feedback invullen. Bespreek deze zodat je ook begrijpt hoe de feedback tot stand is gekomen.",
         "subtitel_C": "Terugkoppeling Fase 1",
-        "vraagen": [
+        
+        "deel_A": [
             {
                 "vraag": "wat is je leerling nummer",
                 "antwoorden": [
@@ -36,54 +38,10 @@
                         "type": "date"
                     }
                 ]
-            },
-            {
-                "vraag": "datum",
-                "antwoorden": [
-                    {
-                        "label": "datum",
-                        "name": "date_name",
-                        "type": "date"
-                    }
-                ]
-            },
-            {
-                "vraag": "vraag 1 deel c",
-                "antwoorden": [
-                    {
-                        "label": "Je hebt jezelf voorgesteld en het is duidelijk wat je ambities zijn.",
-                        "name": "vraag1C_name",
-                        "type": "text"
-                    }
-                ]
-            },
-            {
-                "vraag": "vraag 2 deel c",
-                "antwoorden": [
-                    {
-                        "label": "Je hebt inzicht in de medestudenten, docenten, opleiding en vakgebied.",
-                        "name": "vraag2C_name",
-                        "type": "text"
-                    }
-                ]
-            },
-            {
-                "vraag": "vraag 3 deel c",
-                "antwoorden": [
-                    {
-                        "label": "Je hebt laten zien welke skills je kan toepassen en begeerst",
-                        "name": "vraag1C_name",
-                        "type": "text"
-                    }
-                ]
             }
-        ]
-    },
-    "coach": {
-        "titel": "Review Fase 1",
-        "subtitel_B": "In te vullen door coach",
-        "beschrijving": "Maak op school of tijdens de les een afspraak met de desbetrefende docent en laat hem de beoordeling en feedback invullen. Bespreek deze zodat je ook begrijpt hoe de feedback tot stand is gekomen.",
-        "vraagen": [
+        ],
+
+        "deel_B": [
             {
                 "vraag": "Vormgeven input veld",
                 "antwoorden": [
@@ -143,6 +101,40 @@
                         "type": "text"
                     }
                 ]
+            }
+        ],
+
+
+        "deel_C": [
+            {
+                "vraag": "vraag 1 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je hebt jezelf voorgesteld en het is duidelijk wat je ambities zijn.",
+                        "name": "vraag1C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vraag 2 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je hebt inzicht in de medestudenten, docenten, opleiding en vakgebied.",
+                        "name": "vraag2C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vraag 3 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je hebt laten zien welke skills je kan toepassen en begeerst",
+                        "name": "vraag1C_name",
+                        "type": "text"
+                    }
+                ]
             },
             {
                 "vraag": "doorgroei advies",
@@ -163,7 +155,18 @@
                         "type": "text"
                     }
                 ]
+            },
+            {
+                "vraag": "handtekening leerling",
+                "antwoorden": [
+                    {
+                        "label": "Handtekening leerling",
+                        "name": "handtekening_name",
+                        "type": "text"
+                    }
+                ]
             }
+
         ]
     }
 }
