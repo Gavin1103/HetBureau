@@ -1,4 +1,4 @@
-<form method="post" action="">
+<form method="POST" action="./generatepdf.php">
     <?php
     require "./get_formulier.php";
     $getForm = new GetFormFunction();
