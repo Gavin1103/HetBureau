@@ -4,29 +4,30 @@ $getForm = new GetFormFunction();
 $form_data = $getForm->get_formulieren(1);
 
 echo "<pre>";
-foreach ($form_data as $key => $form) {
+var_dump($form_data->coach);
+
+foreach ($form_data  as $key => $form) {
+    
     echo $form->titel;
-    echo "<br/>";
-    foreach ($form->info as $key2 => $infoForm) {
-        echo $infoForm->beschrijving;
-        echo "<br/>";
-    }
-    foreach ($form->info as $key2 => $infoForm) {
-        echo $infoForm->element;
-        echo "<br/>";
-    }
+ 
 }
 
-echo "<br>";
+// foreach ($form_data as $key => $form) {
 
-foreach ($form_data as $key => $form) {
-    echo $form->titelChecklist;
-    echo "<br/>";
-    foreach ($form->infoChecklist as $key2 => $infoForm) {
-        echo $infoForm->beschrijvingChecklist;
-        echo "<br/>";
-    }
-}
+//     echo $form->titel;
+
+ 
+ 
+// }
+
+
+// foreach ($form_data->student["vraagen"]  as $key => $form) {
+
+//     echo $form->titel;
+ 
+// }
+
+
 
 
 
