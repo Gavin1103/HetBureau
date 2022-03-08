@@ -28,6 +28,23 @@
         echo "<br/>";
         echo "<br/>";
     }
+
+    foreach ($form_data->formulier->checkboxen  as $key => $form) {
+        // var_dump($form);
+        // echo $form->vraag;
+        echo "<br/>";
+        foreach ($form->checkbox as $key => $box) {
+            echo "<input type='{$box->type}' name='{$box->name}'/>";
+            echo "<label>{$box->label}</label>";
+        }
+        // echo "<input name='{$form->vraag} placeholder='{$form->vraag}'/>";
+        echo "<br/>";
+        echo "<br/>";
+    }
+
+
+
+
     foreach ($form_data as $key => $form) {
         echo "<h2>$form->subtitel_B</h2>";
         echo "<br/>";

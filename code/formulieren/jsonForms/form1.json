@@ -7,7 +7,6 @@
         "subtitel_B": "Review Fase 1",
         "subtitel_B_info": "In te vullen door vakdocent: <br> Maak op school of tijdens de les een afspraak met de desbetrefende docent en laat hem de beoordeling en feedback invullen. Bespreek deze zodat je ook begrijpt hoe de feedback tot stand is gekomen.",
         "subtitel_C": "Terugkoppeling Fase 1",
-        
         "deel_A": [
             {
                 "vraag": "wat is je leerling nummer",
@@ -40,7 +39,6 @@
                 ]
             }
         ],
-
         "deel_B": [
             {
                 "vraag": "Vormgeven input veld",
@@ -103,8 +101,6 @@
                 ]
             }
         ],
-
-
         "deel_C": [
             {
                 "vraag": "vraag 1 deel c",
@@ -166,7 +162,99 @@
                     }
                 ]
             }
+        ],
 
+        "checkboxen": [
+            {
+                "checkbox": [
+                    {
+                        "label": "Startportfolio",
+                        "type": "checkbox",
+                        "name":"startportfolio_name_f1"
+                    }
+                ]
+
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Challenge 1 (interactie)",
+                        "type": "checkbox",
+                        "name":"challenge_name_f1"
+                    }
+                ]
+
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Onderzoek",
+                        "type": "checkbox",
+                        "name":"onderzoek_name_f1"
+                    }
+                ]
+
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Loopbaan reflectie 1",
+                        "type": "checkbox",
+                        "name":"loopbaan_name_f1"
+                    }
+                ]
+
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Kennismakings opdrachten (poster van jezelf, website vd werkgroep en netwerkopdracht)",
+                        "type": "checkbox",
+                        "name":"kennismakings_name_f1"
+                    }
+                ]
+
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Tools (Illustrator en Photoshop)",
+                        "type": "checkbox",
+                        "name":"tools_name_f1"
+                    }
+                ]
+
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Vormgeven",
+                        "type": "checkbox",
+                        "name":"vormgeven_name_f1"
+                    }
+                ]
+
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Webtechnieken",
+                        "type": "checkbox",
+                        "name":"webtechnieken_name_f1"
+                    }
+                ]
+
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Reviews van de docenten",
+                        "type": "checkbox",
+                        "name":"review_docenten_name_f1"
+                    }
+                ]
+
+            }
         ]
     }
 }
