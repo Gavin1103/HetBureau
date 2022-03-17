@@ -35,10 +35,10 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
     </p>
     <br>
     <p>Kies hier welk formulier u wilt invullen.</p>
-    <a href="../formulieren/form.php?formID=1">Formulier fase 1</a>
-    <a href="../formulieren/form.php?formID=2">Formulier fase 2</a>
-    <a href="../formulieren/form.php?formID=3">Formulier fase 3</a>
-    <a href="../formulieren/form.php?formID=4">Formulier fase 4</a>
+    <a href="../forms/formulieren_fase_1.php">Formulier fase 1</a>
+    <a href="../forms/formulieren_fase_2.php">Formulier fase 2</a>
+    <a href="../forms/formulieren_fase_3.php">Formulier fase 3</a>
+    <a href="../forms/formulieren_fase_4.php">Formulier fase 4</a>
     <br>
     <br>
     <form method="POST" action="#">
