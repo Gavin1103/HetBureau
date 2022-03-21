@@ -33,6 +33,21 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
         $getKlassenFunction = $getKlassen->loopKlas();
         ?>
     </p>
+    <br>
+    <p>Kies hier welk formulier u wilt invullen.</p>
+    <a href="../formulieren/form.php?formID=1">Formulier fase 1</a>
+    <a href="../formulieren/form.php?formID=2">Formulier fase 2</a>
+    <a href="../formulieren/form.php?formID=3">Formulier fase 3</a>
+    <a href="../formulieren/form.php?formID=4">Formulier fase 4</a>
+    <br>
+    <br>
+    <form method="POST" action="#">
+        <label for="zoeken">Zoek een leerling:</label>
+        <input id="zoeken" type="text" name="zoeken" placeholder="leerlingnummer">
+        <input type="submit" value="zoeken">
+    </form>
+
+</html>
 </body>
 
 </html>
