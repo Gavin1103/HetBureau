@@ -22,7 +22,7 @@ class Database{
       {
          echo "Fout tijdens verbinden: " . $e->getMessage();
       }
-      echo $con;
+      // echo $con;
       return $this->con;
    }
 }

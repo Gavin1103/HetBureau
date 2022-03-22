@@ -8,7 +8,6 @@ $db = $database->getConnection();
 $getForm = new retrieveFormFase1($db);
 $executeForm = $getForm->getFormFase1();
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
