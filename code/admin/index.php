@@ -25,6 +25,8 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
 
 <body>
     <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
+
+
     <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
     <br>
     <a href="#">klassen wijzigen</a>
