@@ -3,7 +3,6 @@ CRUD komt hier
 include("../functions/getAccount.php");
 include("../functions/verifyAdmin.php");
 include("../core/databaseConnection.php");
-include("../functions/getklassen.php");
 
 $verifyAdminLogin = new verifyAdminLoginClass();
 $verifyAdmin = $verifyAdminLogin->checkInputAdmin();

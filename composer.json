@@ -13,6 +13,6 @@
     ],
     "require": {
         "vlucas/phpdotenv": "^5.4",
-        "fpdf/fpdf": "^1.83"
+        "setasign/fpdf": "^1.8"
     }
 }
