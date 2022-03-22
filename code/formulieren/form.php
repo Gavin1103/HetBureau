@@ -12,7 +12,7 @@
 
 <body>
 
-    <form method="POST" action="testform.php?formID=<?php echo $formID ?>"> 
+    <form> 
         <?php
 
 
@@ -103,7 +103,7 @@
         ?>
         <input type="submit" name="form_submit" />
     </form>
-
+        <script src="../js/form.js"></script>
 </body>
 
 </html>
