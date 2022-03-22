@@ -1,0 +1,250 @@
+{
+    "formulier": {
+        "titel": "afsluiting fase 1",
+        "beschrijving": "dit formulier gaat je helpen om te komen tot een a",
+        "subtitel_A": "Checklist",
+        "subtitel_A_info": "samen met coach invullen",
+        "subtitel_B": "Review Fase 1",
+        "subtitel_B_info": "In te vullen door vakdocent: <br> Maak op school of tijdens de les een afspraak met de desbetrefende docent en laat hem de beoordeling en feedback invullen. Bespreek deze zodat je ook begrijpt hoe de feedback tot stand is gekomen.",
+        "subtitel_C": "Terugkoppeling Fase 1",
+        "deel_A": [
+            {
+                "vraag": "wat is je leerling nummer",
+                "antwoorden": [
+                    {
+                        "label": "studentnummer",
+                        "name": "student_nummer",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "vraag": "coach",
+                "antwoorden": [
+                    {
+                        "label": "Coach",
+                        "name": "coach_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "datum",
+                "antwoorden": [
+                    {
+                        "label": "datum",
+                        "name": "date_name",
+                        "type": "date"
+                    }
+                ]
+            }
+        ],
+        "deel_B": [
+            {
+                "vraag": "Vormgeven input veld",
+                "antwoorden": [
+                    {
+                        "label": "vormgeven:",
+                        "name": "vormgeven_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "techniek input veld",
+                "antwoorden": [
+                    {
+                        "label": "Techniek:",
+                        "name": "techniek_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "Ondernemend input veld",
+                "antwoorden": [
+                    {
+                        "label": "Ondernemend:",
+                        "name": "ondernemend_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "softskills input veld",
+                "antwoorden": [
+                    {
+                        "label": "softskills",
+                        "name": "softskills_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "AVO input veld",
+                "antwoorden": [
+                    {
+                        "label": "AVO: (Nederlands, Engels, rekenen)",
+                        "name": "AVO_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vul hier je bijzondere kwaliteiten in",
+                "antwoorden": [
+                    {
+                        "label": "Evt. bijzondere kwaliteiten",
+                        "name": "kwaliteiten_name",
+                        "type": "text"
+                    }
+                ]
+            }
+        ],
+        "deel_C": [
+            {
+                "vraag": "vraag 1 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je hebt jezelf voorgesteld en het is duidelijk wat je ambities zijn.",
+                        "name": "vraag1C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vraag 2 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je hebt inzicht in de medestudenten, docenten, opleiding en vakgebied.",
+                        "name": "vraag2C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vraag 3 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je hebt laten zien welke skills je kan toepassen en begeerst",
+                        "name": "vraag1C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "doorgroei advies",
+                "antwoorden": [
+                    {
+                        "label": "Doorgroei advies",
+                        "name": "advies_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "handtekening docent",
+                "antwoorden": [
+                    {
+                        "label": "Handtekening assesor",
+                        "name": "handtekening_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "handtekening leerling",
+                "antwoorden": [
+                    {
+                        "label": "Handtekening leerling",
+                        "name": "handtekening_name",
+                        "type": "text"
+                    }
+                ]
+            }
+        ],
+        "checkboxen": [
+            {
+                "checkbox": [
+                    {
+                        "label": "Startportfolio",
+                        "type": "checkbox",
+                        "name": "startportfolio_name_f1"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Challenge 1 (interactie)",
+                        "type": "checkbox",
+                        "name": "challenge_name_f1"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Onderzoek",
+                        "type": "checkbox",
+                        "name": "onderzoek_name_f1"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Loopbaan reflectie 1",
+                        "type": "checkbox",
+                        "name": "loopbaan_name_f1"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Kennismakings opdrachten (poster van jezelf, website vd werkgroep en netwerkopdracht)",
+                        "type": "checkbox",
+                        "name": "kennismakings_name_f1"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Tools (Illustrator en Photoshop)",
+                        "type": "checkbox",
+                        "name": "tools_name_f1"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Vormgeven",
+                        "type": "checkbox",
+                        "name": "vormgeven_name_f1"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Webtechnieken",
+                        "type": "checkbox",
+                        "name": "webtechnieken_name_f1"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Reviews van de docenten",
+                        "type": "checkbox",
+                        "name": "review_docenten_name_f1"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -43,7 +43,7 @@ class verifyAdminLoginClass
             // exit();
         } else {
             echo 'fout';
-            header("location: ../inlog_admin.php?error=foutLogin");
+            header("location: ../inlog_admin.php?error=foutLogin444");
         }
     }
 }
