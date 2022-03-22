@@ -1,3 +1,4 @@
+<!-- verbinding maken met database -->
 <?php
 
 // define("BASEHREF","http://localhost/programming/HetBureau/code/");
