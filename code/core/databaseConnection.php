@@ -21,7 +21,7 @@ class Database{
       {
          echo "Fout tijdens verbinden: " . $e->getMessage();
       }
-      // echo $this->con;
+      // echo $con;
       return $this->con;
    }
 }

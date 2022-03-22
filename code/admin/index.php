@@ -3,6 +3,7 @@ CRUD komt hier
 include("../functions/getAccount.php");
 include("../functions/verifyAdmin.php");
 include("../core/databaseConnection.php");
+include("functions_admin/getStudentsForm.php");
 
 $verifyAdminLogin = new verifyAdminLoginClass();
 $verifyAdmin = $verifyAdminLogin->checkInputAdmin();
@@ -25,28 +26,24 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
 <body>
     <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
     <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
-    <h2>Klassen:</h2>
-    <p>
-        <?php
-        $getKlassen = new getKlassen();
-        $getKlassenFunction = $getKlassen->loopKlas();
-        ?>
-    </p>
     <br>
-    <p>Kies hier welk formulier u wilt invullen.</p>
-    <a href="../formulieren/form.php?formID=1">Formulier fase 1</a>
-    <a href="../formulieren/form.php?formID=2">Formulier fase 2</a>
-    <a href="../formulieren/form.php?formID=3">Formulier fase 3</a>
-    <a href="../formulieren/form.php?formID=4">Formulier fase 4</a>
+    <a href="#">klassen wijzigen</a>
     <br>
-    <br>
-    <form method="POST" action="#">
-        <label for="zoeken">Zoek een leerling:</label>
-        <input id="zoeken" type="text" name="zoeken" placeholder="leerlingnummer">
-        <input type="submit" value="zoeken">
-    </form>
+    <a href="#">formulier inhoud wijzigen</a>
+    <hr>
 
-</html>
+    <h2>Formulieren van studenten</h2>
+
+    <?php
+    
+    $klassen = new adminFunctions();
+    $klassenFunction = $klassen->getKlassen();
+
+    ?>
+
+
+    
+
 </body>
 
 </html>
