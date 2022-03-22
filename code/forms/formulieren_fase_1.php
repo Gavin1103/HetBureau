@@ -2,11 +2,13 @@
 
 include("../core/databaseConnection.php");
 include("./getForms/getFormFase1.php");
+include './getForms/getCheckBoxen.php';
 
 $database = new Database();
-
 $getForm = new retrieveFormFase1();
 $executeForm = $getForm->getFormFase1();
+$getCheckboxFunction = new checkboxen();
+// $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
 
 
 
@@ -51,44 +53,9 @@ $executeForm = $getForm->getFormFase1();
                 <input type="text" />
                 <br />
                 <ul>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>
-                            Het startportfolio dient als kapstok waar de opgedane kennis en ervaring zichtbaar wordt. Het portfolio moet een overzicht geven van jou als aankomend webdesigner.
-                        </p>
-                    </li>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>Challenge 1</p>
-                    </li>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>Onderzoek naar vakgebied</p>
-                    </li>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>Kennismakingsopdrachten</p>
-                    </li>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>Tools</p>
-                    </li>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>Vormgeven</p>
-                    </li>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>Webtechnieken</p>
-                    </li>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>Reviews van docenten</p>
-                    </li>
-                    <li>
-                        <input class="circle" type="checkbox" />
-                        <p>Eigen werk</p>
-                    </li>
+                   <?php
+                   $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
+                   ?>
                 </ul>
             </form>
 

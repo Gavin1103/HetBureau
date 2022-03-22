@@ -42,7 +42,8 @@ class getAccountInfo
             header("location: ../inlog_admin.php?error=fout22");
         }
 
-        $getAdminInfo_sql = mysqli_query($db->con, "SELECT `id`, `naam`, `achternaam`, `email`, `wachtwoord`, `functie`, `afkorting` FROM `admin_docent` WHERE afkorting = '$this->afkorting_admin'");
+        $getAdminInfo_sql = mysqli_query($db->con, "SELECT `id`, `naam`, `achternaam`, `email`,
+        `wachtwoord`, `functie`, `afkorting` FROM `admin_docent` WHERE afkorting = '$this->afkorting_admin'");
         $results = mysqli_fetch_assoc($getAdminInfo_sql);
         $result_array = [
             "naam" => $results["naam"],

@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: Custom;
+}
+
+@font-face {
+    font-family: Custom;
+    src: url(../Materiaal/fonts/static/ReadexPro-Light.ttf);
+}
+
+@font-face {
+    font-family: ppRight;
+    src: url(../Materiaal/fonts/PPRightGrotesk-WideMedium.ttf);
+}
+
+.containerLeft {
+    background: url(../Materiaal/achtergrondLogin/Achtergrond-Login.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+
+}
+
+.containerLeft, .containerRight {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.miniContainer {
+    width: 50%;
+}
+
+.logo {
+    margin-bottom: 15%;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 10%;
+    font-family: ppRight;
+}
+
+input {
+    padding: 10px;
+    display: flex;
+    margin: 20px 0;
+    border: 1px solid #262626;
+    font-size: x-large;
+}
+
+.checkBox {
+    border: #262626 5px solid;
+}
+
+.inputText {
+    height: 30px;
+    width: 95%;
+}
+
+input:focus {
+    outline: none;
+}
+
+.onthoudmij {
+    display: flex;
+    width: 50%;
+    align-items: center;
+}
+
+label {
+    margin-left: 20px;
+}
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkBox {
+    width: 10%;
+    margin: 0%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    height: 50px;
+    margin-top: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button a {
+    color: white;
+}
