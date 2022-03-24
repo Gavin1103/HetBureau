@@ -1,0 +1,243 @@
+{
+    "formulier": {
+        "titel": "Afsluiting fase 4",
+        "beschrijving": "dit formulier gaat je helpen om te komen tot een a",
+        "subtitel_A": "Checklist",
+        "subtitel_A_info": "samen met coach invullen",
+        "subtitel_B": "Review Fase 4",
+        "subtitel_B_info": "Maak op school of tijdens de les een adspraak met de desbretefende docent en laat hem de beoordeling en feedback invullen. Bespreek deze zodat je ook begrijpt hoe de feedback tot stand is gekomen",
+        "subtitel_C": "Terugkoppeling Fase 4 ",
+        "deel_A": [
+            {
+                "vraag": "wat is je leerling nummer",
+                "antwoorden": [
+                    {
+                        "label": "studentnummer",
+                        "name": "student nummer",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "vraag": "coach",
+                "antwoorden": [
+                    {
+                        "label": "Coach",
+                        "name": "coach_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "datum",
+                "antwoorden": [
+                    {
+                        "label": "datum",
+                        "name": "date_name",
+                        "type": "date"
+                    }
+                ]
+            }
+        ],
+        "deel_B": [
+            {
+                "vraag": "Vormgeven input veld",
+                "antwoorden": [
+                    {
+                        "label": "vormgeven:",
+                        "name": "vormgeven_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "Techniek input veld",
+                "antwoorden": [
+                    {
+                        "label": "Techniek:",
+                        "name": "Techniek_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "ondernemen input veld",
+                "antwoorden": [
+                    {
+                        "label": "ondernemen:",
+                        "name": "ondernemen_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "Softskills input veld",
+                "antwoorden": [
+                    {
+                        "label": "Tools:",
+                        "name": "techniek_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "AVO input veld",
+                "antwoorden": [
+                    {
+                        "label": "AVO: (Nederlands, Engels, rekenen)",
+                        "name": "AVO_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vul hier je bijzondere kwaliteiten in",
+                "antwoorden": [
+                    {
+                        "label": "Evt. bijzondere kwaliteiten",
+                        "name": "kwaliteiten_name",
+                        "type": "text"
+                    }
+                ]
+            }
+        ],
+        "deel_C": [
+            {
+                "vraag": "vraag 1 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je ontwikkelt je 'in house' verder als professioneel webdesigner",
+                        "name": "vraag1C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vraag 2 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je gaat met je semiprofessionele tean aan de slag met  echte opdrachten voor klanten",
+                        "name": "vraag2C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vraag 3 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je werkt aan je eigen profiel en verstevigd je showcase portfolio",
+                        "name": "vraag3C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "vraag 4 deel c",
+                "antwoorden": [
+                    {
+                        "label": "Je hebt een beeld van de type profielen/rollen van een webdesign bureau.",
+                        "name": "vraag4C_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "doorgroei advies",
+                "antwoorden": [
+                    {
+                        "label": "Doorgroei advies",
+                        "name": "advies_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "handtekening docent",
+                "antwoorden": [
+                    {
+                        "label": "Handtekening assesor",
+                        "name": "handtekening_name",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "vraag": "handtekening leerling",
+                "antwoorden": [
+                    {
+                        "label": "Handtekening leerling",
+                        "name": "handtekening_name",
+                        "type": "text"
+                    }
+                ]
+            }
+        ],
+
+        "checkboxen": [
+            {
+                "checkbox": [
+                    {
+                        "label": "Ontwikkelportfolio<br>(Het ontwikkelportfolio dient...)",
+                        "type": "checkbox",
+                        "name": "ontwikkelportfolio_name_f4"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Ondernemersschap",
+                        "type": "checkbox",
+                        "name": "ondernemer_name_f4"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Promotie van showcase portfolio",
+                        "type": "checkbox",
+                        "name": "promotie_name_f4"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "klantopdracht",
+                        "type": "checkbox",
+                        "name": "klantopdracht_name_f4"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Loopbaan reflecties 1,2,3 en 4",
+                        "type": "checkbox",
+                        "name": "loopbaan_name_f4"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "Keuzedeel 3",
+                        "type": "checkbox",
+                        "name": "keuzedeel_name_f4"
+                    }
+                ]
+            },
+            {
+                "checkbox": [
+                    {
+                        "label": "reviews van docenten.",
+                        "type": "checkbox",
+                        "name": "reviews_name_f4"
+                    }
+                ]
+            }
+        ]
+    }
+}

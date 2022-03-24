@@ -6,11 +6,9 @@ include './getForms/getCheckBoxen.php';
 
 $database = new Database();
 $getForm = new retrieveFormFase1();
+
 $executeForm = $getForm->getFormFase1();
 $getCheckboxFunction = new checkboxen();
-// $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
-
-
 
 // echo "<pre>";
 // var_dump($executeForm);
@@ -44,13 +42,13 @@ $getCheckboxFunction = new checkboxen();
                 <input type="text" />
                 <br />
                 <p><?php echo $executeForm["leerling nummer"]; ?></p>
-                <input type="text" />
+                <input name="leerlingnummer_name_af1" type="text" />
                 <br />
                 <p><?php echo $executeForm["coach"]; ?>:</p>
-                <input type="text" />
+                <input name="coach_name_af1" type="text" />
                 <br />
                 <p><?php echo $executeForm["datum"]; ?></p>
-                <input type="text" />
+                <input name="datum_name_af1" type="text" />
                 <br />
                 <ul>
                    <?php
@@ -72,25 +70,25 @@ $getCheckboxFunction = new checkboxen();
     </div>
     <div id="container_2">
         <div class="innerContainer">
-            <form action="">
+            <form method="POST" action="">
                 <p><?php echo $executeForm["vormgeven_beoordeling"] ?></p>
-                <input type="textarea" />
+                <input name="vormgeven_name_af1" type="textarea" />
                 <br />
                 <p><?php echo $executeForm["techniek_beoordeling"] ?>
                 </p>
-                <input type="text" />
+                <input name="techniek_name_af1" type="text" />
                 <br />
                 <p><?php echo $executeForm["ondernemend_beoordeling"] ?></p>
                 <input type="text" />
                 <br />
                 <p><?php echo $executeForm["softskills_beoordeling"] ?></p>
-                <input type="text" />
+                <input name="softskills_name_af1" type="text" />
                 <br />
                 <p><?php echo $executeForm["AVO_beoordeling"] ?></p>
-                <input type="text" />
+                <input name="avo_name_af1" type="text" />
                 <br />
                 <p><?php echo $executeForm["evt_kwaliteiten"] ?>:</p>
-                <input type="text" />
+                <input name="evt_name_af1" type="text" />
                 <br />
             </form>
         </div>
