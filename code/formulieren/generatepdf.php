@@ -1,34 +1,34 @@
 <?php
-// ob_end_clean();
-// require_once "../../vendor/autoload.php";   
-// use Fpdf\Fpdf;
- 
-// // Instantiate and use the FPDF class 
-// $pdf = new FPDF();
-  
-// //Add a new page
-// $pdf->AddPage();
-  
-// // Set the font for the text
-// $pdf->SetFont('Arial', 'B', 18);
-  
-// // Prints a cell with given text 
-// // $pdf->Cell(60,20,'Hello GeeksforGeeks!');
+ob_end_clean();
+require_once "../../vendor/autoload.php";   
+use Fpdf\Fpdf;
 
-// $kaas = 20;
-// foreach ($_POST as $key => $answer){
-//     // $pdf->Cell(60,(20 + ($kaas + 20)),$answer);
-//     $pdf->Cell(20,20,"{$key}: {$answer}");
-//     $pdf->Ln();
+// haal en parse de data uit de post body
+$raw_http_body = file_get_contents('php://input');
+$post_body = json_decode($raw_http_body,JSON_PRETTY_PRINT);   
 
-//     $kaas++;
-// }
+// Instantiate and use the FPDF class 
+$pdf = new FPDF();
   
-// // return the generated output
-// $pdf->Output();
+//Add a new page
+$pdf->AddPage();
+  
+// Set the font for the text
+$pdf->SetFont('Arial', 'B', 12);
 
-// // echo $pdf;
-$kaas  = json_decode($_POST);   
-var_dump($kaas);
-var_dump($_POST);
+$row = 20;
+foreach ($post_body as $key => $antwoord){
+    $vraag = $antwoord["label"];
+    $user_antwoord = $antwoord["answer"];
+    $pdf->Cell(20,20,"{$key} {$vraag}: {$user_antwoord}");
+    $pdf->Ln();
+
+    $row++;
+}
+
+// return the generated output
+$pdf->Output();
+
+// echo $pdf;
+
 ?>
