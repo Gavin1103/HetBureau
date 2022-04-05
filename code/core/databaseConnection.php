@@ -1,7 +1,8 @@
 <?php
 //  verbinding maken met database 
-require_once ("../../vendor/autoload.php");
-$dotenv = Dotenv\Dotenv::createImmutable("../../");
+// require_once ("C:/xampp/htdocs/HetBureau/vendor/autoload.php");
+require_once (dirname(__File__) . '/../../vendor/autoload.php'); 
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__File__) ."/../../");
 $dotenv->load();
 class Database{
    // private $host;
