@@ -20,7 +20,7 @@ class verifyAdminLoginClass
                 $this->verifyUser();
                 exit();
             } else {
-                header("location: ../inlog_admin.php?error=geenWachtwoordOfLeerlingnummer");
+                header("location: ../index.php?error=geenWachtwoordOfLeerlingnummer");
                 exit("Please fill both the username and password fields!");
             }
         } 
@@ -43,7 +43,7 @@ class verifyAdminLoginClass
             // exit();
         } else {
             echo 'fout';
-            header("location: ../inlog_admin.php?error=foutLogin444");
+            header("location: ../index.php?error=Incorrect");
         }
     }
 }
