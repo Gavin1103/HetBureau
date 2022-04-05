@@ -43,7 +43,6 @@ $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
                     <h2><?php echo $executeForm["checklist_titel"]; ?></h2>
                     <p>samen met coach invullen.</p>
                 </div>
-
                 <p><?php echo $executeForm["student"]; ?></p>
                 <input name="student_name_af1" type="text" />
                 <br />
@@ -53,6 +52,12 @@ $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
                 <p><?php echo $executeForm["coach"]; ?>:</p>
                 <input name="coach_name_af1" type="text" />
                 <br />
+
+
+                <p><?php echo $executeForm["klas"] ?></p>
+          
+
+
                 <p><?php echo $executeForm["datum"]; ?></p>
                 <input name="datum_name_af1" type="date" />
                 <br />
@@ -61,8 +66,6 @@ $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
                     $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
                     ?>
                 </ul>
-
-
                 <div id="prestaties">
                     <h2><?php echo $executeForm["Review_fase_1"]; ?></h2>
                     <p>
