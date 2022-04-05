@@ -36,7 +36,7 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
         <div class="nav-right">
             <p><?php echo $getAdminAccountFunction["naam"] ?></p>
             <img class="pfp" src="../assets/Materiaal/icoonset/pfp.jpg" style="border-radius: 50%;" alt="pfp">
-            <a href="login.html"><img class="logout-icon" src="../assets/Materiaal/icoonset/Uitloggen.svg" alt="logout"></a>
+            <a href="logout.php"><img class="logout-icon" src="../assets/Materiaal/icoonset/Uitloggen.svg" alt="logout"></a>
         </div>
     </nav>
     <div class="container">

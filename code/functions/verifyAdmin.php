@@ -33,13 +33,14 @@ class verifyAdminLoginClass
         $this->admin_wachtwoord = $_POST["ww_admin"];
 
         $this->hashwachtwoord = hash("sha256", $this->admin_wachtwoord);
-        $verifyAdminUser = mysqli_query($db->con, "SELECT afkorting, wachtwoord FROM `admin_docent` WHERE afkorting = '$this->admin_afkorting' AND wachtwoord = '$this->hashwachtwoord'");
+        $verifyAdminUser = mysqli_query($db->con, "SELECT afkorting, wachtwoord, functie FROM `admin_docent` WHERE afkorting = '$this->admin_afkorting' AND wachtwoord = '$this->hashwachtwoord'");
 
         $checkInDataBase = mysqli_fetch_array($verifyAdminUser);
 
         if (is_array($checkInDataBase)) {
             $_SESSION[$this->admin_afkorting] = $checkInDataBase['afkorting'];
             $_SESSION[$this->hashwachtwoord] = $checkInDataBase['wachtwoord'];
+            $_SESSION["userType"] = $checkInDataBase['functie'];
             // exit();
         } else {
             echo 'fout';
