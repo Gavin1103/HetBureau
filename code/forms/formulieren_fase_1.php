@@ -4,6 +4,7 @@ include("../core/databaseConnection.php");
 include("./getForms/getFormFase1.php");
 include './getForms/getCheckBoxen.php';
 include '../functions/sendForms.php';
+include '../functions/getklassen.php';
 
 $database = new Database();
 $getForm = new retrieveFormFase1();
@@ -14,15 +15,12 @@ $getCheckboxFunction = new checkboxen();
 $sendFormClass = new sendForms();
 $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
 
+$getKlassen = new getKlassen();
 
-// echo "<pre>";
-// var_dump($executeForm);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,7 +28,6 @@ $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
     <title>AssesmentForm</title>
     <link rel="stylesheet" href="assets/style/style.css" />
 </head>
-
 <body>
     <form method="POST" action="#">
         <div id="container_1">
@@ -52,12 +49,12 @@ $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
                 <p><?php echo $executeForm["coach"]; ?>:</p>
                 <input name="coach_name_af1" type="text" />
                 <br />
-
-
                 <p><?php echo $executeForm["klas"] ?></p>
-          
-
-
+                <select name="klas_name" id="klas">
+                    <?php
+                    $getKlassenFunction = $getKlassen->selectKlas();
+                    ?>
+                </select>
                 <p><?php echo $executeForm["datum"]; ?></p>
                 <input name="datum_name_af1" type="date" />
                 <br />

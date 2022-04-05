@@ -5,6 +5,7 @@ class sendForms
     private $student;
     private $leerlingNummer;
     private $coach;
+    private $klas;
     private $datum;
     private $vormgeven;
     private $techniek;
@@ -25,6 +26,7 @@ class sendForms
                 $this->coach = $_POST["coach_name_af1"];
                 $this->leerlingNummer = $_POST["leerlingnummer_name_af1"];
                 $this->datum = $_POST["datum_name_af1"];
+                $this->klas = $_POST["klas_name"];
 
                 $this->vormgeven = $_POST["vormgeven_name_af1"];
                 $this->techniek = $_POST["techniek_name_af1"];
@@ -38,7 +40,7 @@ class sendForms
 
                 $db = new Database();
 
-                $this->addFormQRY = mysqli_query($db->con, "INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->datum','$this->checkboxen_json','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten')");
+                $this->addFormQRY = mysqli_query($db->con, "INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`,  `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->klas','$this->datum','$this->checkboxen_json','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten')");
                 if($this->addFormQRY){
                     echo "Formulier opgeslagen";
                 }

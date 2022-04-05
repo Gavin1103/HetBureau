@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<form action="" method="post">
+<form action="#" method="post">
 		Naam van klas:<input type="text" name="klasnaam" id="" placeholder=""><br>
 		<input type="submit" name="submit" value="submit"><br>
 	</form>

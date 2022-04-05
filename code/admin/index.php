@@ -99,17 +99,17 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
             $('.loader-bg').fadeToggle();
         }, 1250);
     </script>
-    
+<!--     
     <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
     <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
     <h2>Klassen:</h2>
     <a href="klasCRUD/addKlas.php">Voeg klas toe</a>
     <p>
         <?php
-        $getKlassen = new getKlassen();
-        $getKlassenFunction = $getKlassen->loopKlas();
+        // $getKlassen = new getKlassen();
+        // $getKlassenFunction = $getKlassen->loopKlas();
         ?>
-    </p>
+    </p> -->
 </body>
 
 </html>
