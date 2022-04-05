@@ -1,5 +1,6 @@
 <?php
 include("../core/databaseConnection.php");
+session_start();
 class AddAdmin
 {
     private $naam_admin;

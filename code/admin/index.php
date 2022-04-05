@@ -1,4 +1,6 @@
 <?php
+session_start();
+include '../functions/sessionCheck.php';
 
 include("../functions/getAccount.php");
 include("../functions/verifyAdmin.php");
@@ -99,7 +101,7 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
             $('.loader-bg').fadeToggle();
         }, 1250);
     </script>
-    
+
     <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
     <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
     <h2>Klassen:</h2>
