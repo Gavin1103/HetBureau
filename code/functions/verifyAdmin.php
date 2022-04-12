@@ -20,7 +20,7 @@ class verifyAdminLoginClass
                 $this->verifyUser();
                 exit();
             } else {
-                header("location: ../inlog_admin.php?error=geenWachtwoordOfLeerlingnummer");
+                // header("location: ../.php?error=geenWachtwoordOfLeerlingnummer");
                 exit("Please fill both the username and password fields!");
             }
         } 
@@ -38,8 +38,7 @@ class verifyAdminLoginClass
         $checkInDataBase = mysqli_fetch_array($verifyAdminUser);
 
         if (is_array($checkInDataBase)) {
-            $_SESSION[$this->admin_afkorting] = $checkInDataBase['afkorting'];
-            $_SESSION[$this->hashwachtwoord] = $checkInDataBase['wachtwoord'];
+            $_SESSION["afkorting_admin"] = $checkInDataBase['afkorting'];
             $_SESSION["userType"] = $checkInDataBase['functie'];
             // exit();
         } else {

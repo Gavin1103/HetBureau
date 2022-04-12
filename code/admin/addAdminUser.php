@@ -62,7 +62,7 @@ class AddAdmin
         $verifyAfkorting = mysqli_query($db->con, "SELECT afkorting FROM `admin_docent` WHERE afkorting = '$this->afkorting_admin' ");
         $checkInDataBase = mysqli_fetch_array($verifyAfkorting);
         if (is_array($checkInDataBase)) {
-            $_SESSION[$this->afkorting_admin] = $checkInDataBase['afkorting'];
+            $this->afkorting_admin = $checkInDataBase['afkorting'];
             echo "gebruiker bestaat al";
             exit();
         } 

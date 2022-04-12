@@ -1,6 +1,6 @@
 <?php
-// session_start();
+session_start();
 
-if ($_SESSION['functie'] != "admin" && $_SESSION['functie'] != "docent") {
+if ($_SESSION['userType'] != "admin" && $_SESSION['userType'] != "docent") {
     header("location: index.php");
 }
