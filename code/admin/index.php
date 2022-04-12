@@ -44,6 +44,7 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
         <div class="containerLeft">
             <div class="block blue">
                 <h2>Fase 1 Formulier</h2><a href="../forms/formulieren_fase_1.php?formNumber=form1"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
+                <a href="../forms/formCRUD/editform.php?tablename=assesment_form1">edit</a>
             </div>
             <div class="block green">
                 <h2>Fase 2 Formulier</h2><a href="../forms/formulieren_fase_2.php?formNumber=form2"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
