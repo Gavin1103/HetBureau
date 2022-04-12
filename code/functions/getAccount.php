@@ -35,9 +35,9 @@ class getAccountInfo
     {
 
         $db = new Database();
-        $this->afkorting_admin = $_GET["admin"];
+        $this->afkorting_admin = $_SESSION["afkorting_admin"];
 
-        if(!isset($_GET["admin"])){
+        if(!isset($this->afkorting_admin)){
             echo "fout";
             header("location: ../inlog_admin.php?error=fout22");
         }
