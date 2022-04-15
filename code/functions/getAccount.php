@@ -13,7 +13,7 @@ class getAccountInfo
         $db = new Database();
         $this->leerlingNummer = $_GET["studentNumber"];
 
-        if(!isset($_GET["studentNumber"])){
+        if (!isset($_GET["studentNumber"])) {
             echo "fout";
             header("location: ../index.php?error=fout22");
         }
@@ -22,7 +22,7 @@ class getAccountInfo
         $results = mysqli_fetch_assoc($getUserInfo_qry);
         $result_array = [
             "id" => $results["id"],
-            "leerling nummer" =>$results["leerlingnummer"],
+            "leerling nummer" => $results["leerlingnummer"],
             "naam" => $results["naam"],
             "achternaam" => $results["achternaam"],
             "wachtwoord" => $results["wachtwoord"],
@@ -35,11 +35,14 @@ class getAccountInfo
     {
 
         $db = new Database();
+
+        // $this->afkorting_admin = $_GET["afkorting_admin"];
+        // if (!isset($_GET["admin"])) {
         $this->afkorting_admin = $_SESSION["afkorting_admin"];
 
-        if(!isset($this->afkorting_admin)){
+        if (!isset($this->afkorting_admin)) {
             echo "fout";
-            header("location: ../inlog_admin.php?error=fout22");
+            header("location: ../index.php?error=fout99");
         }
 
         $getAdminInfo_sql = mysqli_query($db->con, "SELECT `id`, `naam`, `achternaam`, `email`,
