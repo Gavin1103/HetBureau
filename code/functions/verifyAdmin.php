@@ -7,15 +7,13 @@ class verifyAdminLoginClass
     private $admin_afkorting;
     private $admin_wachtwoord;
 
-    function CheckInputAdmin()
+    public function CheckInputAdmin()
     {
         if (isset($_POST["submit_admin"])) {
             $this->admin_afkorting = $_POST["afkorting_admin"];
             $this->admin_wachtwoord = $_POST["ww_admin"];
-
             if (!empty($this->admin_afkorting) && !empty($this->admin_wachtwoord)) {
                 // inlog functie...
-
                 header("location: ../admin/index.php?admin=$this->admin_afkorting");
                 $this->verifyUser();
                 exit();
@@ -25,7 +23,7 @@ class verifyAdminLoginClass
             }
         } 
     }
-    function verifyUser()
+    private function verifyUser()
     {
         $db = new Database();
 

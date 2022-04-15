@@ -1,5 +1,6 @@
 <?php
 
+include "../functions/showForm.php";
 include("../core/databaseConnection.php");
 include("./getForms/getFormFase1.php");
 include './getForms/getCheckBoxen.php';
@@ -15,15 +16,19 @@ $getCheckboxFunction = new checkboxen();
 $sendFormClass = new sendForms();
 $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
 
-$getKlassen = new getKlassen();
 
-// $leerlingNummer = $_POST["leerlingnummer_name_af1"];
+$showFormClass = new showForm();
+$showFormF1 = $showFormClass->showFormF1();
+
+// echo $sendFormClass["id"];
+
+
+$getKlassen = new getKlassen();
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,9 +36,8 @@ $getKlassen = new getKlassen();
     <title>AssesmentForm</title>
     <link rel="stylesheet" href="assets/style/style.css" />
 </head>
-
 <body>
-    <form method="POST" action="../admin/studentInfo.php">
+    <form method="POST" action="#">
         <div id="container_1">
             <div class="innerContainer">
                 <header>
@@ -99,7 +103,7 @@ $getKlassen = new getKlassen();
                 <p><?php echo $executeForm["evt_kwaliteiten"] ?>:</p>
                 <input name="evt_name_af1" type="text" />
                 <br />
-                <input type="submit" name="submit_form_AF1">
+                <input type="submit" value="bewerken" name="submit_form_AF1">
             </div>
         </div>
     </form>

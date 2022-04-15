@@ -43,11 +43,13 @@ class sendForms
                 $this->addFormQRY = mysqli_query($db->con, "INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`,  `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->klas','$this->datum','$this->checkboxen_json','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten')");
                 if($this->addFormQRY){
                     echo "Formulier opgeslagen";
+                    // header("location ../");
                 }
                 // echo '<pre>';
                 // var_dump($this->checkboxen_json);
             } else {
                 echo "niet alles met een ster ingevuld";
+                // header("location ../getForms/fulledInForm_F1.php");
             }
         }
     }
