@@ -1,4 +1,5 @@
 <?php
+include '../functions/sessionCheck.php';
 
 include("../functions/getAccount.php");
 include("../functions/verifyAdmin.php");
@@ -36,7 +37,7 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
         <div class="nav-right">
             <p><?php echo $getAdminAccountFunction["naam"] ?></p>
             <img class="pfp" src="../assets/Materiaal/icoonset/pfp.jpg" style="border-radius: 50%;" alt="pfp">
-            <a href="login.html"><img class="logout-icon" src="../assets/Materiaal/icoonset/Uitloggen.svg" alt="logout"></a>
+            <a href="logout.php"><img class="logout-icon" src="../assets/Materiaal/icoonset/Uitloggen.svg" alt="logout"></a>
         </div>
     </nav>
     <div class="container">
@@ -99,17 +100,17 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
             $('.loader-bg').fadeToggle();
         }, 1250);
     </script>
-<!--     
+
     <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
     <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
     <h2>Klassen:</h2>
     <a href="klasCRUD/addKlas.php">Voeg klas toe</a>
     <p>
         <?php
-        // $getKlassen = new getKlassen();
-        // $getKlassenFunction = $getKlassen->loopKlas();
+        $getKlassen = new getKlassen();
+        $getKlassenFunction = $getKlassen->loopKlas();
         ?>
-    </p> -->
+    </p>
 </body>
 
 </html>
