@@ -20,11 +20,11 @@ class sendForms
     public function sendForm_AF1()
     {
         if (isset($_POST["submit_form_AF1"])) {
-            if (!empty($_POST["student_name_af1"]) && !empty($_POST["coach_name_af1"]) && !empty($_POST["leerlingnummer_name_af1"])) {
+            if (!empty($_POST["student_name_af1"]) && !empty($_POST["coach_name_af1"]) && !empty($_POST["leerlingNummer"])) {
                 // echo "Formulier is opgeslagen";
                 $this->student = $_POST["student_name_af1"];
                 $this->coach = $_POST["coach_name_af1"];
-                $this->leerlingNummer = $_POST["leerlingnummer_name_af1"];
+                $this->leerlingNummer = $_POST["leerlingNummer"];
                 $this->datum = $_POST["datum_name_af1"];
                 $this->klas = $_POST["klas_name"];
 
@@ -43,7 +43,7 @@ class sendForms
                 $this->addFormQRY = mysqli_query($db->con, "INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`,  `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->klas','$this->datum','$this->checkboxen_json','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten')");
                 if($this->addFormQRY){
                     echo "Formulier opgeslagen";
-                    // header("location ../");
+                    header("location: ../admin/studentInfo.php?leerlingNummer={$this->leerlingNummer}");
                 }
                 // echo '<pre>';
                 // var_dump($this->checkboxen_json);

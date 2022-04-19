@@ -19,7 +19,7 @@ class checkboxen
                 echo '<br>';
             }
         } else {
-            echo 'fout';
+            echo 'er gaat iets fout bij de checkboxen';
         }
     }
 }

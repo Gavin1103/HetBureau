@@ -7,10 +7,12 @@ include '../functions/sendForms.php';
 include '../functions/getklassen.php';
 
 $database = new Database();
-$getForm = new retrieveFormFase1();
-
-$executeForm = $getForm->getFormFase1();
 $getCheckboxFunction = new checkboxen();
+
+$getForm = new retrieveFormFase1();
+$executeForm = $getForm->getFormFase1();
+
+
 
 $sendFormClass = new sendForms();
 $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
@@ -33,7 +35,7 @@ $getKlassen = new getKlassen();
 </head>
 
 <body>
-    <form method="POST" action="../admin/studentInfo.php">
+    <form method="POST">
         <div id="container_1">
             <div class="innerContainer">
                 <header>
@@ -45,10 +47,10 @@ $getKlassen = new getKlassen();
                     <p>samen met coach invullen.</p>
                 </div>
                 <p><?php echo $executeForm["student"]; ?></p>
-                <input name="student_name_af1" type="text" />
+                <input name="student_name_af1" type="text"/>
                 <br />
                 <p><?php echo $executeForm["leerling nummer"]; ?></p>
-                <input name="leerlingnummer_name_af1" type="number" />
+                <input name="leerlingNummer" type="number" />
                 <br />
                 <p><?php echo $executeForm["coach"]; ?>:</p>
                 <input name="coach_name_af1" type="text" />
