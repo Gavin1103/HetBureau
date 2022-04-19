@@ -42,6 +42,7 @@ class getAccountInfo
 
         if (!isset($this->afkorting_admin)) {
             echo "fout";
+            session_destroy();
             header("location: ../index.php?error=fout99");
         }
 

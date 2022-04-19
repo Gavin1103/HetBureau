@@ -1,5 +1,5 @@
 <?php
-include '../functions/sessionCheck.php';
+session_start();
 
 include("../functions/getAccount.php");
 include("../functions/verifyAdmin.php");
@@ -13,6 +13,12 @@ $verifyAdmin = $verifyAdminLogin->checkInputAdmin();
 
 $getAdminAccountClass = new getAccountInfo();
 $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
+
+
+// if ($_SESSION['userType'] != "admin" && $_SESSION['userType'] != "docent") {
+//     header("location: index.php");
+// }
+// include("../functions/sessionCheck.php")
 
 // $getKlassen = new getKlassen();
 // $getKlassenFunction = $getKlassen->loopKlas();
