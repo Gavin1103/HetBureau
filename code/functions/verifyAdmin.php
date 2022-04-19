@@ -40,7 +40,7 @@ class verifyAdminLoginClass
             $_SESSION[$this->hashwachtwoord] = $checkInDataBase['wachtwoord'];
             // exit();
         } else {
-            echo 'fout';
+            // echo 'fout';
             header("location: ../index.php?error=Incorrect");
         }
     }
