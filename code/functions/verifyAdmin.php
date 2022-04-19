@@ -38,8 +38,8 @@ class verifyAdminLoginClass
         $checkInDataBase = mysqli_fetch_array($verifyAdminUser);
 
         if (is_array($checkInDataBase)) {
-            $_SESSION[$this->admin_afkorting] = $checkInDataBase['afkorting'];
-            $_SESSION[$this->hashwachtwoord] = $checkInDataBase['wachtwoord'];
+            $_SESSION["afkorting_admin"] = $checkInDataBase['afkorting'];
+            $_SESSION["wachtwoord"] = $checkInDataBase['wachtwoord'];
             // exit();
         } else {
             // echo 'fout';
