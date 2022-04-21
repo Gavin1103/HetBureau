@@ -4,7 +4,7 @@ session_start();
 include("../functions/getAccount.php");
 include("../functions/verifyAdmin.php");
 include("../core/databaseConnection.php");
-include("../functions/getklassen.php");
+include("functions_admin/getStudentsForm.php");
 
 
 
@@ -108,6 +108,8 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
     </script>
 
     <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
+
+
     <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
     <h2>Klassen:</h2>
     <a href="klasCRUD/addKlas.php">Voeg klas toe</a>

@@ -19,7 +19,11 @@ include "../core/databaseConnection.php";
 
     $showFormLinkF1 = new CheckIfFormExist();
     $FormLinkF1 = $showFormLinkF1->CheckFormF1();
+
+    // echo "<p>Bekijk formulier fase 1 van deze persoon</p>";
+                // echo "<a href='../forms/fulledInForm_F1.php?formNumber=form1&leerlingNummer='{$this->_leerlingnummer}'>Form fase 1</a>";
     ?>
+ bn
 
 </body>
 

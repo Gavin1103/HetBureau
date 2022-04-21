@@ -30,7 +30,6 @@ class retrieveFormFase1
     private $handtekening_student;
 
     public $con;
-
     public function getFormFase1()
     {
         $db = new Database();

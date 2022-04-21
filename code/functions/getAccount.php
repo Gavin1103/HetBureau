@@ -1,5 +1,4 @@
 <?php
-
 class getAccountInfo
 {
 
@@ -31,6 +30,8 @@ class getAccountInfo
         ];
         return $result_array;
     }
+
+
     function getAdminAccount()
     {
 
