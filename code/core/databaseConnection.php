@@ -1,9 +1,9 @@
 <!-- verbinding maken met database -->
 <?php
-
-// define("BASEHREF","http://localhost/programming/HetBureau/code/");
-require_once "../../vendor/autoload.php";
-$dotenv = Dotenv\Dotenv::createImmutable("../../");
+//  verbinding maken met database 
+// require_once ("C:/xampp/htdocs/HetBureau/vendor/autoload.php");
+require_once (dirname(__File__) . '/../../vendor/autoload.php'); 
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__File__) ."/../../");
 $dotenv->load();
 class Database{
    public $con;

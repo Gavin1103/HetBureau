@@ -7,25 +7,23 @@ class verifyAdminLoginClass
     private $admin_afkorting;
     private $admin_wachtwoord;
 
-    function CheckInputAdmin()
+    public function CheckInputAdmin()
     {
         if (isset($_POST["submit_admin"])) {
             $this->admin_afkorting = $_POST["afkorting_admin"];
             $this->admin_wachtwoord = $_POST["ww_admin"];
-
             if (!empty($this->admin_afkorting) && !empty($this->admin_wachtwoord)) {
                 // inlog functie...
-
                 header("location: ../admin/index.php?admin=$this->admin_afkorting");
                 $this->verifyUser();
                 exit();
             } else {
-                header("location: ../inlog_admin.php?error=geenWachtwoordOfLeerlingnummer");
+                header("location: ../index.php?error=geenWachtwoordOfLeerlingnummer");
                 exit("Please fill both the username and password fields!");
             }
         } 
     }
-    function verifyUser()
+    private function verifyUser()
     {
         $db = new Database();
 
@@ -38,12 +36,12 @@ class verifyAdminLoginClass
         $checkInDataBase = mysqli_fetch_array($verifyAdminUser);
 
         if (is_array($checkInDataBase)) {
-            $_SESSION[$this->admin_afkorting] = $checkInDataBase['afkorting'];
-            $_SESSION[$this->hashwachtwoord] = $checkInDataBase['wachtwoord'];
+            $_SESSION["afkorting_admin"] = $checkInDataBase['afkorting'];
+            $_SESSION["wachtwoord"] = $checkInDataBase['wachtwoord'];
             // exit();
         } else {
-            echo 'fout';
-            header("location: ../inlog_admin.php?error=foutLogin");
+            // echo 'fout';
+            header("location: ../index.php?error=Incorrect");
         }
     }
 }

@@ -9,6 +9,7 @@ class retrieveFormFase1
     private $student;
     private $leerling_nummer;
     private $coach;
+    private $klas;
     private $datum;
     private $checkboxen_id;
     private $Review_fase_1;
@@ -29,7 +30,6 @@ class retrieveFormFase1
     private $handtekening_student;
 
     public $con;
-    
     public function getFormFase1()
     {
         $db = new Database();
@@ -42,6 +42,7 @@ class retrieveFormFase1
          veld_student,
          veld_leerlingnummer,
          veld_coach,
+         veld_klas,
          datum,
          checkboxen_id,
          review_fase_1,
@@ -72,6 +73,7 @@ class retrieveFormFase1
                 $this->student,
                 $this->leerling_nummer,
                 $this->coach,
+                $this->klas,
                 $this->datum,
                 $this->checkboxen_id,
                 $this->Review_fase_1,
@@ -103,12 +105,13 @@ class retrieveFormFase1
                         "student" => $this->student,
                         "leerling nummer" => $this->leerling_nummer,
                         "coach" => $this->coach,
+                        "klas" => $this->klas,
                         "datum" => $this->datum,
                         "checkboxen_id" => $this->checkboxen_id,
                         "Review_fase_1" => $this->Review_fase_1,
                         "titel_docent_invullen" => $this->titel_docent_invullen,
                         "review_fase_1_tekst" => $this->review_fase_1_tekst,
-                        "Vormgeven_beoordeling" => $this->Vormgeven_beoordeling,
+                        "vormgeven_beoordeling" => $this->Vormgeven_beoordeling,
                         "techniek_beoordeling" => $this->techniek_beoordeling,
                         "ondernemend_beoordeling" => $this->ondernemend_beoordeling,
                         "softskills_beoordeling" => $this->softskills_beoordeling,
@@ -129,4 +132,3 @@ class retrieveFormFase1
         }
     }
 }
-
