@@ -69,6 +69,10 @@ $getKlassen = new getKlassen();
                 <ul>
                     <?php
                     $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
+                    // echo $showFormF1["checkboxen"];
+                    $checkboxen_true = json_decode($showFormF1["checkboxen"]);
+                    echo "<pre>";
+                    var_dump($checkboxen_true);
                     ?>
                 </ul>
                 <div id="prestaties">

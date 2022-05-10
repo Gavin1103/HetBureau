@@ -17,6 +17,7 @@ class sendForms
     private $checkboxen;
     private $checkboxen_json;
     private $addFormQRY;
+    
     public function sendForm_AF1()
     {
         if (isset($_POST["submit_form_AF1"])) {
@@ -34,6 +35,7 @@ class sendForms
                 $this->softskills = $_POST["softskills_name_af1"];
                 $this->AVO = $_POST["avo_name_af1"];
                 $this->evt_kwaliteiten = $_POST["evt_name_af1"];
+
 
                 $this->checkboxen = $_POST["checkbox_vakken"];
                 $this->checkboxen_json = json_encode($this->checkboxen);

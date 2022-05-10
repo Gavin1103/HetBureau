@@ -2,6 +2,7 @@
 // include("../core/databaseConnection.php");
 class verifyLogin
 {
+    // todo: password_hash and password_verify inbouwen
     public $con;
     private $leerlingNummer_login;
     private $wachtwoord_login;

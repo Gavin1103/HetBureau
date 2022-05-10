@@ -47,7 +47,7 @@ class retrieveFormFase1
          checkboxen_id,
          review_fase_1,
          titel_docent_invullen ,
-        review_fase_1_tekst,
+         review_fase_1_tekst,
          vormgeven_beoordeling,
          techniek_beoordeling,
          ondernemend_beoordeling,

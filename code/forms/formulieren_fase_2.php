@@ -2,9 +2,8 @@
 
 include("../core/databaseConnection.php");
 include("./getForms/getFormFase2.php");
-
-
 include './getForms/getCheckBoxen.php';
+
 $getCheckboxFunction = new checkboxen();
 $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
 

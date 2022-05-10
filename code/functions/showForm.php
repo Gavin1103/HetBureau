@@ -51,7 +51,6 @@ class showForm
                     "AVO_veld" => $results["AVO_veld"],
                     "softskills_veld" => $results["softskills_veld"],
                     "evtKwaliteiten_veld" => $results["evtKwaliteiten_veld"],
-
                 ];
                 // var_dump($formF1_array);
                 return $formF1_array;
@@ -62,21 +61,14 @@ class showForm
         }
     }
 }
-
 class CheckIfFormExist extends showForm
 {
-
     public function CheckFormF1()
     {
-
         if (isset($_GET["leerlingNummer"])) {
-
             $db = new Database();
-            $this->_leerlingnummer = $_GET["leerlingNummer"];
-            echo $this->_leerlingnummer;
-
-
-
+            echo $this->_leerlingnummer = $_GET["leerlingNummer"];
+            echo "<a href='../forms/fulledInForm_F1.php?formNumber=form1&leerlingNummer={$this->_leerlingnummer}'>Form fase 1</a>";
         } else {
             header("location: ../admin/?error=geenstudentNummer");
         }
@@ -84,4 +76,4 @@ class CheckIfFormExist extends showForm
 }
 
  // echo "<p>Bekijk formulier fase 1 van deze persoon</p>";
-                // echo "<a href='../forms/fulledInForm_F1.php?formNumber=form1&leerlingNummer='{$this->_leerlingnummer}'>Form fase 1</a>";
+               
