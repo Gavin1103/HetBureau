@@ -61,4 +61,16 @@ class getAccountInfo
         ];
         return $result_array;
     }
+
+
+    public function searchStudent()
+    {
+
+        if (isset($_POST["studentNumber"])) {
+            $this->leerlingNummer = $_POST["studentNumber"];
+
+            
+
+        }
+    }
 }

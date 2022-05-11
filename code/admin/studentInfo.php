@@ -16,7 +16,6 @@ include "../core/databaseConnection.php";
     <br>
     <?php
     include '../functions/showForm.php';
-
     $showFormLinkF1 = new CheckIfFormExist();
     $FormLinkF1 = $showFormLinkF1->CheckFormF1();
 

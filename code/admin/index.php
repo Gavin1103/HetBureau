@@ -10,6 +10,7 @@ $verifyAdmin = $verifyAdminLogin->checkInputAdmin();
 
 $getAdminAccountClass = new getAccountInfo();
 $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
+$searchStudentFunction = $getAdminAccountClass->searchStudent();
 
 
 // if ($_SESSION['userType'] != "admin" && $_SESSION['userType'] != "docent") {
@@ -22,6 +23,7 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,9 +34,9 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
 </head>
 
 <body>
-    <div class="loader-bg">
-    <img class="preloader-img" src="../assets/Materiaal/icoonset/stop-button.png" alt="glu-logo">
-  </div>
+    <!-- <div class="loader-bg">
+        <img class="preloader-img" src="../assets/Materiaal/icoonset/stop-button.png" alt="glu-logo">
+    </div> -->
     <nav>
         <div class="nav-left"><img src="../assets/Materiaal/logo/Logo-Dashboard.svg" alt="logo"></div>
         <div class="nav-right">
@@ -68,9 +70,9 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
             <div id="innerContainerMiddle">
                 <div id="searchContainer">
                     <div class="searchIcon"></div>
-                    <form id="searchForm" action="" method="post">
-                        <input type="search" name="" id="">
-                        <input type="submit" value="zoeken">
+                    <form id="searchForm" action="index.php" method="post">
+                        <input type="search" name="studentNumber" id="">
+                        <input type="submit" name="searchSubmit" value="zoeken">
                     </form>
 
                 </div>
@@ -97,12 +99,12 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         setTimeout(function() {
             $('.loader-bg').fadeToggle();
         }, 1250);
-    </script>
+    </script> -->
 
     <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
 

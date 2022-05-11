@@ -9,10 +9,7 @@
 </head>
 
 <body>
-
-
     <form action="./formulieren/index.php" method="POST">
-
         <input type="text" name="leerling_nummer" placeholder="leerling nummer">
         <br>
         <input type="text" name="naam" placeholder="naam">
@@ -30,7 +27,6 @@
         <br>
         <input type="submit" name="submit_createAcc" value="maak account">
     </form>
-
 </body>
 
 </html>
