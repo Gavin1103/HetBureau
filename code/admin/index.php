@@ -12,14 +12,6 @@ $getAdminAccountClass = new getAccountInfo();
 $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
 $searchStudentFunction = $getAdminAccountClass->searchStudent();
 
-
-// if ($_SESSION['userType'] != "admin" && $_SESSION['userType'] != "docent") {
-//     header("location: index.php");
-// }
-// include("../functions/sessionCheck.php")
-
-// $getKlassen = new getKlassen();
-// $getKlassenFunction = $getKlassen->loopKlas();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,11 +63,53 @@ $searchStudentFunction = $getAdminAccountClass->searchStudent();
                 <div id="searchContainer">
                     <div class="searchIcon"></div>
                     <form id="searchForm" action="index.php" method="post">
-                        <input type="search" name="studentNumber" id="">
+                        <input type="search" name="studentNumber" id="searchStudentInput">
                         <input type="submit" name="searchSubmit" value="zoeken">
                     </form>
+                </div>
+
+                <div id="resultContainer">
+
+
+
+                    <?php
+
+                    $searchStudentFunction = $getAdminAccountClass->searchStudent();
+                    if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["student"])) {
+                        echo $searchStudentFunction["leerlingnummer"];
+                        echo $searchStudentFunction["student"];
+                        echo "<a href='studentInfo.php?leerlingNummer={$searchStudentFunction['leerlingnummer']}'>Formulieren</a>";
+                    } else {
+                        echo 'gebruiker niet gevonden';
+                    }
+
+
+                    ?>
 
                 </div>
+                <!-- <script>
+                    let searchInput = document.getElementById("searchStudentInput");
+
+                    searchInput.addEventListener('input', function() {
+                        console.log("aan het zoeken...");
+
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                // Typical action to be performed when the document is ready:
+                                document.getElementById("resultContainer").innerHTML = xhttp.responseText;
+                            }
+                        };
+                        xhttp.open("GET", "searchFunction.php", true);
+                        xhttp.send();
+
+                    });
+                </script> -->
+
+
+
+
+
             </div>
         </div>
         <div class="containerRight">

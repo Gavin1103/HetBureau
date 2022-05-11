@@ -65,12 +65,35 @@ class getAccountInfo
 
     public function searchStudent()
     {
-
         if (isset($_POST["studentNumber"])) {
-            $this->leerlingNummer = $_POST["studentNumber"];
-
-            
-
+            $this->_leerlingNummer = $_POST["studentNumber"];
+            $db = new Database();
+            // Query
+            $selectQuery = $db->con->prepare("SELECT `id`, `student`, `leerlingnummer`, `coach`, `klas`, `datum` FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->_leerlingNummer' LIMIT 1;");
+            if ($selectQuery === false) {
+                echo mysqli_error($db->con);
+            }
+            if ($selectQuery->execute()) {
+                $selectQueryResult = $selectQuery->get_result();
+                // Loop 
+                while ($results = $selectQueryResult->fetch_assoc()) {
+                    // echo $selectQueryRow['my_column'];
+                    // var_dump($results);
+                    $formF1_array = [
+                        "id" => $results["id"],
+                        "student" => $results["student"],
+                        "leerlingnummer" => $results["leerlingnummer"],
+                        "coach" => $results["coach"],
+                        "klas" => $results["klas"],
+                        "datum" => $results["datum"],
+                    ];
+                    // var_dump($formF1_array);
+                    return $formF1_array;
+                }
+            } else {
+                echo mysqli_error($db->con);
+                echo 'asdfsafdsaf';
+            }
         }
     }
 }
