@@ -1,8 +1,8 @@
 <?php
 include "../core/databaseConnection.php";
-include '../functions/showForm.php';
-$showFormLinkF1 = new CheckIfFormExist();
-$showFormF1 = $showFormLinkF1->showFormF1();
+include '../functions/classes/formClass.php';
+$FormClass = new Formulier();
+$showFormF1 = $FormClass->showFormF1();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@ $showFormF1 = $showFormLinkF1->showFormF1();
                     <img src="../assets/Materiaal/img/slideleft.png" alt="slideleft" class="slideleft">
                     <div class="box">
                         <?php
-                        $FormLinkF1 = $showFormLinkF1->CheckFormF1();
+                        $checkForm = $FormClass->CheckFormF1();
                         ?>
                     </div>
                     <img src="../assets/Materiaal/img/slideright.png" alt="slideright" class="slideright">

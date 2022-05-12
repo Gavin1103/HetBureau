@@ -48,12 +48,11 @@ class crudklassen
         // echo $klas;
         // echo $sql;
         // echo $qry;
-        
+    
 		if ($qry) {
 			echo 'Data updated in database.';
 		}
 	}
-
     public function delete($id)
     {
         $db = new Database;

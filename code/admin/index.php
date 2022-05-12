@@ -1,16 +1,17 @@
 <?php
 session_start();
 
-include("../functions/getAccount.php");
-include("../functions/verifyAdmin.php");
 include("../core/databaseConnection.php");
 
-$verifyAdminLogin = new verifyAdminLoginClass();
-$verifyAdmin = $verifyAdminLogin->checkInputAdmin();
+include '../functions/classes/userClass.php';
 
-$getAdminAccountClass = new getAccountInfo();
-$getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
-$searchStudentFunction = $getAdminAccountClass->searchStudent();
+
+
+$userClass = new User();
+$loginUserFunction = $userClass->CheckInputAdmin();
+$getAdminAccountFunction = $userClass->getAdminAccount();
+$searchStudentFunction = $userClass->searchStudent();
+
 
 ?>
 <!DOCTYPE html>
@@ -39,29 +40,76 @@ $searchStudentFunction = $getAdminAccountClass->searchStudent();
     </nav>
     <div class="container">
         <div class="containerLeft">
-            <div class="block blue">
-                <h2>Fase 1 Formulier</h2><a href="../forms/formulieren_fase_1.php?formNumber=form1"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block green">
-                <h2>Fase 2 Formulier</h2><a href="../forms/formulieren_fase_2.php?formNumber=form2"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block purple">
-                <h2>Fase 3 Formulier</h2><a href="../forms/formulieren_fase_3.php?formNumber=form3"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block yellow">
-                <h2>Fase 4 Formulier</h2><a href="../forms/formulieren_fase_4.php?formNumber=form4"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block grey">
-                <h2>Fase 5 Formulier</h2><a href="#"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block red">
-                <h2>Fase 6 Formulier</h2><a href="#"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
+            <div class="innerLeftContainer">
+                <div class="block blue">
+                    <div class="block_left">
+                        <h2>Fase 1 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="../forms/formulieren_fase_1.php?formNumber=form1">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block green">
+                    <div class="block_left">
+                        <h2>Fase 2 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="../forms/formulieren_fase_2.php?formNumber=form2">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block purple">
+                    <div class="block_left">
+                        <h2>Fase 3 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="../forms/formulieren_fase_3.php?formNumber=form3">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block yellow">
+                    <div class="block_left">
+                        <h2>Fase 4 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="../forms/formulieren_fase_4.php?formNumber=form4">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block grey">
+                    <div class="block_left">
+                        <h2>Fase 5 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="#">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block red">
+                    <div class="block_left">
+                        <h2>Fase 6 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="#">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="containerMiddle">
-
-
-
             <div id="innerContainerMiddle">
                 <form id="searchForm" id="searchForm" action="index.php" method="post">
                     <div id="searchContainer">
@@ -69,16 +117,12 @@ $searchStudentFunction = $getAdminAccountClass->searchStudent();
                         <input type="submit" value="Zoeken">
                         <input type="search" name="studentNumber" id="searchStudentInput">
                         <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
-                        
+
                     </div>
                 </form>
-
-
-
-
                 <div id="resultContainer">
                     <?php
-                    $searchStudentFunction = $getAdminAccountClass->searchStudent();
+                    // $searchStudentFunction = $userClass->searchStudent();
                     if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["student"])) {
                         echo $searchStudentFunction["leerlingnummer"];
                         echo $searchStudentFunction["student"];
@@ -106,8 +150,6 @@ $searchStudentFunction = $getAdminAccountClass->searchStudent();
 
                     });
                 </script> -->
-
-
             </div>
         </div>
         <div class="containerRight">

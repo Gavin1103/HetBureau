@@ -1,24 +1,25 @@
 <?php
 
-include "../functions/showForm.php";
+// include "../functions/showForm.php";
 include("../core/databaseConnection.php");
-include("./getForms/getFormFase1.php");
-include './getForms/getCheckBoxen.php';
+include("../functions/classes/formClass.php");
+include '../functions/classes/checkboxenClass.php';
 include '../functions/sendForms.php';
 include '../functions/getklassen.php';
 
 $database = new Database();
-$getForm = new retrieveFormFase1();
+$FormCLass = new Formulier();
+$getFormF1 = $FormCLass->getFormF1();
+$showFormF1 = $FormCLass->showFormF1();
 
-$executeForm = $getForm->getFormFase1();
 $getCheckboxFunction = new checkboxen();
 
 $sendFormClass = new sendForms();
 $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
 
 
-$showFormClass = new showForm();
-$showFormF1 = $showFormClass->showFormF1();
+// $showFormClass = new showForm();
+// $showFormF1 = $showFormClass->showFormF1();
 
 // echo $sendFormClass["id"];
 
@@ -43,29 +44,29 @@ $getKlassen = new getKlassen();
         <div id="container_1">
             <div class="innerContainer">
                 <header>
-                    <h1><?php echo $executeForm["afsluiting fase 1"]; ?></h1>
-                    <p> <?php echo $executeForm["tekst_intro"]; ?></p>
+                    <h1><?php echo $getFormF1["AF1"]; ?></h1>
+                    <p> <?php echo $getFormF1["tekst_intro"]; ?></p>
                 </header>
                 <div id="checklist">
-                    <h2><?php echo $executeForm["checklist_titel"]; ?></h2>
+                    <h2><?php echo $getFormF1["checklist_titel"]; ?></h2>
                     <p>samen met coach invullen.</p>
                 </div>
-                <p><?php echo $executeForm["student"]; ?></p>
+                <p><?php echo $getFormF1["veld_student"]; ?></p>
                 <input name="student_name_af1" type="text" value="<?php echo $showFormF1["student"] ?>" />
                 <br />
-                <p><?php echo $executeForm["leerling nummer"]; ?></p>
+                <p><?php echo $getFormF1["veld_leerlingnummer"]; ?></p>
                 <input name="leerlingnummer_name_af1" type="number" value="<?php echo $showFormF1["leerlingnummer"] ?>" />
                 <br />
-                <p><?php echo $executeForm["coach"]; ?></p>
+                <p><?php echo $getFormF1["veld_coach"]; ?></p>
                 <input name="coach_name_af1" type="text" value="<?php echo $showFormF1["coach"] ?>" />
                 <br />
-                <p><?php echo $executeForm["klas"] ?></p>
+                <p><?php echo $getFormF1["veld_klas"] ?></p>
                 <select name="klas_name" id="klas">
                     <?php
                     $getKlassenFunction = $getKlassen->selectKlas();
                     ?>
                 </select>
-                <p><?php echo $executeForm["datum"]; ?></p>
+                <p><?php echo $getFormF1["datum"]; ?></p>
                 <input name="datum_name_af1" value="<?php echo $showFormF1["datum"] ?>" type="date" />
                 <br />
                 <ul>
@@ -79,35 +80,35 @@ $getKlassen = new getKlassen();
                     ?>
                 </ul>
                 <div id="prestaties">
-                    <h2><?php echo $executeForm["Review_fase_1"]; ?></h2>
+                    <h2><?php echo $getFormF1["review_fase_1"]; ?></h2>
                     <p>
-                        <?php echo $executeForm["titel_docent_invullen"] ?>
+                        <?php echo $getFormF1["titel_docent_invullen"] ?>
                     </p>
                     <p>
-                        <?php echo $executeForm["review_fase_1_tekst"] ?>
+                        <?php echo $getFormF1["review_fase_1_tekst"] ?>
                     </p>
                 </div>
             </div>
         </div>
         <div id="container_2">
             <div class="innerContainer">
-                <p><?php echo $executeForm["vormgeven_beoordeling"] ?></p>
+                <p><?php echo $getFormF1["vormgeven_beoordeling"] ?></p>
                 <input name="vormgeven_name_af1" type="textarea" value="<?php echo $showFormF1["vormgeven_veld"] ?>" />
                 <br />
-                <p><?php echo $executeForm["techniek_beoordeling"] ?>
+                <p><?php echo $getFormF1["techniek_beoordeling"] ?>
                 </p>
                 <input name="techniek_name_af1" value="<?php echo $showFormF1["techniek_veld"] ?>" type="text" />
                 <br />
-                <p><?php echo $executeForm["ondernemend_beoordeling"] ?></p>
+                <p><?php echo $getFormF1["ondernemend_beoordeling"] ?></p>
                 <input name="ondernemend_name_af1" value="<?php echo $showFormF1["ondernemend_veld"] ?>" type="text" />
                 <br />
-                <p><?php echo $executeForm["softskills_beoordeling"] ?></p>
+                <p><?php echo $getFormF1["softskills_beoordeling"] ?></p>
                 <input name="softskills_name_af1" value="<?php echo $showFormF1["softskills_veld"] ?>" type="text" />
                 <br />
-                <p><?php echo $executeForm["AVO_beoordeling"] ?></p>
+                <p><?php echo $getFormF1["avo_beoordeling"] ?></p>
                 <input name="avo_name_af1" value="<?php echo $showFormF1["AVO_veld"] ?>" type="text" />
                 <br />
-                <p><?php echo $executeForm["evt_kwaliteiten"] ?>:</p>
+                <p><?php echo $getFormF1["bijzondere_kwaliteiten"] ?>:</p>
                 <input name="evt_name_af1" value="<?php echo $showFormF1["evtKwaliteiten_veld"] ?>" type="text" />
                 <br />
                 <input type="submit" value="bewerken" name="submit_form_AF1">
