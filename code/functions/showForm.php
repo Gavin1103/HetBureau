@@ -66,14 +66,11 @@ class CheckIfFormExist extends showForm
     public function CheckFormF1()
     {
         if (isset($_GET["leerlingNummer"])) {
-            $db = new Database();
-            echo $this->_leerlingnummer = $_GET["leerlingNummer"];
-            echo "<a href='../forms/fulledInForm_F1.php?formNumber=form1&leerlingNummer={$this->_leerlingnummer}'>Form fase 1</a>";
+            // $db = new Database();
+            $this->_leerlingnummer = $_GET["leerlingNummer"];
+            echo "<div class='boxtext'><a href='../forms/fulledInForm_F1.php?formNumber=form1&leerlingNummer={$this->_leerlingnummer}'>Fase 1 Assessmentformulier</a></div>";
         } else {
             header("location: ../admin/?error=geenstudentNummer");
         }
     }
 }
-
- // echo "<p>Bekijk formulier fase 1 van deze persoon</p>";
-               
