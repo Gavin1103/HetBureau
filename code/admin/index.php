@@ -59,21 +59,25 @@ $searchStudentFunction = $getAdminAccountClass->searchStudent();
             </div>
         </div>
         <div class="containerMiddle">
+
+
+
             <div id="innerContainerMiddle">
-                <div id="searchContainer">
-                    <div class="searchIcon"></div>
-                    <form id="searchForm" action="index.php" method="post">
+                <form id="searchForm" id="searchForm" action="index.php" method="post">
+                    <div id="searchContainer">
+                        <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
+                        <input type="submit" value="Zoeken">
                         <input type="search" name="studentNumber" id="searchStudentInput">
-                        <input type="submit" name="searchSubmit" value="zoeken">
-                    </form>
-                </div>
+                        <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
+                        
+                    </div>
+                </form>
+
+
+
 
                 <div id="resultContainer">
-
-
-
                     <?php
-
                     $searchStudentFunction = $getAdminAccountClass->searchStudent();
                     if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["student"])) {
                         echo $searchStudentFunction["leerlingnummer"];
@@ -82,10 +86,7 @@ $searchStudentFunction = $getAdminAccountClass->searchStudent();
                     } else {
                         echo 'gebruiker niet gevonden';
                     }
-
-
                     ?>
-
                 </div>
                 <!-- <script>
                     let searchInput = document.getElementById("searchStudentInput");
@@ -105,9 +106,6 @@ $searchStudentFunction = $getAdminAccountClass->searchStudent();
 
                     });
                 </script> -->
-
-
-
 
 
             </div>
@@ -140,18 +138,7 @@ $searchStudentFunction = $getAdminAccountClass->searchStudent();
         }, 1250);
     </script> -->
 
-    <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
 
-
-    <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
-    <h2>Klassen:</h2>
-    <a href="klasCRUD/addKlas.php">Voeg klas toe</a>
-    <p>
-        <?php
-        $getKlassen = new getKlassen();
-        $getKlassenFunction = $getKlassen->loopKlas();
-        ?>
-    </p>
 </body>
 
 </html>
