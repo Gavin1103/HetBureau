@@ -4,6 +4,7 @@ session_start();
 include("../core/databaseConnection.php");
 
 include '../functions/classes/userClass.php';
+include '../functions/studentCount.php';
 
 
 
@@ -12,6 +13,7 @@ $loginUserFunction = $userClass->CheckInputAdmin();
 $getAdminAccountFunction = $userClass->getAdminAccount();
 $searchStudentFunction = $userClass->searchStudent();
 
+$count = new countstudent("studenten");
 
 ?>
 <!DOCTYPE html>
@@ -157,7 +159,7 @@ $searchStudentFunction = $userClass->searchStudent();
         </div>
         <div class="containerRight">
             <div class="mini-block blue-border">
-                <p>43 Studenten</p>
+                <p><?php echo $count->countklas("2wdv1"); ?> studenten</p>
             </div>
             <div class="mini-block green-border">
                 <p>27 Studenten</p>
