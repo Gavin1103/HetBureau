@@ -1,3 +1,9 @@
+* {
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
@@ -85,22 +91,58 @@ nav p {
 .containerLeft {
     /* border: 1px solid green; */
     width: 45%;
+    height: 75vh;
+    overflow-y: scroll;
+
+}
+
+.innerLeftContainer {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    height: auto;
 }
 
 h2 {
     font-family: custom;
-    width: fit-content;
-    margin: 0;
-    margin-top: 5%;
+    /* width: fit-content; */
+    /* margin: 0;
+    margin-top: 5%; */
     color: #FFFFFF;
 }
 
 .block {
-    width: 90%;
+    width: 100%;
     height: 150px;
     border: white 1px solid;
     margin-bottom: 50px;
-    padding-left: 50px;
+    /* padding-left: 50px; */
+    display: flex;
+    /* justify-content: space-between;
+    align-items: center; */
+}
+
+.block_left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.block_right {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /* background-color: red; */
+}
+
+.plusIcon {
+    width: 40px;
+    height: 40px;
+    background-image: url(../Materiaal/icoonset/toevoegen.svg);
+    margin-right: 10px;
+    margin-bottom: 10px;
+
 }
 
 /* block colors  */
@@ -131,9 +173,9 @@ h2 {
 /* block colors end */
 .block img {
     height: 25%;
-    margin: 10px;
+    /* margin: 10px;
     margin-top: 40px;
-    float: right;
+    float: right; */
 }
 
 .containerMiddle {
@@ -143,34 +185,80 @@ h2 {
     justify-content: center;
 }
 
-#innerContainerMiddle{
+#innerContainerMiddle {
     width: 90%;
+    ;
     /* background-color: pink; */
 }
 
-#searchForm{
+#searchForm {
     /* background-color: #FF6060; */
-    height: 100%;
-}
-
-#searchContainer{
-    width: 100%;
-    height: 75px;
-    background-color: aqua;
-
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-   
+    width: 100%;
+    height: 75px;
 }
 
-.searchIcon{
+#searchContainer {
+    width: 100%;
+    height: 75px;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+}
+
+input[type=search] {
+    padding: 15px;
+    border: 1px solid #000000;
+    font-size: x-large;
+}
+
+input[type=search]:focus {
+    outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+
+    /* Remove default */
+    -webkit-appearance: none;
+
+    /* Now your own custom styles */
+    height: 15px;
+    width: 15px;
+    background-image: url(/assets/Materiaal/icoonset/Kruisje.svg);
+    /* Will place small red box on the right of input (positioning carries over) */
+
+}
+
+.filterIcon {
     height: 100%;
     width: 75px;
-    background-color: #38DDA1;
+    /* background-color: #38DDA1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
+.filterIcon img {
+    height: 80%;
+}
+
+.searchIcon {
+    display: flex;
+    height: 100%;
+    width: 75px;
+    /* background-color: #38DDA1; */
+    align-items: center;
+    justify-content: center;
+}
+
+.searchIcon img {
+    height: 50%;
+}
 
 /* Right side */
 
@@ -223,6 +311,3 @@ h2 {
 }
 
 /* Right side end */
-
-
-

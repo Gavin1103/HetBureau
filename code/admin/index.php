@@ -1,24 +1,22 @@
 <?php
-include '../functions/sessionCheck.php';
+session_start();
 
-include("../functions/getAccount.php");
-include("../functions/verifyAdmin.php");
 include("../core/databaseConnection.php");
-include("../functions/getklassen.php");
+
+include '../functions/classes/userClass.php';
 
 
 
-$verifyAdminLogin = new verifyAdminLoginClass();
-$verifyAdmin = $verifyAdminLogin->checkInputAdmin();
+$userClass = new User();
+$loginUserFunction = $userClass->CheckInputAdmin();
+$getAdminAccountFunction = $userClass->getAdminAccount();
+$searchStudentFunction = $userClass->searchStudent();
 
-$getAdminAccountClass = new getAccountInfo();
-$getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
 
-// $getKlassen = new getKlassen();
-// $getKlassenFunction = $getKlassen->loopKlas();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,9 +27,9 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
 </head>
 
 <body>
-    <div class="loader-bg">
-    <img class="preloader-img" src="../assets/Materiaal/icoonset/stop-button.png" alt="glu-logo">
-  </div>
+    <!-- <div class="loader-bg">
+        <img class="preloader-img" src="../assets/Materiaal/icoonset/stop-button.png" alt="glu-logo">
+    </div> -->
     <nav>
         <div class="nav-left"><img src="../assets/Materiaal/logo/Logo-Dashboard.svg" alt="logo"></div>
         <div class="nav-right">
@@ -42,36 +40,116 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
     </nav>
     <div class="container">
         <div class="containerLeft">
-            <div class="block blue">
-                <h2>Fase 1 Formulier</h2><a href="../forms/formulieren_fase_1.php?formNumber=form1"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-                <a href="../forms/formCRUD/editform.php?tablename=assesment_form1">edit</a>
-            </div>
-            <div class="block green">
-                <h2>Fase 2 Formulier</h2><a href="../forms/formulieren_fase_2.php?formNumber=form2"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block purple">
-                <h2>Fase 3 Formulier</h2><a href="../forms/formulieren_fase_3.php?formNumber=form3"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block yellow">
-                <h2>Fase 4 Formulier</h2><a href="../forms/formulieren_fase_4.php?formNumber=form4"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block grey">
-                <h2>Fase 5 Formulier</h2><a href="#"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
-            </div>
-            <div class="block red">
-                <h2>Fase 6 Formulier</h2><a href="#"><img src="../assets/Materiaal/icoonset/toevoegen.svg" alt="plusIcon"></a>
+            <div class="innerLeftContainer">
+                <div class="block blue">
+                    <div class="block_left">
+                        <h2>Fase 1 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="../forms/formulieren_fase_1.php?formNumber=form1">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block green">
+                    <div class="block_left">
+                        <h2>Fase 2 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="../forms/formulieren_fase_2.php?formNumber=form2">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block purple">
+                    <div class="block_left">
+                        <h2>Fase 3 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="../forms/formulieren_fase_3.php?formNumber=form3">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block yellow">
+                    <div class="block_left">
+                        <h2>Fase 4 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="../forms/formulieren_fase_4.php?formNumber=form4">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block grey">
+                    <div class="block_left">
+                        <h2>Fase 5 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="#">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="block red">
+                    <div class="block_left">
+                        <h2>Fase 6 Formulier</h2>
+                    </div>
+                    <div class="block_right">
+                        <a href="#">
+                            <div class="plusIcon"></div>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="containerMiddle">
             <div id="innerContainerMiddle">
-                <div id="searchContainer">
-                    <div class="searchIcon"></div>
-                    <form id="searchForm" action="" method="post">
-                        <input type="search" name="" id="">
-                        <input type="submit" value="zoeken">
-                    </form>
+                <form id="searchForm" id="searchForm" action="index.php" method="post">
+                    <div id="searchContainer">
+                        <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
+                        <input type="submit" value="Zoeken">
+                        <input type="search" name="studentNumber" id="searchStudentInput">
+                        <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
 
+                    </div>
+                </form>
+                <div id="resultContainer">
+                    <?php
+                    // $searchStudentFunction = $userClass->searchStudent();
+                    if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["student"])) {
+                        echo $searchStudentFunction["leerlingnummer"];
+                        echo $searchStudentFunction["student"];
+                        echo "<a href='studentInfo.php?leerlingNummer={$searchStudentFunction['leerlingnummer']}'>Formulieren</a>";
+                    } else {
+                        echo 'gebruiker niet gevonden';
+                    }
+                    ?>
                 </div>
+                <!-- <script>
+                    let searchInput = document.getElementById("searchStudentInput");
+
+                    searchInput.addEventListener('input', function() {
+                        console.log("aan het zoeken...");
+
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                // Typical action to be performed when the document is ready:
+                                document.getElementById("resultContainer").innerHTML = xhttp.responseText;
+                            }
+                        };
+                        xhttp.open("GET", "searchFunction.php", true);
+                        xhttp.send();
+
+                    });
+                </script> -->
             </div>
         </div>
         <div class="containerRight">
@@ -95,23 +173,14 @@ $getAdminAccountFunction = $getAdminAccountClass->getAdminAccount();
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         setTimeout(function() {
             $('.loader-bg').fadeToggle();
         }, 1250);
-    </script>
+    </script> -->
 
-    <h1>Welkom <?php echo $getAdminAccountFunction["naam"] ?> <?php echo $getAdminAccountFunction["afkorting"] ?></h1>
-    <a href="addAdminUser.php">Voeg een Admin/Docent toe</a>
-    <h2>Klassen:</h2>
-    <a href="klasCRUD/addKlas.php">Voeg klas toe</a>
-    <p>
-        <?php
-        $getKlassen = new getKlassen();
-        $getKlassenFunction = $getKlassen->loopKlas();
-        ?>
-    </p>
+
 </body>
 
 </html>

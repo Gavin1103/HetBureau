@@ -6,13 +6,14 @@ include_once dirname(__DIR__) . ("../core/databaseConnection.php");
 class crudklassen
 {
     private $tablename= "klassen";
+    private $_sql;
 
     public function create($klas)
     {
         $db = new Database;
 
         $sql = "INSERT INTO ".$this->tablename." (klas) VALUES ('$klas')";
-        $qry = mysqli_query($db->con, $sql);
+        $qry = mysqli_query($db->con, $this->_sql);
         // echo $klas;
         // echo $sql;
         // echo $qry;
@@ -27,7 +28,7 @@ class crudklassen
         $db = new Database;
 
         $query = "SELECT * FROM " .$this->tableName . " WHERE id=$id";
-        $qry = mysqli_query($db->con, $sql);
+        $qry = mysqli_query($db->con, $this->_sql);
     }
 
     public function read_all($id)
@@ -35,7 +36,7 @@ class crudklassen
         $db = new Database;
 
 		$query = "SELECT * FROM " .$this->tableName;
-        $qry = mysqli_query($db->con, $sql);
+        $qry = mysqli_query($db->con, $this->_sql);
     }
 
     public function update($klas, $id)
@@ -47,12 +48,11 @@ class crudklassen
         // echo $klas;
         // echo $sql;
         // echo $qry;
-        
+    
 		if ($qry) {
 			echo 'Data updated in database.';
 		}
 	}
-
     public function delete($id)
     {
         $db = new Database;

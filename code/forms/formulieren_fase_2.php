@@ -1,18 +1,26 @@
 <?php
 
 include("../core/databaseConnection.php");
-include("./getForms/getFormFase2.php");
-
-
-include './getForms/getCheckBoxen.php';
-$getCheckboxFunction = new checkboxen();
-$executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
+// include("./getForms/getFormFase1.php");
+include '../functions/classes/formClass.php';
+include '../functions/classes/checkboxenClass.php';
+include '../functions/sendForms.php';
+include '../functions/getklassen.php';
 
 $database = new Database();
+$getCheckboxFunction = new checkboxen();
 
-$getForm = new retrieveFormFase2();
-$executeForm = $getForm->getFormFase2();
+$FormClass = new Formulier();
+$getFormF1 = $FormClass->getFormF2();
 
-echo "<pre>";
-var_dump($executeForm);
+$getKlassen = new getKlassen();
+
+// $leerlingNummer = $_POST["leerlingnummer_name_af1"];
+
 ?>
+
+<select name="klas_name" id="klas">
+    <?php
+    $getKlassenFunction = $getKlassen->selectKlas();
+    ?>
+</select>
