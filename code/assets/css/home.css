@@ -68,7 +68,6 @@ nav p {
     width: fit-content;
     display: block;
     padding: 15px;
-
 }
 
 .pfp {
@@ -87,13 +86,11 @@ nav p {
     margin: auto;
 }
 
-
 .containerLeft {
     /* border: 1px solid green; */
     width: 45%;
     height: 75vh;
     overflow-y: scroll;
-
 }
 
 .innerLeftContainer {
@@ -108,7 +105,7 @@ h2 {
     /* width: fit-content; */
     /* margin: 0;
     margin-top: 5%; */
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .block {
@@ -142,32 +139,31 @@ h2 {
     background-image: url(../Materiaal/icoonset/toevoegen.svg);
     margin-right: 10px;
     margin-bottom: 10px;
-
 }
 
 /* block colors  */
 .blue {
-    background-color: #74BBE8;
+    background-color: #74bbe8;
 }
 
 .green {
-    background-color: #38DDA1;
+    background-color: #38dda1;
 }
 
 .purple {
-    background-color: #A180B8;
+    background-color: #a180b8;
 }
 
 .yellow {
-    background-color: #F9E616;
+    background-color: #f9e616;
 }
 
 .grey {
-    background-color: #A0A2A4;
+    background-color: #a0a2a4;
 }
 
 .red {
-    background-color: #FF6060;
+    background-color: #ff6060;
 }
 
 /* block colors end */
@@ -187,8 +183,58 @@ h2 {
 
 #innerContainerMiddle {
     width: 90%;
-    ;
     /* background-color: pink; */
+}
+
+#searchStudentInput {
+    width: 300px;
+    height: 60px;
+}
+
+#resultContainer {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: green; */
+}
+
+.resultStudent {
+    width: 300px;
+    height: 60px;
+    background-color: #74bbe8;
+    margin-top: 10px;
+    display: flex;
+    border: solid 1px;
+
+}
+.resultStudentLeft {
+    /* background-color: red; */
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultStudentLeft img {
+    height: 55px;
+}
+
+.resultStudentRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.searchInnerContainer {
+    width: 25%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #searchForm {
@@ -196,7 +242,8 @@ h2 {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 75px;
+    height: 10%;
+    /* background-color: yellow; */
 }
 
 #searchContainer {
@@ -205,23 +252,20 @@ h2 {
     /* background-color: aqua; */
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-
-
+    /* justify-content: space-evenly; */
 }
 
-input[type=search] {
+input[type="search"] {
     padding: 15px;
     border: 1px solid #000000;
     font-size: x-large;
 }
 
-input[type=search]:focus {
+input[type="search"]:focus {
     outline: none;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
-
     /* Remove default */
     -webkit-appearance: none;
 
@@ -230,7 +274,6 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 15px;
     background-image: url(/assets/Materiaal/icoonset/Kruisje.svg);
     /* Will place small red box on the right of input (positioning carries over) */
-
 }
 
 .filterIcon {
@@ -240,7 +283,6 @@ input[type="search"]::-webkit-search-cancel-button {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .filterIcon img {
@@ -276,7 +318,7 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 85%;
     height: 100px;
     margin-bottom: 20px;
-    background: #EFEFEF;
+    background: #efefef;
     align-items: center;
     justify-content: center;
 }
@@ -287,27 +329,27 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .blue-border {
-    border-right: 40px solid #74BBE8;
+    border-right: 40px solid #74bbe8;
 }
 
 .green-border {
-    border-right: 40px solid #38DDA1;
+    border-right: 40px solid #38dda1;
 }
 
 .purple-border {
-    border-right: 40px solid #A180B8;
+    border-right: 40px solid #a180b8;
 }
 
 .yellow-border {
-    border-right: 40px solid #F9E616;
+    border-right: 40px solid #f9e616;
 }
 
 .grey-border {
-    border-right: 40px solid #A0A2A4;
+    border-right: 40px solid #a0a2a4;
 }
 
 .red-border {
-    border-right: 40px solid #FF6060;
+    border-right: 40px solid #ff6060;
 }
 
 /* Right side end */

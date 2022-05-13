@@ -20,12 +20,16 @@ $showFormF1 = $FormClass->showFormF1();
 
 <body>
     <div id="container">
-        <div class="menu">
-            <img src="../assets/Materiaal/img/dashboard.png" alt="dashboard" class="dashboard">
-            <img src="../assets/Materiaal/img/foto2.png" alt="docentfoto" class="foto2">
-            <img src="../assets/Materiaal/img/linee.png" alt="line" class="line">
-            <img src="../assets/Materiaal/img/Uitloggen.png" alt="uitloggen" class="uitloggen">
-        </div>
+        <nav>
+            <div class="innerMenuLeft">
+                <img src="../assets/Materiaal/img/dashboard.png" alt="dashboard" class="logo">
+            </div>
+            <div class="innerMenuRight">
+                <img src="../assets/Materiaal/img/foto2.png" alt="docentfoto" class="foto2">
+                <img src="../assets/Materiaal/img/linee.png" alt="line" class="line">
+                <img src="../assets/Materiaal/img/Uitloggen.png" alt="uitloggen" class="uitloggen">
+            </div>
+        </nav>
         <div class="background">
             <div class="left">
                 <div class="name">Naam Achternaam | Fase 1</div>

@@ -4,14 +4,10 @@ session_start();
 include("../core/databaseConnection.php");
 
 include '../functions/classes/userClass.php';
-
-
-
 $userClass = new User();
 $loginUserFunction = $userClass->CheckInputAdmin();
 $getAdminAccountFunction = $userClass->getAdminAccount();
 $searchStudentFunction = $userClass->searchStudent();
-
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +46,6 @@ $searchStudentFunction = $userClass->searchStudent();
                             <div class="plusIcon"></div>
                         </a>
                     </div>
-
                 </div>
                 <div class="block green">
                     <div class="block_left">
@@ -61,7 +56,6 @@ $searchStudentFunction = $userClass->searchStudent();
                             <div class="plusIcon"></div>
                         </a>
                     </div>
-
                 </div>
                 <div class="block purple">
                     <div class="block_left">
@@ -72,7 +66,6 @@ $searchStudentFunction = $userClass->searchStudent();
                             <div class="plusIcon"></div>
                         </a>
                     </div>
-
                 </div>
                 <div class="block yellow">
                     <div class="block_left">
@@ -83,7 +76,6 @@ $searchStudentFunction = $userClass->searchStudent();
                             <div class="plusIcon"></div>
                         </a>
                     </div>
-
                 </div>
                 <div class="block grey">
                     <div class="block_left">
@@ -94,7 +86,6 @@ $searchStudentFunction = $userClass->searchStudent();
                             <div class="plusIcon"></div>
                         </a>
                     </div>
-
                 </div>
                 <div class="block red">
                     <div class="block_left">
@@ -105,30 +96,40 @@ $searchStudentFunction = $userClass->searchStudent();
                             <div class="plusIcon"></div>
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>
         <div class="containerMiddle">
             <div id="innerContainerMiddle">
-                <form id="searchForm" id="searchForm" action="index.php" method="post">
+                <form id="searchForm" action="index.php" method="post">
                     <div id="searchContainer">
                         <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
-                        <input type="submit" value="Zoeken">
-                        <input type="search" name="studentNumber" id="searchStudentInput">
-                        <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
-
+                        <div class="searchInnerContainer">
+                            <input type="submit" value="Zoeken">
+                        </div>
+                        <div class="searchInnerContainerMiddle">
+                            <input type="search" name="studentNumber" id="searchStudentInput">
+                        </div>
+                        <div class="searchInnerContainer">
+                            <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
+                        </div>
                     </div>
                 </form>
                 <div id="resultContainer">
                     <?php
-                    // $searchStudentFunction = $userClass->searchStudent();
+
                     if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["student"])) {
-                        echo $searchStudentFunction["leerlingnummer"];
-                        echo $searchStudentFunction["student"];
-                        echo "<a href='studentInfo.php?leerlingNummer={$searchStudentFunction['leerlingnummer']}'>Formulieren</a>";
-                    } else {
-                        echo 'gebruiker niet gevonden';
+                        echo "
+                        <a href='studentInfo.php?leerlingNummer={$searchStudentFunction['leerlingnummer']}'><div class='resultStudent'>
+                        <div class='resultStudentLeft'>
+                        <img src='../assets/Materiaal/img/foto2.png' alt=''>
+                        </div>
+                        <div class='resultStudentRight'>
+                        <p>{$searchStudentFunction['leerlingnummer']}</p>
+                        <p>{$searchStudentFunction['student']}</p>
+                        </div>
+                        </div>
+                        </a>";
                     }
                     ?>
                 </div>
@@ -147,7 +148,6 @@ $searchStudentFunction = $userClass->searchStudent();
                         };
                         xhttp.open("GET", "searchFunction.php", true);
                         xhttp.send();
-
                     });
                 </script> -->
             </div>
