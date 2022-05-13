@@ -11,9 +11,19 @@
     <form action="#" method="post">
         Naam van form veranderen:<input type="text" name="AF1" id="" placeholder=""><br>
         Info tekst van form:<input type="text" name="tekst_intro" id="" placeholder=""><br>
+        Checklist titel:<input type="text" name="checklist_titel" id="" placeholder=""><br>
+        Student:<input type="text" name="veld_student" id="" placeholder=""><br>
+        Leerling nummer:<input type="text" name="veld_leerling_nummer" id="" placeholder=""><br>
+        coach:<input type="text" name="veld_coach" id="" placeholder=""><br>
+        <!-- klas:<input type="text" name="veld_klas" id="" placeholder=""><br>
+        datum:<input type="text" name="datum" id="" placeholder=""><br> -->
+
         Review titel veranderen:<input type="text" name="review_fase_1" id="" placeholder=""><br>
         Review info tekst:<input type="text" name="review_fase_1_tekst" id="" placeholder=""><br>
-		<input type="submit" name="submit" value="submit"><br>
+        Review info tekst:<input type="text" name="review_fase_1_tekst" id="" placeholder=""><br>
+
+        
+        <input type="submit" name="submit" value="submit"><br>
 	</form>
 </body>
 
@@ -37,6 +47,10 @@ if (isset($_POST['submit']) && $_POST['submit'] != '') {
 	$tekst_intro = mysqli_real_escape_string($db->con, $_POST['tekst_intro']);
 	$review_fase_1 = mysqli_real_escape_string($db->con, $_POST['review_fase_1']);
 	$review_fase_1_tekst = mysqli_real_escape_string($db->con, $_POST['review_fase_1_tekst']);
+	$AF1 = mysqli_real_escape_string($db->con, $_POST['AF1']);
+	$AF1 = mysqli_real_escape_string($db->con, $_POST['AF1']);
+	$AF1 = mysqli_real_escape_string($db->con, $_POST['AF1']);
+	$AF1 = mysqli_real_escape_string($db->con, $_POST['AF1']);
 
 
 

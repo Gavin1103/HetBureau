@@ -16,7 +16,8 @@ class crudformulieren
         $db = new Database;
 
         // echo $AF1;
-		$sql = "UPDATE ".$this->tablename." SET `AF1`='$AF1', `tekst_intro`='$tekst_intro', `review_fase_1`='$review_fase_1', `review_fase_1_tekst`='$review_fase_1_tekst' WHERE id='$id'";
+		$sql = "UPDATE ".$this->tablename." 
+        SET `AF1`='$AF1', `tekst_intro`='$tekst_intro', `review_fase_1`='$review_fase_1', `review_fase_1_tekst`='$review_fase_1_tekst' WHERE id='$id'";
         $qry = mysqli_query($db->con, $sql);
 
         // echo "<br>";
