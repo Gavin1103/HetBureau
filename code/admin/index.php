@@ -2,12 +2,16 @@
 session_start();
 
 include("../core/databaseConnection.php");
-
 include '../functions/classes/userClass.php';
+
 $userClass = new User();
+$studentClass = new StudentUser();
+
 $loginUserFunction = $userClass->CheckInputAdmin();
 $getAdminAccountFunction = $userClass->getAdminAccount();
-$searchStudentFunction = $userClass->searchStudent();
+
+$searchStudentFunction = $studentClass->searchStudent();
+// $searchStudentFunction = $userClass->searchStudent();
 
 ?>
 <!DOCTYPE html>
@@ -105,7 +109,7 @@ $searchStudentFunction = $userClass->searchStudent();
                     <div id="searchContainer">
                         <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
                         <div class="searchInnerContainer">
-                            <input type="submit" value="Zoeken">
+                            <input name="searchSubmit" type="submit" value="Zoeken">
                         </div>
                         <div class="searchInnerContainerMiddle">
                             <input type="search" name="studentNumber" id="searchStudentInput">
@@ -117,19 +121,22 @@ $searchStudentFunction = $userClass->searchStudent();
                 </form>
                 <div id="resultContainer">
                     <?php
-
-                    if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["student"])) {
-                        echo "
-                        <a href='studentInfo.php?leerlingNummer={$searchStudentFunction['leerlingnummer']}'><div class='resultStudent'>
+                    if (isset($_POST["searchSubmit"])) {
+                        if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["naam"])) {
+                            echo "
+                        <a style='text-decoration:none; color:white;' href='studentInfo.php?leerlingNummer={$searchStudentFunction['leerlingnummer']}'><div class='resultStudent'>
                         <div class='resultStudentLeft'>
                         <img src='../assets/Materiaal/img/foto2.png' alt=''>
                         </div>
                         <div class='resultStudentRight'>
                         <p>{$searchStudentFunction['leerlingnummer']}</p>
-                        <p>{$searchStudentFunction['student']}</p>
+                        <p>{$searchStudentFunction['naam']}</p>
                         </div>
                         </div>
                         </a>";
+                        }else{
+                            echo 'gebruiker niet gevonden';
+                        }
                     }
                     ?>
                 </div>

@@ -77,38 +77,7 @@ class User
         ];
         return $result_array;
     }
-    // student formulier opzoeken
-    public function searchStudent()
-    {
-        if (isset($_POST["studentNumber"])) {
-            $this->leerlingNummer = $_POST["studentNumber"];
-            $db = new Database();
-            // Query
-            $selectQuery = $db->con->prepare("SELECT `id`, `student`, `leerlingnummer`, `coach`, `klas`, `datum` FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->leerlingNummer' LIMIT 1;");
-            if ($selectQuery === false) {
-                echo mysqli_error($db->con);
-            }
-            if ($selectQuery->execute()) {
-                $selectQueryResult = $selectQuery->get_result();
-                // Loop 
-                while ($results = $selectQueryResult->fetch_assoc()) {
-                    $formF1_array = [
-                        "id" => $results["id"],
-                        "student" => $results["student"],
-                        "leerlingnummer" => $results["leerlingnummer"],
-                        "coach" => $results["coach"],
-                        "klas" => $results["klas"],
-                        "datum" => $results["datum"],
-                    ];
-                    // var_dump($formF1_array);
-                    return $formF1_array;
-                }
-            } else {
-                echo mysqli_error($db->con);
-                echo 'asdfsafdsaf';
-            }
-        }
-    }
+
     // account aanmaken
     function AddAdminUser()
     {
@@ -161,6 +130,73 @@ class User
             $this->afkorting = $checkInDataBase['afkorting'];
             echo "gebruiker bestaat al";
             exit();
+        }
+    }
+}
+
+class StudentUser extends User
+{
+    public $leerlingNummer;
+    public function addStudent()
+    {
+        if (isset($_POST["submit_form_AF1"])) {
+            if (!empty($_POST["leerlingNummer"]) && !empty($_POST["leerlingNummer"])) {
+
+                echo 1;
+                $this->leerlingNummer = $_POST["leerlingNummer"];
+                $this->naam = $_POST["student_name_af1"];
+
+                $this->existStudent();
+
+                $db = new Database();
+                $addStudentQRY = mysqli_query($db->con, "INSERT INTO `studenten`( `leerlingnummer`, `naam`) VALUES ('$this->leerlingNummer','$this->naam')");
+                if ($addStudentQRY) {
+                    echo "leerling toegevoegd";
+                }
+            } else {
+                echo 'leerling niet toegevoegd';
+            }
+        }
+    }
+
+    private function existStudent()
+    {
+        $db = new Database();
+        $this->leerlingNummer = $_POST["leerlingNummer"];
+        $checkStudent = mysqli_query($db->con, "SELECT leerlingnummer FROM `studenten` WHERE leerlingnummer = '$this->leerlingNummer'");
+        $checkInDataBase = mysqli_fetch_array($checkStudent);
+        if (is_array($checkInDataBase)) {
+            $this->leerlingNummer = $checkInDataBase['leerlingnummer'];
+            echo "student bestaat al";
+            exit();
+        }
+    }
+
+    public function searchStudent()
+    {
+        if (isset($_POST["studentNumber"])) {
+            $this->leerlingNummer = $_POST["studentNumber"];
+            $db = new Database();
+            // Query
+            $selectQuery = $db->con->prepare("SELECT `id`, `leerlingnummer`, `naam` FROM `studenten` WHERE leerlingnummer = '$this->leerlingNummer'");
+            if ($selectQuery === false) {
+                echo mysqli_error($db->con);
+            }
+            if ($selectQuery->execute()) {
+                $selectQueryResult = $selectQuery->get_result();
+                // Loop 
+                while ($results = $selectQueryResult->fetch_assoc()) {
+                    $studentInfoArray = [
+                        "leerlingnummer" => $results["leerlingnummer"],
+                        "naam" => $results["naam"]
+                    ];
+                    // var_dump($studentInfoArray);
+                    return $studentInfoArray;
+                }
+            } else {
+                echo mysqli_error($db->con);
+                echo 'asdfsafdsaf';
+            }
         }
     }
 }

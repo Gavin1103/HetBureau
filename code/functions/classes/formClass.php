@@ -17,6 +17,13 @@ class Formulier
     private $_softskills;
     private $_evtKwaliteiten_veld;
 
+    public function errorMelding()
+    {
+        if (isset($_GET["error"])) {
+            echo "gebruiker heeft al een formulier in deze fase.";
+        }
+    }
+
     public function getFormF1()
     {
 
@@ -87,10 +94,9 @@ class Formulier
     {
         echo 'word nog aan gewerkt 4';
     }
- 
-    
+
     // ingevulde formulieren ophalen
-    
+
     public function showFormF1()
     {
         if (isset($_GET["leerlingNummer"])) {
@@ -148,10 +154,4 @@ class Formulier
             header("location: ../admin/?error=geenstudentNummer");
         }
     }
-
-
 }
-
-
-
-

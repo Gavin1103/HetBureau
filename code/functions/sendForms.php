@@ -17,7 +17,7 @@ class sendForms
     private $checkboxen;
     private $checkboxen_json;
     private $addFormQRY;
-    
+
     public function sendForm_AF1()
     {
         if (isset($_POST["submit_form_AF1"])) {
@@ -41,10 +41,12 @@ class sendForms
 
                 $db = new Database();
 
+                $this->checkIfStudentExistF1();
+
                 $this->addFormQRY = mysqli_query($db->con, "INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`,  `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->klas','$this->datum','$this->checkboxen_json','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten')");
-                if($this->addFormQRY){
+                if ($this->addFormQRY) {
                     echo "Formulier opgeslagen";
-                    header("location: ../admin/studentInfo.php?leerlingNummer={$this->leerlingNummer}");
+                    // header("location: ../admin/studentInfo.php?leerlingNummer={$this->leerlingNummer}");
                 }
                 // echo '<pre>';
                 // var_dump($this->checkboxen_json);
@@ -52,6 +54,20 @@ class sendForms
                 echo "niet alles met een ster ingevuld";
                 // header("location ../getForms/fulledInForm_F1.php");
             }
+        }
+    }
+
+    private function checkIfStudentExistF1()
+    {
+
+        $db = new Database();
+        $this->leerlingNummer = $_POST["leerlingNummer"];
+        $verifyStudent = mysqli_query($db->con, "SELECT leerlingnummer FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->leerlingNummer'");
+        $checkInDataBase = mysqli_fetch_array($verifyStudent);
+        if (is_array($checkInDataBase)) {
+            $this->afkorting_admin = $checkInDataBase['leerlingnummer'];
+            header("location: ../forms/formulieren_fase_1.php?formNumber=form1&&error=studentExist");
+            exit();
         }
     }
 }

@@ -6,15 +6,18 @@ include '../functions/classes/formClass.php';
 include '../functions/classes/checkboxenClass.php';
 include '../functions/sendForms.php';
 include '../functions/getklassen.php';
+include '../functions/classes/userClass.php';
 
 $database = new Database();
 $getCheckboxFunction = new checkboxen();
-
-$FormClass = new Formulier();
-$getFormF1 = $FormClass->getFormF1();
-
 $sendFormClass = new sendForms();
+$FormClass = new Formulier();
+$addStudentClass = new StudentUser();
+
+$getFormF1 = $FormClass->getFormF1();
+$errorFunction = $FormClass->errorMelding();
 $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
+$addStudentFunction = $addStudentClass->addStudent();
 
 $getKlassen = new getKlassen();
 
@@ -34,7 +37,7 @@ $getKlassen = new getKlassen();
 </head>
 
 <body>
-    <form method="POST">
+    <form action="formulieren_fase_1.php" method="POST">
         <div id="container_1">
             <div class="innerContainer">
                 <header>
