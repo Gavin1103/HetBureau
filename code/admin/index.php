@@ -46,6 +46,9 @@ $searchStudentFunction = $userClass->searchStudent();
                         <h2>Fase 1 Formulier</h2>
                     </div>
                     <div class="block_right">
+                        <a href="../forms/formCRUD/editform.php">
+                            <p>edit</p>
+                        </a>
                         <a href="../forms/formulieren_fase_1.php?formNumber=form1">
                             <div class="plusIcon"></div>
                         </a>
