@@ -38,14 +38,14 @@ if (isset($_POST['submit']) && $_POST['submit'] != '') {
 
 
 
-	echo "$AF1 is aangepast";
-	echo "<br>";
+	// echo "$AF1 is aangepast";
+	// echo "<br>";
 
 	$result = $crudformulieren->update($id, $AF1, $tekst_intro, $checklist_titel, $veld_student, $veld_leerlingnummer, $veld_coach, $veld_klas, $datum, $review_fase_1, $review_fase_1_tekst, $vormgeven_beoordeling, $techniek_beoordeling, $ondernemend_beoordeling, $avo_beoordeling, $softskills_beoordeling, $bijzondere_kwaliteiten);
 	// form legen
     echo $result;
     if (!$result){
-        // header("location: ../../admin/index.php");
+        header("location: ../../admin/index.php");
         exit();
     }
 }
