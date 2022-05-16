@@ -142,12 +142,9 @@ class StudentUser extends User
         if (isset($_POST["submit_form_AF1"])) {
             if (!empty($_POST["leerlingNummer"]) && !empty($_POST["leerlingNummer"])) {
 
-                echo 1;
                 $this->leerlingNummer = $_POST["leerlingNummer"];
                 $this->naam = $_POST["student_name_af1"];
-
                 $this->existStudent();
-
                 $db = new Database();
                 $addStudentQRY = mysqli_query($db->con, "INSERT INTO `studenten`( `leerlingnummer`, `naam`) VALUES ('$this->leerlingNummer','$this->naam')");
                 if ($addStudentQRY) {
@@ -178,7 +175,7 @@ class StudentUser extends User
             $this->leerlingNummer = $_POST["studentNumber"];
             $db = new Database();
             // Query
-            $selectQuery = $db->con->prepare("SELECT `id`, `leerlingnummer`, `naam` FROM `studenten` WHERE leerlingnummer = '$this->leerlingNummer'");
+            $selectQuery = $db->con->prepare("SELECT `id`, `leerlingnummer`, `naam` FROM `studenten` WHERE leerlingnummer LIKE '$this->leerlingNummer%'");
             if ($selectQuery === false) {
                 echo mysqli_error($db->con);
             }
@@ -190,8 +187,22 @@ class StudentUser extends User
                         "leerlingnummer" => $results["leerlingnummer"],
                         "naam" => $results["naam"]
                     ];
-                    // var_dump($studentInfoArray);
-                    return $studentInfoArray;
+                   
+                    echo "
+                        <div class='innerResultContainer'>
+                        <a href='studentInfo.php?leerlingNummer={$studentInfoArray['leerlingnummer']}'><div class='resultStudent'>
+                        <div class='resultStudentLeft'>
+                        <img src='../assets/Materiaal/img/foto2.png' alt=''>
+                        </div>
+                        <div class='resultStudentRight'>
+                        <p>{$studentInfoArray['leerlingnummer']}</p>
+                        <p>{$studentInfoArray['naam']}</p>
+                        </div>
+                        </div>
+                        </a>
+                        </div>
+                        ";
+                
                 }
             } else {
                 echo mysqli_error($db->con);

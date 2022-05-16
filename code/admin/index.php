@@ -10,7 +10,7 @@ $studentClass = new StudentUser();
 $loginUserFunction = $userClass->CheckInputAdmin();
 $getAdminAccountFunction = $userClass->getAdminAccount();
 
-$searchStudentFunction = $studentClass->searchStudent();
+
 // $searchStudentFunction = $userClass->searchStudent();
 
 ?>
@@ -23,7 +23,9 @@ $searchStudentFunction = $studentClass->searchStudent();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/mediaqry.css">
     <script src="https://kit.fontawesome.com/3d742e90d9.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -109,7 +111,7 @@ $searchStudentFunction = $studentClass->searchStudent();
                     <div id="searchContainer">
                         <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
                         <div class="searchInnerContainer">
-                            <input name="searchSubmit" type="submit" value="Zoeken">
+                            <input id="searchButton" name="searchSubmit" type="submit" value="">
                         </div>
                         <div class="searchInnerContainerMiddle">
                             <input type="search" name="studentNumber" id="searchStudentInput">
@@ -120,40 +122,27 @@ $searchStudentFunction = $studentClass->searchStudent();
                     </div>
                 </form>
                 <div id="resultContainer">
+
                     <?php
-                    if (isset($_POST["searchSubmit"])) {
-                        if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["naam"])) {
-                            echo "
-                        <a style='text-decoration:none; color:white;' href='studentInfo.php?leerlingNummer={$searchStudentFunction['leerlingnummer']}'><div class='resultStudent'>
-                        <div class='resultStudentLeft'>
-                        <img src='../assets/Materiaal/img/foto2.png' alt=''>
-                        </div>
-                        <div class='resultStudentRight'>
-                        <p>{$searchStudentFunction['leerlingnummer']}</p>
-                        <p>{$searchStudentFunction['naam']}</p>
-                        </div>
-                        </div>
-                        </a>";
-                        }else{
-                            echo 'gebruiker niet gevonden';
-                        }
-                    }
+                    $searchStudentFunction = $studentClass->searchStudent();
                     ?>
+
                 </div>
                 <!-- <script>
+              
                     let searchInput = document.getElementById("searchStudentInput");
-
                     searchInput.addEventListener('input', function() {
-                        console.log("aan het zoeken...");
-
                         var xhttp = new XMLHttpRequest();
                         xhttp.onreadystatechange = function() {
                             if (this.readyState == 4 && this.status == 200) {
                                 // Typical action to be performed when the document is ready:
-                                document.getElementById("resultContainer").innerHTML = xhttp.responseText;
+                                // document.getElementById("resultContainer").innerHTML = xhttp.responseText;
+                                console.log(xhttp.responseText);
+                                // document.write(xhttp.responseText)
+                                
                             }
                         };
-                        xhttp.open("GET", "searchFunction.php", true);
+                        xhttp.open("POST", "searchFunction.php?test=<?php echo $searchStudentFunction['leerlingnummer'] ?>", true);
                         xhttp.send();
                     });
                 </script> -->
