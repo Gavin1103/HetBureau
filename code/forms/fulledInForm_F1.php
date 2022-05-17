@@ -41,8 +41,11 @@ $getKlassen = new getKlassen();
         <div id="container_1">
             <nav>
                 <a href="<?php echo BASEURL; ?>admin/studentInfo.php?leerlingNummer=<?php echo $showFormF1["leerlingnummer"]  ?>"><i class="fa-solid fa-chevron-left"></i>terug</a>
-                <div class="save"><i class="fa-solid fa-download  fa-2x download"></i>
-                    <p>Download</p>
+                <div class="save">
+                    <!-- <div class="dowloadIcon">
+                        <img src="../assets/Materiaal/icoonset/opslaan.svg" alt="">
+                    </div> -->
+                <input value="Opslaan" class="createFormButton" type="submit" name="submit_form_AF1">
                 </div>
             </nav>
             <div class="innerContainer">
@@ -229,10 +232,15 @@ $getKlassen = new getKlassen();
                 </div>
                 <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div>
             </footer>
-            <input type="submit" name="submit_form_AF1">
+            <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->
 
         </div>
     </form>
+
+    <div id="footerIMG">
+        <img src="../assets/Materiaal/footer.png" alt="">
+    </div>
+
 </body>
 
 </html>

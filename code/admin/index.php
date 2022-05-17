@@ -27,7 +27,7 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
 </head>
 
 <body>
-    //TODO: aanzetten wanneer livesearch werkt;
+    <!-- aanzetten wanneer livesearch werkt; -->
     <?php
     // if (isset($_GET["admin"])) {
     //     echo "

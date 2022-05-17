@@ -30,20 +30,54 @@ $showFormF1 = $FormClass->showFormF1();
                 <img src="../assets/Materiaal/img/Uitloggen.png" alt="uitloggen" class="uitloggen">
             </div>
         </nav>
-        <a class="terugKnop" href="<?php echo BASEURL;?>admin/">Terug</a>
+        <a class="terugKnop" href="<?php echo BASEURL; ?>admin/">Terug</a>
         <div class="background">
             <div class="left">
-                <div class="name">Naam Achternaam | Fase 1</div>
-                <hr>
-                <img src="../assets/Materiaal/img/foto1.png" alt="foto1" class="foto1">
-                <div class="small">Klas: <?php echo $showFormF1["klas"] ?><br>Studentnummer: <?php echo $showFormF1["leerlingnummer"] ?></div>
-                <hr class="hr2">
-                <img src="../assets/Materiaal/img/foto2.png" alt="foto1" class="foto1">
-                <div class="small2">Coach: <?php echo $showFormF1["coach"] ?></div>
-                <hr class="hr2">
-                <img src="../assets/Materiaal/img/foto3.png" alt="foto1" class="foto1">
-                <div class="small2">Assessor: <?php echo $showFormF1["coach"] ?></div>
-                <hr class="hr2">
+
+
+
+                <div id="titleContainer">
+                    <h2>Assesment Formulier Fase 1</h2>
+                </div>
+                <div class="innerContainer">
+                    <div class="innerContainerLeft">
+                        <img src="../assets/Materiaal/img/profielFoto.png" alt="">
+                    </div>
+                    <div class="innerContainerRight">
+                        <h3>Klas: <?php echo $showFormF1["klas"] ?></h3>
+                        <h3>Student: <?php echo $showFormF1["leerlingnummer"] ?></h3>
+                    </div>
+                </div>
+                <div class="innerContainer">
+                    <div class="innerContainerLeft">
+                        <img src="../assets/Materiaal/img/profielFoto.png" alt="">
+                    </div>
+                    <div class="innerContainerRight">
+                        <h3>Coach: <?php echo $showFormF1["coach"] ?></h3>
+                    </div>
+                </div>
+                <div class="innerContainer">
+                    <div class="innerContainerLeft">
+                        <img src="../assets/Materiaal/img/profielFoto.png" alt="">
+                    </div>
+                    <div class="innerContainerRight">
+                        <h3>Assesor: <?php echo $showFormF1["coach"] ?></h3>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <div class="middle">
                 <div class="semi">

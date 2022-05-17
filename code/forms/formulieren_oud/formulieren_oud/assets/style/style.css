@@ -26,11 +26,11 @@ body {
  font-weight: 700;
  font-size: 30px;
 }
-.innerContainer {
+/* .innerContainer {
   padding: 50px;
   width: 80%;
   margin: auto;
-}
+} */
 header p {
   line-height: 150%;
   font-size: 15px;

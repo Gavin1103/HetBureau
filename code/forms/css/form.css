@@ -12,6 +12,7 @@ nav {
     font-family: custom;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
@@ -21,10 +22,10 @@ nav a {
 }
 
 .save {
-    width: 196px;
+    width: 100px;
     height: 51px;
     background-color: #000;
-    margin: 10px;
+    margin-right: 2.5%;
     display: flex;
 }
 .save p{
@@ -114,5 +115,44 @@ hr{
 }
 .row input{
     width: 60%;
+}
+
+
+#footerIMG{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+
+}
+
+#footerIMG img{
+    height: 100%;
+}
+
+/* .createFormButton{
+    padding: 20px;
+    color: red;
+} */
+
+.dowloadIcon{
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dowloadIcon img{
+    height: 90%;
+}
+
+.createFormButton{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: black;
+    color: white;
 }
 
