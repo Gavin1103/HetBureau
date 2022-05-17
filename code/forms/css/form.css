@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    background-color: #74BBE8;
+    font-family: Custom;
+    color: #fff;
+}
+
+nav {
+    width: 100%;
+    background-color: #fff;
+    /* padding: 20px 10px; */
+    font-family: custom;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 30px;
+}
+
+.save {
+    width: 196px;
+    height: 51px;
+    background-color: #000;
+    margin: 10px;
+    display: flex;
+}
+.save p{
+    color: white;
+    padding-left: 20px;
+}
+@font-face {
+    font-family: Custom;
+    src: url(../Materiaal/fonts/static/ReadexPro-Light.ttf);
+}
+
+@font-face {
+    font-family: ppRight;
+    src: url(../Materiaal/fonts/PPRightGrotesk-WideMedium.ttf);
+}
+
+.innerContainer {
+    width: 80%;
+    margin: auto;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+input{
+    outline: none;
+}
+
+input[type=checkbox]{
+    margin-top: 20px;
+}
+input[type=textarea]{
+    width: 50%;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+.download {
+    padding: 10px;
+    color: #fff;
+}
+
+.footer-block {
+    width: 80%;
+    margin: auto;
+}
+
+hr{
+    border: 1px solid #fff;
+}
+
+.rating{
+    height: 30px;
+    width: 60%;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+}
+.prestatieWrapper{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.red, .orange, .green{
+    background-color: red;
+    height: 25px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.orange{
+    background-color: orange;
+   
+}
+.green{
+    background-color: green;
+   
+}
+
+.row{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+.row input{
+    width: 60%;
+}
+

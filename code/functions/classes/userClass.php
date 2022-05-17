@@ -9,10 +9,8 @@ class User
     public $ww_opniew;
     public $email;
     public $functieUser; //docent of admin
-
     // voor leerlingen
     public $leerlingNummer;
-
     // voor inloggen
     public function CheckInputAdmin()
     {
@@ -50,9 +48,7 @@ class User
             header("location: ../index.php?error=Incorrect");
         }
     }
-
     // account informatie ophalen
-
     public function getAdminAccount()
     {
         $db = new Database();
@@ -77,7 +73,6 @@ class User
         ];
         return $result_array;
     }
-
     // account aanmaken
     function AddAdminUser()
     {
@@ -133,7 +128,6 @@ class User
         }
     }
 }
-
 class StudentUser extends User
 {
     public $leerlingNummer;
@@ -187,7 +181,6 @@ class StudentUser extends User
                         "leerlingnummer" => $results["leerlingnummer"],
                         "naam" => $results["naam"]
                     ];
-                   
                     echo "
                         <div class='innerResultContainer'>
                         <a href='studentInfo.php?leerlingNummer={$studentInfoArray['leerlingnummer']}'><div class='resultStudent'>
@@ -202,7 +195,6 @@ class StudentUser extends User
                         </a>
                         </div>
                         ";
-                
                 }
             } else {
                 echo mysqli_error($db->con);

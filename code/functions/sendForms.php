@@ -13,6 +13,7 @@ class sendForms
     private $softskills;
     private $AVO;
     private $evt_kwaliteiten;
+    private $doorgroei_advies;
     // checkkboxen
     private $checkboxen;
     private $checkboxen_json;
@@ -34,13 +35,16 @@ class sendForms
                 $this->softskills = $_POST["softskills_name_af1"];
                 $this->AVO = $_POST["avo_name_af1"];
                 $this->evt_kwaliteiten = $_POST["evt_name_af1"];
+                $this->doorgroei_advies = $_POST["doorgroeiAdvies_af1"];
+
+
                 $this->checkboxen = $_POST["checkbox_vakken"];
 
                 $this->checkboxen_json = json_encode($this->checkboxen);
                 $db = new Database();
 
                 $this->checkIfStudentExistF1();
-                $this->addFormQRY = mysqli_query($db->con, "INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`,  `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->klas','$this->datum','$this->checkboxen_json','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten')");
+                $this->addFormQRY = mysqli_query($db->con, "INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`,  `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`, `doorgroei_advies`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->klas','$this->datum','$this->checkboxen_json','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten', '$this->doorgroei_advies')");
                 if ($this->addFormQRY) {
                     echo "Formulier opgeslagen";
                     header("location: ../admin/studentInfo.php?leerlingNummer={$this->leerlingNummer}");

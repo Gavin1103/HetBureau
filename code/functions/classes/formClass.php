@@ -120,7 +120,7 @@ class Formulier
         }
         $db = new Database();
         // Query
-        $selectQuery = $db->con->prepare("SELECT `id`, `student`, `leerlingnummer`, `coach`, `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld` FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->_leerlingnummer' LIMIT 1;");
+        $selectQuery = $db->con->prepare("SELECT `id`, `student`, `leerlingnummer`, `coach`, `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`, `doorgroei_advies` FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->_leerlingnummer' LIMIT 1;");
         if ($selectQuery === false) {
             echo mysqli_error($db->con);
         }
@@ -144,6 +144,8 @@ class Formulier
                     "AVO_veld" => $results["AVO_veld"],
                     "softskills_veld" => $results["softskills_veld"],
                     "evtKwaliteiten_veld" => $results["evtKwaliteiten_veld"],
+                    "doorgroei_advies" => $results["doorgroei_advies"],
+                    
                 ];
                 // var_dump($formF1_array);
                 return $formF1_array;

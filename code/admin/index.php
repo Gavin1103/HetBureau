@@ -10,9 +10,7 @@ $studentClass = new StudentUser();
 $loginUserFunction = $userClass->CheckInputAdmin();
 $getAdminAccountFunction = $userClass->getAdminAccount();
 
-
 // $searchStudentFunction = $userClass->searchStudent();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,13 +23,26 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
     <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/css/mediaqry.css">
     <script src="https://kit.fontawesome.com/3d742e90d9.js" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <!-- <div class="loader-bg">
-        <img class="preloader-img" src="../assets/Materiaal/icoonset/stop-button.png" alt="glu-logo">
-    </div> -->
+    //TODO: aanzetten wanneer livesearch werkt;
+    <?php
+    // if (isset($_GET["admin"])) {
+    //     echo "
+    //     <div class='loader-bg'>
+    //     <img class='preloader-img' src='../assets/Materiaal/icoonset/stop-button.png' alt='glu-logo'>
+    //     </div>
+    //     <script>
+    //     setTimeout(function() {
+    //     $('.loader-bg').fadeToggle();
+    //     }, 1250);
+    //     </script>
+    //     ";
+    // }
+    ?>
+
     <nav>
         <div class="nav-left"><img src="../assets/Materiaal/logo/Logo-Dashboard.svg" alt="logo"></div>
         <div class="nav-right">
@@ -122,14 +133,11 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
                     </div>
                 </form>
                 <div id="resultContainer">
-
                     <?php
                     $searchStudentFunction = $studentClass->searchStudent();
                     ?>
-
                 </div>
                 <!-- <script>
-              
                     let searchInput = document.getElementById("searchStudentInput");
                     searchInput.addEventListener('input', function() {
                         var xhttp = new XMLHttpRequest();
@@ -169,14 +177,14 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
             </div>
         </div>
     </div>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <!-- <script>
         setTimeout(function() {
             $('.loader-bg').fadeToggle();
         }, 1250);
     </script> -->
-
-
 </body>
 
 </html>

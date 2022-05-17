@@ -30,6 +30,7 @@ $showFormF1 = $FormClass->showFormF1();
                 <img src="../assets/Materiaal/img/Uitloggen.png" alt="uitloggen" class="uitloggen">
             </div>
         </nav>
+        <a class="terugKnop" href="<?php echo BASEURL;?>admin/">Terug</a>
         <div class="background">
             <div class="left">
                 <div class="name">Naam Achternaam | Fase 1</div>
