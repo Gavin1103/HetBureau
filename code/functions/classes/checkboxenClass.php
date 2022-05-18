@@ -13,7 +13,7 @@ class checkboxen
             $checkboxenQRY = mysqli_query($db->con, " SELECT checkboxen.label, checkboxen.type ,checkboxen.name ,checkboxen_koppeling.checkboxen_id, checkboxen.id , checkboxen_koppeling.id FROM `checkboxen` INNER JOIN checkboxen_koppeling on checkboxen_koppeling.checkboxen_id = checkboxen.id WHERE checkboxen_koppeling.formulier_id = '$this->formID';");
             while ($checkboxen = mysqli_fetch_array($checkboxenQRY)) {
                 // echo '<li>';
-                echo "<input id=" . 'c' . $checkboxen['id'] . " name=" . 'checkbox_vakken[' . $checkboxen["id"] . ']' . "class='circle' type=" . $checkboxen["type"];
+                echo "<input id=" . 'c' . $checkboxen['id'] . " name=" . 'checkbox_vakken[' . $checkboxen["id"] . ']' . " class='circle' type=" . $checkboxen["type"];
 
                 if (isset($checkboxen_input) && in_array($checkboxen["id"], $checkboxen_input)) {
                     echo " checked";

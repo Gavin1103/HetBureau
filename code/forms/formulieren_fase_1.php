@@ -17,7 +17,8 @@ $addStudentClass = new StudentUser();
 $getFormF1 = $FormClass->getFormF1();
 $errorFunction = $FormClass->errorMelding();
 $sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
-$addStudentFunction = $addStudentClass->addStudent();
+// exit();
+// $addStudentFunction = $addStudentClass->addStudent();
 
 $getKlassen = new getKlassen();
 

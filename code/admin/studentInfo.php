@@ -3,6 +3,7 @@ include "../core/databaseConnection.php";
 include '../functions/classes/formClass.php';
 $FormClass = new Formulier();
 $showFormF1 = $FormClass->showFormF1();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

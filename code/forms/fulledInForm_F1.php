@@ -14,8 +14,10 @@ $showFormF1 = $FormCLass->showFormF1();
 
 $getCheckboxFunction = new checkboxen();
 
-$sendFormClass = new sendForms();
-$sendFormFunction_AF1 = $sendFormClass->sendForm_AF1();
+
+$sendFormsClass = new sendForms();
+$editFormFucntion = $sendFormsClass->editForm_AF1();
+
 
 // $showFormClass = new showForm();
 // $showFormF1 = $showFormClass->showFormF1();
@@ -37,7 +39,7 @@ $getKlassen = new getKlassen();
 </head>
 
 <body>
-    <form action="formulieren_fase_1.php" method="POST">
+    <form action="fulledInForm_F1.php?formNumber=form1&leerlingNummer=<?php echo $showFormF1["leerlingnummer"]  ?>" method="POST">
         <div id="container_1">
             <nav>
                 <a href="<?php echo BASEURL; ?>admin/studentInfo.php?leerlingNummer=<?php echo $showFormF1["leerlingnummer"]  ?>"><i class="fa-solid fa-chevron-left"></i>terug</a>
@@ -45,7 +47,7 @@ $getKlassen = new getKlassen();
                     <!-- <div class="dowloadIcon">
                         <img src="../assets/Materiaal/icoonset/opslaan.svg" alt="">
                     </div> -->
-                <input value="Opslaan" class="createFormButton" type="submit" name="submit_form_AF1">
+                <input value="Bewerken" class="createFormButton" type="submit" name="edit_form_AF1">
                 </div>
             </nav>
             <div class="innerContainer">
@@ -62,25 +64,20 @@ $getKlassen = new getKlassen();
                     </h2>
                     <hr>
                 </div>
-
                 <p>
                     <?php echo $getFormF1["veld_student"]; ?>
                 </p>
                 <input value="<?php echo $showFormF1["student"] ?>" name="student_name_af1" type="text" />
                 <br />
-
                 <p>
-                    <?php echo $getFormF1["veld_leerlingnummer"]; ?>
+                    <?php echo $getFormF1["veld_leerlingnummer"]; ?> <?php echo $showFormF1["leerlingnummer"] ?>
                 </p>
-                <input value="<?php echo $showFormF1["leerlingnummer"] ?>" name="leerlingNummer" type="text" />
-                <br />
-
+              
                 <p>
                     <?php echo $getFormF1["veld_coach"]; ?>
                 </p>
                 <input value="<?php echo $showFormF1["coach"] ?>" name="coach_name_af1" type="text" />
                 <br />
-
                 <h3>
                     <?php echo $getFormF1["veld_klas"] ?> <?php echo $showFormF1["klas"] ?>
                 </h3>
@@ -95,12 +92,11 @@ $getKlassen = new getKlassen();
                 <div class="gay">
                     <ul>
                         <?php
-                        // echo "<pre>";
+                        echo "<pre>";
                         $checkboxen_true = (array) json_decode($showFormF1["checkboxen"]);
                         // var_dump($checkboxen_true);
                         $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1($checkboxen_true);
                         // echo $showFormF1["checkboxen"];
-                        // 
                         ?>
                     </ul>
                 </div>
