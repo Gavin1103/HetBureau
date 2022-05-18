@@ -195,9 +195,9 @@ $getKlassen = new getKlassen();
                     <div class="prestatieWrapper">
                         <p><?php echo $getFormF1["deel_c_tekst_1"] ?></p>
                         <div class="rating">
-                            <div class="red"></div>
-                            <div class="orange"></div>
-                            <div class="green"></div>
+                        <div class="red"><input value="rood" name="veld_a_beoordeling" type="radio"></div>
+                            <div class="orange"><input value="geel" name="veld_a_beoordeling" type="radio"></div>
+                            <div class="green"><input value="groen" name="veld_a_beoordeling" type="radio"></div>
                         </div>
                     </div>
                     <br />
@@ -206,26 +206,51 @@ $getKlassen = new getKlassen();
                     <div class="prestatieWrapper">
                         <p><?php echo $getFormF1["deel_c_tekst_2"] ?></p>
                         <div class="rating">
-                            <div class="red"></div>
-                            <div class="orange"></div>
-                            <div class="green"></div>
+                        <div class="red"><input value="rood" name="veld_b_beoordeling" type="radio"></div>
+                            <div class="orange"><input value="geel" name="veld_b_beoordeling" type="radio"></div>
+                            <div class="green"><input value="groen" name="veld_b_beoordeling" type="radio"></div>
                         </div>
                         <br />
                     </div>
                 </div>
+
                 <div class="innerContainer">
                     <div class="prestatieWrapper">
                         <p><?php echo $getFormF1["deel_c_tekst_3"] ?></p>
                         <div class="rating">
-                            <div class="red"></div>
-                            <div class="orange"></div>
-                            <div class="green"></div>
+                            <div class="red"><input value="rood" name="veld_c_beoordeling" type="radio" ></div>
+                            <div class="orange"><input value="geel" name="veld_c_beoordeling" type="radio"></div>
+                            <div class="green"><input value="groen" name="veld_c_beoordeling" type="radio"></div>
                         </div>
                         <br />
                     </div>
 
                     <h2><?php echo $getFormF1["doorgroei_advies"] ?></h2>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <footer>
                 <div class="footer-block">

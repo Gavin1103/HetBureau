@@ -91,8 +91,6 @@ class Formulier
             header("location: ../admin/?error=geenstudentNummer");
         }
     }
-
-
     public function getFormF2()
     {
         echo 'word nog aan gewerkt 2';
@@ -120,7 +118,7 @@ class Formulier
         }
         $db = new Database();
         // Query
-        $selectQuery = $db->con->prepare("SELECT `id`, `student`, `leerlingnummer`, `coach`, `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`, `doorgroei_advies` FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->_leerlingnummer' LIMIT 1;");
+        $selectQuery = $db->con->prepare("SELECT `id`, `student`, `leerlingnummer`, `coach`, `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`, `doorgroei_advies`, `veld_a_beoordeling`, `veld_b_beoordeling`, `veld_c_beoordeling` FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->_leerlingnummer' LIMIT 1;");
         if ($selectQuery === false) {
             echo mysqli_error($db->con);
         }
@@ -145,7 +143,9 @@ class Formulier
                     "softskills_veld" => $results["softskills_veld"],
                     "evtKwaliteiten_veld" => $results["evtKwaliteiten_veld"],
                     "doorgroei_advies" => $results["doorgroei_advies"],
-                    
+                    "veld_a_beoordeling" => $results["veld_a_beoordeling"],
+                    "veld_b_beoordeling" => $results["veld_b_beoordeling"],
+                    "veld_c_beoordeling" => $results["veld_c_beoordeling"]
                 ];
                 // var_dump($formF1_array);
                 return $formF1_array;

@@ -47,7 +47,7 @@ $getKlassen = new getKlassen();
                     <!-- <div class="dowloadIcon">
                         <img src="../assets/Materiaal/icoonset/opslaan.svg" alt="">
                     </div> -->
-                <input value="Bewerken" class="createFormButton" type="submit" name="edit_form_AF1">
+                    <input value="Bewerken" class="createFormButton" type="submit" name="edit_form_AF1">
                 </div>
             </nav>
             <div class="innerContainer">
@@ -72,7 +72,7 @@ $getKlassen = new getKlassen();
                 <p>
                     <?php echo $getFormF1["veld_leerlingnummer"]; ?> <?php echo $showFormF1["leerlingnummer"] ?>
                 </p>
-              
+
                 <p>
                     <?php echo $getFormF1["veld_coach"]; ?>
                 </p>
@@ -81,13 +81,13 @@ $getKlassen = new getKlassen();
                 <h3>
                     <?php echo $getFormF1["veld_klas"] ?> <?php echo $showFormF1["klas"] ?>
                 </h3>
-              
+
                 <!-- <select name="klas_name" id="klas">
                     <?php
                     // $getKlassenFunction = $getKlassen->selectKlas();
                     ?>
                 </select> -->
-                
+
                 <h3>Aanmaak datum: <?php echo $showFormF1["datum"]; ?></h3>
                 <div class="gay">
                     <ul>
@@ -190,9 +190,22 @@ $getKlassen = new getKlassen();
                     <div class="prestatieWrapper">
                         <p><?php echo $getFormF1["deel_c_tekst_1"] ?></p>
                         <div class="rating">
-                            <div class="red"></div>
-                            <div class="orange"></div>
-                            <div class="green"></div>
+                            <div class="red"><input value="rood" name="veld_a_beoordeling" type="radio" <?php
+                                                                                                        if ($showFormF1["veld_a_beoordeling"] === "rood") {
+                                                                                                            echo "checked";
+                                                                                                        }
+                                                                                                        ?>></div>
+                            <div class="orange"><input value="geel" name="veld_a_beoordeling" type="radio" <?php
+                                                                                                            if ($showFormF1["veld_a_beoordeling"] === "geel") {
+                                                                                                                echo "checked";
+                                                                                                            }
+                                                                                                            ?>></div>
+                            <div class="green"><input value="groen" name="veld_a_beoordeling" type="radio" <?php
+
+                                                                                                            if ($showFormF1["veld_a_beoordeling"] === "groen") {
+                                                                                                                echo "checked";
+                                                                                                            }
+                                                                                                            ?>></div>
                         </div>
                     </div>
                     <br />
@@ -201,9 +214,23 @@ $getKlassen = new getKlassen();
                     <div class="prestatieWrapper">
                         <p><?php echo $getFormF1["deel_c_tekst_2"] ?></p>
                         <div class="rating">
-                            <div class="red"></div>
-                            <div class="orange"></div>
-                            <div class="green"></div>
+                            <div class="red"><input value="rood" name="veld_b_beoordeling" type="radio" <?php
+                                                                                                        if ($showFormF1["veld_b_beoordeling"]   === "rood") {
+                                                                                                            echo "checked";
+                                                                                                        }
+                                                                                                        ?>></div>
+                            <div class="orange"><input value="geel" name="veld_b_beoordeling" type="radio" <?php
+
+                                                                                                            if ($showFormF1["veld_b_beoordeling"] === "geel") {
+                                                                                                                echo "checked";
+                                                                                                            }
+                                                                                                            ?>></div>
+                            <div class="green"><input value="groen" name="veld_b_beoordeling" type="radio" <?php
+
+                                                                                                            if ($showFormF1["veld_b_beoordeling"] === "groen") {
+                                                                                                                echo "checked";
+                                                                                                            }
+                                                                                                            ?>></div>
                         </div>
                         <br />
                     </div>
@@ -212,9 +239,25 @@ $getKlassen = new getKlassen();
                     <div class="prestatieWrapper">
                         <p><?php echo $getFormF1["deel_c_tekst_3"] ?></p>
                         <div class="rating">
-                            <div class="red"></div>
-                            <div class="orange"></div>
-                            <div class="green"></div>
+                            <div class="red"><input value="rood" name="veld_c_beoordeling" type="radio" <?php
+                                                                                                        if ($showFormF1["veld_c_beoordeling"] === "rood") {
+                                                                                                            echo "checked";
+                                                                                                        } ?>>
+                            </div>
+                            <div class="orange"><input value="geel" name="veld_c_beoordeling" type="radio" <?php
+
+                                                                                                            if ($showFormF1["veld_c_beoordeling"] === "geel") {
+                                                                                                                echo "checked";
+                                                                                                            }
+                                                                                                            ?>>
+                            </div>
+                            <div class="green"><input value="groen" name="veld_c_beoordeling" type="radio" <?php
+
+                                                                                                            if ($showFormF1["veld_c_beoordeling"] === "groen") {
+                                                                                                                echo "checked";
+                                                                                                            }
+                                                                                                            ?>>
+                            </div>
                         </div>
                         <br />
                     </div>
@@ -229,7 +272,6 @@ $getKlassen = new getKlassen();
                 <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div>
             </footer>
             <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->
-
         </div>
     </form>
 
