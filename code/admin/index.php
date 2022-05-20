@@ -47,7 +47,9 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
         <div class="nav-left"><img src="../assets/Materiaal/logo/Logo-Dashboard.svg" alt="logo"></div>
         <div class="nav-right">
             <p><?php echo $getAdminAccountFunction["naam"] ?></p>
+            <!-- <a href="<?php echo BASEURL; ?>admin/profile.php?id=<?php echo $getAdminAccountFunction["afkorting"] ?>"> -->
             <img class="pfp" src="../assets/Materiaal/icoonset/pfp.jpg" style="border-radius: 50%;" alt="pfp">
+        <!-- </a> -->
             <a href="logout.php"><img class="logout-icon" src="../assets/Materiaal/icoonset/Uitloggen.svg" alt="logout"></a>
         </div>
     </nav>

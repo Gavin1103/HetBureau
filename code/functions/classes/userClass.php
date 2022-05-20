@@ -131,37 +131,7 @@ class User
 class StudentUser extends User
 {
     public $leerlingNummer;
-    public function addStudent()
-    {
-        if (isset($_POST["submit_form_AF1"])) {
-            if (!empty($_POST["leerlingNummer"]) && !empty($_POST["leerlingNummer"])) {
-
-                $this->leerlingNummer = $_POST["leerlingNummer"];
-                $this->naam = $_POST["student_name_af1"];
-                $this->existStudent();
-                $db = new Database();
-                $addStudentQRY = mysqli_query($db->con, "INSERT INTO `studenten`( `leerlingnummer`, `naam`) VALUES ('$this->leerlingNummer','$this->naam')");
-                if ($addStudentQRY) {
-                    echo "leerling toegevoegd";
-                }
-            } else {
-                echo 'leerling niet toegevoegd';
-            }
-        }
-    }
-
-    private function existStudent()
-    {
-        $db = new Database();
-        $this->leerlingNummer = $_POST["leerlingNummer"];
-        $checkStudent = mysqli_query($db->con, "SELECT leerlingnummer FROM `studenten` WHERE leerlingnummer = '$this->leerlingNummer'");
-        $checkInDataBase = mysqli_fetch_array($checkStudent);
-        if (is_array($checkInDataBase)) {
-            $this->leerlingNummer = $checkInDataBase['leerlingnummer'];
-            echo "student bestaat al";
-            exit();
-        }
-    }
+   
 
     public function searchStudent()
     {
@@ -203,3 +173,4 @@ class StudentUser extends User
         }
     }
 }
+
