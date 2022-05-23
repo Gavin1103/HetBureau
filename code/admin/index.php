@@ -3,12 +3,16 @@ session_start();
 
 include("../core/databaseConnection.php");
 include '../functions/classes/userClass.php';
+include '../functions/studentCount.php';
 
 $userClass = new User();
 $studentClass = new StudentUser();
 
 $loginUserFunction = $userClass->CheckInputAdmin();
 $getAdminAccountFunction = $userClass->getAdminAccount();
+$searchStudentFunction = $userClass->searchStudent();
+
+$count = new countstudent("studenten");
 
 // $searchStudentFunction = $userClass->searchStudent();
 ?>
@@ -61,7 +65,7 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
                         <h2>Fase 1 Formulier</h2>
                     </div>
                     <div class="block_right">
-                        <a href="#">
+                        <a href="../forms/formCRUD/editform.php">
                             <div class="settingsIcon"></div>
                         </a>
                         
@@ -180,7 +184,7 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
         </div>
         <div class="containerRight">
             <div class="mini-block blue-border">
-                <p>43 Studenten</p>
+                <p><?php echo $count->countklas("2wdv1"); ?> studenten</p>
             </div>
             <div class="mini-block green-border">
                 <p>27 Studenten</p>
