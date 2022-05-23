@@ -10,7 +10,7 @@ $studentClass = new StudentUser();
 
 $loginUserFunction = $userClass->CheckInputAdmin();
 $getAdminAccountFunction = $userClass->getAdminAccount();
-$searchStudentFunction = $userClass->searchStudent();
+$searchStudentFunction = $studentClass->searchStudent();
 
 $count = new countstudent("studenten");
 
@@ -184,7 +184,7 @@ $count = new countstudent("studenten");
         </div>
         <div class="containerRight">
             <div class="mini-block blue-border">
-                <p><?php echo $count->countklas("2wdv1"); ?> studenten</p>
+                <p><?php echo $count->countAll("opgeslagen_form_af1"); ?> studenten</p>
             </div>
             <div class="mini-block green-border">
                 <p>27 Studenten</p>
