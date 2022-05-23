@@ -86,11 +86,23 @@ class Formulier
         if (isset($_GET["leerlingNummer"])) {
             // $db = new Database();
             $this->_leerlingnummer = $_GET["leerlingNummer"];
-            echo "<div class='boxtext'><a href='../forms/fulledInForm_F1.php?formNumber=form1&leerlingNummer={$this->_leerlingnummer}'>Fase 1 Assessmentformulier</a></div>";
+            echo "<div class='boxtext F1'><a href='../forms/fulledInForm_F1.php?formNumber=form1&leerlingNummer={$this->_leerlingnummer}'>Fase 1 Assessmentformulier</a></div>";
         } else {
             header("location: ../admin/?error=geenstudentNummer");
         }
     }
+
+    public function CheckFormF2()
+    {
+        if (isset($_GET["leerlingNummer"])) {
+            // $db = new Database();
+            $this->_leerlingnummer = $_GET["leerlingNummer"];
+            echo "<div class='boxtext F2'><a href='../forms/fulledInForm_F2.php?formNumber=form2&leerlingNummer={$this->_leerlingnummer}'>Fase 2 Assessmentformulier</a></div>";
+        } else {
+            header("location: ../admin/?error=geenstudentNummer");
+        }
+    }
+
     public function getFormF2()
     {
         echo 'word nog aan gewerkt 2';

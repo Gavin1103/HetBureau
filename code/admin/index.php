@@ -47,9 +47,9 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
         <div class="nav-left"><img src="../assets/Materiaal/logo/Logo-Dashboard.svg" alt="logo"></div>
         <div class="nav-right">
             <p><?php echo $getAdminAccountFunction["naam"] ?></p>
-            <!-- <a href="<?php echo BASEURL; ?>admin/profile.php?id=<?php echo $getAdminAccountFunction["afkorting"] ?>"> -->
+            <a style="height: 80%;" href="<?php echo BASEURL; ?>admin/profile.php?id=<?php echo $getAdminAccountFunction["afkorting"] ?>">
             <img class="pfp" src="../assets/Materiaal/icoonset/pfp.jpg" style="border-radius: 50%;" alt="pfp">
-        <!-- </a> -->
+        </a>
             <a href="logout.php"><img class="logout-icon" src="../assets/Materiaal/icoonset/Uitloggen.svg" alt="logout"></a>
         </div>
     </nav>
@@ -61,9 +61,14 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
                         <h2>Fase 1 Formulier</h2>
                     </div>
                     <div class="block_right">
+                        <a href="#">
+                            <div class="settingsIcon"></div>
+                        </a>
+                        
                         <a href="../forms/formulieren_fase_1.php?formNumber=form1">
                             <div class="plusIcon"></div>
                         </a>
+
                     </div>
                 </div>
                 <div class="block green">
@@ -71,6 +76,9 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
                         <h2>Fase 2 Formulier</h2>
                     </div>
                     <div class="block_right">
+                        <a href="#">
+                            <div class="settingsIcon"></div>
+                        </a>
                         <a href="../forms/formulieren_fase_2.php?formNumber=form2">
                             <div class="plusIcon"></div>
                         </a>
@@ -81,6 +89,9 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
                         <h2>Fase 3 Formulier</h2>
                     </div>
                     <div class="block_right">
+                        <a href="#">
+                            <div class="settingsIcon"></div>
+                        </a>
                         <a href="../forms/formulieren_fase_3.php?formNumber=form3">
                             <div class="plusIcon"></div>
                         </a>
@@ -91,6 +102,9 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
                         <h2>Fase 4 Formulier</h2>
                     </div>
                     <div class="block_right">
+                        <a href="#">
+                            <div class="settingsIcon"></div>
+                        </a>
                         <a href="../forms/formulieren_fase_4.php?formNumber=form4">
                             <div class="plusIcon"></div>
                         </a>
@@ -102,6 +116,9 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
                     </div>
                     <div class="block_right">
                         <a href="#">
+                            <div class="settingsIcon"></div>
+                        </a>
+                        <a href="#">
                             <div class="plusIcon"></div>
                         </a>
                     </div>
@@ -111,6 +128,9 @@ $getAdminAccountFunction = $userClass->getAdminAccount();
                         <h2>Fase 6 Formulier</h2>
                     </div>
                     <div class="block_right">
+                        <a href="#">
+                            <div class="settingsIcon"></div>
+                        </a>
                         <a href="#">
                             <div class="plusIcon"></div>
                         </a>

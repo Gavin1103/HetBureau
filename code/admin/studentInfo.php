@@ -31,12 +31,11 @@ $showFormF1 = $FormClass->showFormF1();
                 <img src="../assets/Materiaal/img/Uitloggen.png" alt="uitloggen" class="uitloggen">
             </div>
         </nav>
-        <a class="terugKnop" href="<?php echo BASEURL; ?>admin/">Terug</a>
         <div class="background">
             <div class="left">
 
 
-
+                <a class="terugKnop" href="<?php echo BASEURL; ?>admin/">Terug</a>
                 <div id="titleContainer">
                     <h2>Assesment Formulier Fase 1</h2>
                 </div>
@@ -65,28 +64,21 @@ $showFormF1 = $FormClass->showFormF1();
                         <h3>Assesor: <?php echo $showFormF1["coach"] ?></h3>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
+
+
             <div class="middle">
                 <div class="semi">
                     <img src="../assets/Materiaal/img/slideleft.png" alt="slideleft" class="slideleft">
                     <div class="box">
-                        <?php
-                        $checkForm = $FormClass->CheckFormF1();
-                        ?>
+                        <div class="innerBox">
+                            <?php
+                            $checkForm = $FormClass->CheckFormF1();
+                            $checkForm = $FormClass->CheckFormF2();
+                            // $checkForm = $FormClass->CheckFormF2();
+                            // $checkForm = $FormClass->CheckFormF2();
+                            ?>
+                        </div>
                     </div>
                     <img src="../assets/Materiaal/img/slideright.png" alt="slideright" class="slideright">
                 </div>
@@ -96,6 +88,11 @@ $showFormF1 = $FormClass->showFormF1();
                     <div class="downloadboxtext">Downloaden</div>
                 </div>
             </div>
+
+
+
+
+
             <div class="right">
                 <div class="zoekbar">
                     <img src="../assets/Materiaal/img/Zoeken.png" class="zoeken">

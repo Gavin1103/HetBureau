@@ -64,6 +64,10 @@ nav p {
     align-items: center;
 }
 
+.nav-right a{
+    height: 80%;
+}
+
 .nav-right img {
     width: fit-content;
     display: block;
@@ -71,7 +75,7 @@ nav p {
 }
 
 .pfp {
-    height: 80%;
+    height: 100%;
 }
 
 .logout-icon {
@@ -130,10 +134,21 @@ h2 {
     width: 50%;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
     /* background-color: red; */
 }
 
+.settingsIcon{
+    width: 40px;
+    height: 40px;
+    background-image: url(../Materiaal/icoonset/settings.png);
+    margin-right: 10px;
+    margin-top: 10px;
+    /* background-color: pink; */
+    background-position: center;
+    background-size: contain;
+}
 .plusIcon {
     width: 40px;
     height: 40px;

@@ -45,6 +45,7 @@ nav a {
 .innerContainer {
     width: 80%;
     margin: auto;
+    /* background-color: red; */
 }
 ul {
     padding: 0;
@@ -169,4 +170,17 @@ input[type="checkbox"] {
 }
 label{
     font-size: 15px;
+}
+
+.leftInnerContainer3{
+    height: 100%;
+    width: 50%;
+    background-color: green;
+
+}
+
+.rightInnerContainer3{
+    height: 100%;
+    width: 50%;
+    background-color: yellow;
 }

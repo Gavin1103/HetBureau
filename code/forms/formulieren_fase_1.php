@@ -187,7 +187,14 @@ $getKlassen = new getKlassen();
                     <hr>
                 </div>
             </div>
-            <div id="container_3">
+
+<!-- 
+            <div style="background-color: red ;" id="container_3">
+            <div class="leftInnerContainer3">
+            </div>
+            <div class="rightInnerContainer3">
+            </div> -->
+
                 <div class="innerContainer">
                     <div class="prestatieWrapper">
                         <p><?php echo $getFormF1["deel_c_tekst_1"] ?></p>
@@ -224,31 +231,16 @@ $getKlassen = new getKlassen();
 
                     <h2><?php echo $getFormF1["doorgroei_advies"] ?></h2>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
+
+
+
+
+
+
+
+
+
             <footer>
                 <div class="footer-block">
                     <input name="doorgroeiAdvies_af1" type="textarea" />
@@ -256,7 +248,6 @@ $getKlassen = new getKlassen();
                 <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div>
             </footer>
             <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->
-
         </div>
     </form>
     
