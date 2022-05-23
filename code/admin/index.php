@@ -103,60 +103,64 @@ $searchStudentFunction = $studentClass->searchStudent();
                 </div>
             </div>
         </div>
+        <script>
+            // $(document).on('click','#showData',function(e){
+            //     $.ajax({    
+            //         type: "GET",
+            //         url: "backend-script.php",             
+            //         dataType: "html",                  
+            //         success: function(data){                    
+            //             $("#table-container").html(data); 
+           
+            //         }
+            //     });
+            // });
+            // function showStudent(str) {
+            //     var xhttp;
+            //     if (str == "") {
+            //         document.getElementById("resultContainer").innerHTML = "";
+            //         return;
+            //     }
+            //     xhttp = new XMLHttpRequest();
+            //     xhttp.onreadystatechange = function() {
+            //         if (this.readyState == 4 && this.status == 200) {
+            //             document.getElementById("resultContainer").innerHTML = this.responseText;
+            //         }
+            //     };
+            //     xhttp.open("GET", "livesearch.php?q="+str, true);
+            //     xhttp.send();
+            // }
+            
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="ajax.js"></script>
         <div class="containerMiddle">
             <div id="innerContainerMiddle">
                 <form id="searchForm" action="index.php" method="post">
                     <div id="searchContainer">
                         <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
                         <div class="searchInnerContainer">
-                            <input name="searchSubmit" type="submit" value="Zoeken">
+                            <!-- <input name="searchSubmit" type="submit" value="Zoeken"> -->
+                            <button id="showStudent">show student</button>
                         </div>
                         <div class="searchInnerContainerMiddle">
-                            <input type="search" name="studentNumber" id="searchStudentInput">
+                            <input type="search" name="studentNumber" id="searchStudentInput" onkeyup="showStudent(this.value)" value="533187">
+
                         </div>
                         <div class="searchInnerContainer">
                             <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
                         </div>
                     </div>
                 </form>
+                <!-- https://www.w3schools.com/xml/ajax_database.asp -->
+                <!-- gebruik link, vindt vervang code -->
                 <div id="resultContainer">
+                    test
                     <?php
-                    if (isset($_POST["searchSubmit"])) {
-                        if (isset($searchStudentFunction["leerlingnummer"]) && isset($searchStudentFunction["naam"])) {
-                            echo "
-                        <a style='text-decoration:none; color:white;' href='studentInfo.php?leerlingNummer={$searchStudentFunction['leerlingnummer']}'><div class='resultStudent'>
-                        <div class='resultStudentLeft'>
-                        <img src='../assets/Materiaal/img/foto2.png' alt=''>
-                        </div>
-                        <div class='resultStudentRight'>
-                        <p>{$searchStudentFunction['leerlingnummer']}</p>
-                        <p>{$searchStudentFunction['naam']}</p>
-                        </div>
-                        </div>
-                        </a>";
-                        }else{
-                            echo 'gebruiker niet gevonden';
-                        }
-                    }
+                    // include "../functions/livesearch.php";
                     ?>
                 </div>
-                <!-- <script>
-                    let searchInput = document.getElementById("searchStudentInput");
-
-                    searchInput.addEventListener('input', function() {
-                        console.log("aan het zoeken...");
-
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                                // Typical action to be performed when the document is ready:
-                                document.getElementById("resultContainer").innerHTML = xhttp.responseText;
-                            }
-                        };
-                        xhttp.open("GET", "searchFunction.php", true);
-                        xhttp.send();
-                    });
-                </script> -->
+                
             </div>
         </div>
         <div class="containerRight">
