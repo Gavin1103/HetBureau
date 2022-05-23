@@ -10,7 +10,7 @@ $studentClass = new StudentUser();
 
 $loginUserFunction = $userClass->CheckInputAdmin();
 $getAdminAccountFunction = $userClass->getAdminAccount();
-$searchStudentFunction = $studentClass->searchStudent();
+// $searchStudentFunction = $studentClass->searchStudent();
 
 $count = new countstudent("studenten");
 
@@ -187,19 +187,19 @@ $count = new countstudent("studenten");
                 <p><?php echo $count->countAll("opgeslagen_form_af1"); ?> studenten</p>
             </div>
             <div class="mini-block green-border">
-                <p>27 Studenten</p>
+                <p>(test) Studenten</p>
             </div>
             <div class="mini-block purple-border">
-                <p>24 Studenten</p>
+                <p>(test) Studenten</p>
             </div>
             <div class="mini-block yellow-border">
-                <p>35 Studenten</p>
+                <p>(test) Studenten</p>
             </div>
             <div class="mini-block grey-border">
-                <p>23 Studenten</p>
+                <p>(test) Studenten</p>
             </div>
             <div class="mini-block red-border">
-                <p>28 Studenten</p>
+                <p>(test) Studenten</p>
             </div>
         </div>
     </div>
