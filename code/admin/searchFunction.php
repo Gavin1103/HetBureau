@@ -2,9 +2,7 @@
 
 <?php
 
-
 echo $_GET["test"];
-
 
 include '../functions/classes/userClass.php';
 $studentClass = new StudentUser();

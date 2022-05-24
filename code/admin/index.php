@@ -32,28 +32,18 @@ $count = new countstudent("studenten");
 
 <body>
     <!-- aanzetten wanneer livesearch werkt; -->
-    <?php
-    // if (isset($_GET["admin"])) {
-    //     echo "
-    //     <div class='loader-bg'>
-    //     <img class='preloader-img' src='../assets/Materiaal/icoonset/stop-button.png' alt='glu-logo'>
-    //     </div>
-    //     <script>
-    //     setTimeout(function() {
-    //     $('.loader-bg').fadeToggle();
-    //     }, 1250);
-    //     </script>
-    //     ";
-    // }
-    ?>
+    <div class='loader-bg'>
+        <img class='preloader-img' src='../assets/Materiaal/icoonset/stop-button.png' alt='glu-logo'>
+    </div>
+
 
     <nav>
         <div class="nav-left"><img src="../assets/Materiaal/logo/Logo-Dashboard.svg" alt="logo"></div>
         <div class="nav-right">
             <p><?php echo $getAdminAccountFunction["naam"] ?></p>
             <a style="height: 80%;" href="<?php echo BASEURL; ?>admin/profile.php?id=<?php echo $getAdminAccountFunction["afkorting"] ?>">
-            <img class="pfp" src="../assets/Materiaal/icoonset/pfp.jpg" style="border-radius: 50%;" alt="pfp">
-        </a>
+                <img class="pfp" src="../assets/Materiaal/icoonset/pfp.jpg" style="border-radius: 50%;" alt="pfp">
+            </a>
             <a href="logout.php"><img class="logout-icon" src="../assets/Materiaal/icoonset/Uitloggen.svg" alt="logout"></a>
         </div>
     </nav>
@@ -68,7 +58,7 @@ $count = new countstudent("studenten");
                         <a href="../forms/formCRUD/editform.php">
                             <div class="settingsIcon"></div>
                         </a>
-                        
+
                         <a href="../forms/formulieren_fase_1.php?formNumber=form1">
                             <div class="plusIcon"></div>
                         </a>
@@ -143,42 +133,42 @@ $count = new countstudent("studenten");
             </div>
         </div>
         <script type="text/javascript">
-            function showHint(str) {  
-                if (str.length == 0) {  
-                    document.getElementById("resultContainer").innerHTML = "";  
-                    return;  
-                } else {  
-                    var xmlhttp = new XMLHttpRequest();  
-                    xmlhttp.onreadystatechange = function() {  
-                        if (this.readyState == 4 && this.status == 200) {  
-                            document.getElementById("resultContainer").innerHTML = this.responseText;  
-                        }  
-                    };  
-                    xmlhttp.open("GET", "../functions/livesearch.php?q=" + str, true);  
-                    xmlhttp.send();  
-                }  
-            }  
+            function showHint(str) {
+                if (str.length == 0) {
+                    document.getElementById("resultContainer").innerHTML = "";
+                    return;
+                } else {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("resultContainer").innerHTML = this.responseText;
+                        }
+                    };
+                    xmlhttp.open("GET", "../functions/livesearch.php?q=" + str, true);
+                    xmlhttp.send();
+                }
+            }
         </script>
         <div class="containerMiddle">
             <div id="innerContainerMiddle">
                 <!-- <form id="searchForm" action="index.php" method="post"> -->
-                    <div id="searchContainer">
-                        <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
-                        <div class="searchInnerContainer">
-                            <!-- <input name="searchSubmit" type="submit" value="Zoeken"> -->
-                        </div>
-                        <div class="searchInnerContainerMiddle">
-                            <input type="search" name="studentNumber" id="searchStudentInput" onkeyup="showHint(this.value)">
-                            <!-- <div id="resultContainer" class="searchresults">test </div> -->
-                        </div>
-                        <div class="searchInnerContainer">
-                            <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
-                        </div>
+                <div id="searchContainer">
+                    <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
+                    <div class="searchInnerContainer">
+                        <!-- <input name="searchSubmit" type="submit" value="Zoeken"> -->
                     </div>
+                    <div class="searchInnerContainerMiddle">
+                        <input type="number" placeholder="leerlingnummer" number name="studentNumber" id="searchStudentInput" onkeyup="showHint(this.value)">
+                        <!-- <div id="resultContainer" class="searchresults">test </div> -->
+                    </div>
+                    <div class="searchInnerContainer">
+                        <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
+                    </div>
+                </div>
                 <!-- </form> -->
                 <div id="resultContainer">
                 </div>
-                
+
             </div>
         </div>
         <div class="containerRight">
@@ -205,11 +195,11 @@ $count = new countstudent("studenten");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-    <!-- <script>
+    <script>
         setTimeout(function() {
             $('.loader-bg').fadeToggle();
-        }, 1250);
-    </script> -->
+        }, 500);
+    </script>
 </body>
 
 </html>

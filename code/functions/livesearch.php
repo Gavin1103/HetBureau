@@ -16,7 +16,7 @@ if ($q !== "") {
         while($row = $qry->fetch_assoc())
         { 
             // echo $row['leerlingnummer']." ". $row['naam']."<br>";
-            echo "<a style='text-decoration:none; color:white;'><div class='resultStudent'>";
+            echo "<a href='studentInfo.php?leerlingNummer={$row['leerlingnummer']}' style='text-decoration:none; color:white;'><div class='resultStudent'>";
             echo "<div class='resultStudentLeft'>";
             echo "<img src='../assets/Materiaal/img/foto2.png' alt=''>";
             echo "</div>";
@@ -30,7 +30,7 @@ if ($q !== "") {
     }
     else
         {
-            echo 'No Results for : "'.$q.'"';
+            echo 'geen resultaat voor : "'.$q.'"';
         }
 }
 
