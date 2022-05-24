@@ -142,44 +142,43 @@ $count = new countstudent("studenten");
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            function showHint(str) {  
+                if (str.length == 0) {  
+                    document.getElementById("resultContainer").innerHTML = "";  
+                    return;  
+                } else {  
+                    var xmlhttp = new XMLHttpRequest();  
+                    xmlhttp.onreadystatechange = function() {  
+                        if (this.readyState == 4 && this.status == 200) {  
+                            document.getElementById("resultContainer").innerHTML = this.responseText;  
+                        }  
+                    };  
+                    xmlhttp.open("GET", "../functions/livesearch.php?q=" + str, true);  
+                    xmlhttp.send();  
+                }  
+            }  
+        </script>
         <div class="containerMiddle">
             <div id="innerContainerMiddle">
-                <form id="searchForm" action="index.php" method="post">
+                <!-- <form id="searchForm" action="index.php" method="post"> -->
                     <div id="searchContainer">
                         <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
                         <div class="searchInnerContainer">
-                            <input id="searchButton" name="searchSubmit" type="submit" value="">
+                            <!-- <input name="searchSubmit" type="submit" value="Zoeken"> -->
                         </div>
                         <div class="searchInnerContainerMiddle">
-                            <input type="search" name="studentNumber" id="searchStudentInput">
+                            <input type="search" name="studentNumber" id="searchStudentInput" onkeyup="showHint(this.value)">
+                            <!-- <div id="resultContainer" class="searchresults">test </div> -->
                         </div>
                         <div class="searchInnerContainer">
                             <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
                         </div>
                     </div>
-                </form>
+                <!-- </form> -->
                 <div id="resultContainer">
-                    <?php
-                    $searchStudentFunction = $studentClass->searchStudent();
-                    ?>
                 </div>
-                <!-- <script>
-                    let searchInput = document.getElementById("searchStudentInput");
-                    searchInput.addEventListener('input', function() {
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                                // Typical action to be performed when the document is ready:
-                                // document.getElementById("resultContainer").innerHTML = xhttp.responseText;
-                                console.log(xhttp.responseText);
-                                // document.write(xhttp.responseText)
-                                
-                            }
-                        };
-                        xhttp.open("POST", "searchFunction.php?test=<?php echo $searchStudentFunction['leerlingnummer'] ?>", true);
-                        xhttp.send();
-                    });
-                </script> -->
+                
             </div>
         </div>
         <div class="containerRight">
