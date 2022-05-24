@@ -2,7 +2,7 @@
 <?php
 
 // define("BASEURL","http://localhost/programming/HetBureau/code/");
-define("BASEURL","http://u533187.gluweb.nl/assesment/code/");
+define("BASEURL","http://localhost/programming/HetBureau/code/");
 
 //  verbinding maken met database 
 // require_once ("C:/xampp/htdocs/HetBureau/vendor/autoload.php");

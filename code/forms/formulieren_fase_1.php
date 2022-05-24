@@ -117,9 +117,9 @@ $getKlassen = new getKlassen();
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["vormgeven_beoordeling"] ?></p>
                     <div class="rating">
-                        <div class="red"><input value="rood" name="veld_1_rating" type="radio"></div>
-                        <div class="orange"><input value="geel" name="veld_1_rating" type="radio"></div>
-                        <div class="green"><input value="groen" name="veld_1_rating" type="radio"></div>
+                    <label class="red"><input value="rood" name="veld_1_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="orange"><input value="geel" name="veld_1_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_1_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
                 <input name="vormgeven_name_af1" type="textarea" />
@@ -128,9 +128,9 @@ $getKlassen = new getKlassen();
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["techniek_beoordeling"] ?></p>
                     <div class="rating">
-                        <div class="red"><input value="rood" name="veld_2_rating" type="radio"></div>
-                        <div class="orange"><input value="geel" name="veld_2_rating" type="radio"></div>
-                        <div class="green"><input value="groen" name="veld_2_rating" type="radio"></div>
+                    <label class="red"><input value="rood" name="veld_2_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="orange"><input value="geel" name="veld_2_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_2_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
                 <input name="techniek_name_af1" type="textarea" />
@@ -138,9 +138,9 @@ $getKlassen = new getKlassen();
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["ondernemend_beoordeling"] ?></p>
                     <div class="rating">
-                        <div class="red"><input value="rood" name="veld_3_rating" type="radio"></div>
-                        <div class="orange"><input value="geel" name="veld_3_rating" type="radio"></div>
-                        <div class="green"><input value="groen" name="veld_3_rating" type="radio"></div>
+                    <label class="red"><input value="rood" name="veld_3_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="orange"><input value="geel" name="veld_3_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_3_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
                 <input name="ondernemend_name_af1" type="textarea" />
@@ -149,9 +149,9 @@ $getKlassen = new getKlassen();
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["softskills_beoordeling"] ?></p>
                     <div class="rating">
-                        <div class="red"><input value="rood" name="veld_4_rating" type="radio"></div>
-                        <div class="orange"><input value="geel" name="veld_4_rating" type="radio"></div>
-                        <div class="green"><input value="groen" name="veld_4_rating" type="radio"></div>
+                    <label class="red"><input value="rood" name="veld_4_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="orange"><input value="geel" name="veld_4_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_4_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
                 <input name="softskills_name_af1" type="textarea" />
@@ -160,9 +160,9 @@ $getKlassen = new getKlassen();
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["avo_beoordeling"] ?></p>
                     <div class="rating">
-                        <div class="red"><input value="rood" name="veld_5_rating" type="radio"></div>
-                        <div class="orange"><input value="geel" name="veld_5_rating" type="radio"></div>
-                        <div class="green"><input value="groen" name="veld_5_rating" type="radio"></div>
+                    <label class="red"><input value="rood" name="veld_5_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="orange"><input value="geel" name="veld_5_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_5_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
                 <input name="avo_name_af1" type="textarea" />
@@ -171,9 +171,9 @@ $getKlassen = new getKlassen();
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["bijzondere_kwaliteiten"] ?></p>
                     <div class="rating">
-                    <div class="red"><input value="rood" name="veld_6_rating" type="radio"></div>
-                        <div class="orange"><input value="geel" name="veld_6_rating" type="radio"></div>
-                        <div class="green"><input value="groen" name="veld_6_rating" type="radio"></div>
+                        <label class="red"><input value="rood" name="veld_6_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="orange"><input value="geel" name="veld_6_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_6_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
                 <input name="evt_name_af1" type="textarea" />
@@ -188,69 +188,69 @@ $getKlassen = new getKlassen();
                 </div>
             </div>
 
-<!-- 
+            <!-- 
             <div style="background-color: red ;" id="container_3">
             <div class="leftInnerContainer3">
             </div>
             <div class="rightInnerContainer3">
             </div> -->
 
-                <div class="innerContainer">
-                    <div class="prestatieWrapper">
-                        <p><?php echo $getFormF1["deel_c_tekst_1"] ?></p>
-                        <div class="rating">
-                            <div class="red"><input value="rood" name="veld_a_beoordeling" type="radio"></div>
-                            <div class="orange"><input value="geel" name="veld_a_beoordeling" type="radio"></div>
-                            <div class="green"><input value="groen" name="veld_a_beoordeling" type="radio"></div>
-                        </div>
+            <div class="innerContainer">
+                <div class="prestatieWrapper">
+                    <p><?php echo $getFormF1["deel_c_tekst_1"] ?></p>
+                    <div class="rating">
+                        <label class="red"><input value="rood" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                        <label class="orange"><input value="geel" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <div class="innerContainer">
+                <div class="prestatieWrapper">
+                    <p><?php echo $getFormF1["deel_c_tekst_2"] ?></p>
+                    <div class="rating">
+                        <label class="red"><input value="rood" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
+                        <label class="orange"><input value="geel" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
                     </div>
                     <br />
                 </div>
-                <div class="innerContainer">
-                    <div class="prestatieWrapper">
-                        <p><?php echo $getFormF1["deel_c_tekst_2"] ?></p>
-                        <div class="rating">
-                            <div class="red"><input value="rood" name="veld_b_beoordeling" type="radio"></div>
-                            <div class="orange"><input value="geel" name="veld_b_beoordeling" type="radio"></div>
-                            <div class="green"><input value="groen" name="veld_b_beoordeling" type="radio"></div>
-                        </div>
-                        <br />
-                    </div>
-                </div>
-
-                <div class="innerContainer">
-                    <div class="prestatieWrapper">
-                        <p><?php echo $getFormF1["deel_c_tekst_3"] ?></p>
-                        <div class="rating">
-                            <div class="red"><input value="rood" name="veld_c_beoordeling" type="radio"></div>
-                            <div class="orange"><input value="geel" name="veld_c_beoordeling" type="radio"></div>
-                            <div class="green"><input value="groen" name="veld_c_beoordeling" type="radio"></div>
-                        </div>
-                        <br />
-                    </div>
-
-                    <h2><?php echo $getFormF1["doorgroei_advies"] ?></h2>
-                </div>
             </div>
 
-
-
-
-
-
-
-
-
-            <footer>
-                <div class="footer-block">
-                    <input name="doorgroeiAdvies_af1" type="textarea" />
+            <div class="innerContainer">
+                <div class="prestatieWrapper">
+                    <p><?php echo $getFormF1["deel_c_tekst_3"] ?></p>
+                    <div class="rating">
+                        <label class="red"><input value="rood" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></span></label>
+                        <label class="orange"><input value="geel" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></label>
+                        <label class="green"><input value="groen" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></label>
+                    </div>
+                    <br />
                 </div>
-                <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div>
-            </footer>
-            <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->
+
+                <h2><?php echo $getFormF1["doorgroei_advies"] ?></h2>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <footer>
+            <div class="footer-block">
+                <input name="doorgroeiAdvies_af1" type="textarea" />
+            </div>
+            <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div>
+        </footer>
+        <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->
         </div>
     </form>
-    
+
     <div id="footerIMG">
         <img src="../assets/Materiaal/footer.png" alt="">
     </div>
