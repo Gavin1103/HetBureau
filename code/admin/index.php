@@ -103,62 +103,41 @@ $searchStudentFunction = $studentClass->searchStudent();
                 </div>
             </div>
         </div>
-        <script>
-            // $(document).on('click','#showData',function(e){
-            //     $.ajax({    
-            //         type: "GET",
-            //         url: "backend-script.php",             
-            //         dataType: "html",                  
-            //         success: function(data){                    
-            //             $("#table-container").html(data); 
-           
-            //         }
-            //     });
-            // });
-            // function showStudent(str) {
-            //     var xhttp;
-            //     if (str == "") {
-            //         document.getElementById("resultContainer").innerHTML = "";
-            //         return;
-            //     }
-            //     xhttp = new XMLHttpRequest();
-            //     xhttp.onreadystatechange = function() {
-            //         if (this.readyState == 4 && this.status == 200) {
-            //             document.getElementById("resultContainer").innerHTML = this.responseText;
-            //         }
-            //     };
-            //     xhttp.open("GET", "livesearch.php?q="+str, true);
-            //     xhttp.send();
-            // }
-            
+        <script type="text/javascript">
+            function showHint(str) {  
+                if (str.length == 0) {  
+                    document.getElementById("resultContainer").innerHTML = "";  
+                    return;  
+                } else {  
+                    var xmlhttp = new XMLHttpRequest();  
+                    xmlhttp.onreadystatechange = function() {  
+                        if (this.readyState == 4 && this.status == 200) {  
+                            document.getElementById("resultContainer").innerHTML = this.responseText;  
+                        }  
+                    };  
+                    xmlhttp.open("GET", "../functions/livesearch.php?q=" + str, true);  
+                    xmlhttp.send();  
+                }  
+            }  
         </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script type="text/javascript" src="ajax.js"></script>
         <div class="containerMiddle">
             <div id="innerContainerMiddle">
-                <form id="searchForm" action="index.php" method="post">
+                <!-- <form id="searchForm" action="index.php" method="post"> -->
                     <div id="searchContainer">
                         <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
                         <div class="searchInnerContainer">
                             <!-- <input name="searchSubmit" type="submit" value="Zoeken"> -->
-                            <button id="showStudent">show student</button>
                         </div>
                         <div class="searchInnerContainerMiddle">
-                            <input type="search" name="studentNumber" id="searchStudentInput" onkeyup="showStudent(this.value)" value="533187">
-
+                            <input type="search" name="studentNumber" id="searchStudentInput" onkeyup="showHint(this.value)">
+                            <!-- <div id="resultContainer" class="searchresults">test </div> -->
                         </div>
                         <div class="searchInnerContainer">
                             <div class="filterIcon"><img src="../assets/Materiaal/icoonset/filter.svg" alt="Filter"></div>
                         </div>
                     </div>
-                </form>
-                <!-- https://www.w3schools.com/xml/ajax_database.asp -->
-                <!-- gebruik link, vindt vervang code -->
+                <!-- </form> -->
                 <div id="resultContainer">
-                    test
-                    <?php
-                    // include "../functions/livesearch.php";
-                    ?>
                 </div>
                 
             </div>
