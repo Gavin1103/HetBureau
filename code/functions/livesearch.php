@@ -30,7 +30,7 @@ if ($q !== "") {
     }
     else
         {
-            echo 'No Results for :"'.$_GET['keyword'].'"';
+            echo 'No Results for : "'.$q.'"';
         }
 }
 
