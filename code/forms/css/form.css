@@ -1,3 +1,7 @@
+* {
+    font-family: "Roboto Condensed", sans-serif;
+}
+
 body {
     margin: 0;
     background-color: #74bbe8;
@@ -44,7 +48,8 @@ nav a {
 
 .innerContainer {
     width: 80%;
-    margin: auto;
+    /* margin: auto; */
+    margin-left: 5%;
     /* background-color: red; */
 }
 ul {
@@ -56,7 +61,8 @@ input {
 }
 
 input[type="checkbox"] {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-right: 10px;
 }
 input[type="textarea"] {
     width: 50%;
@@ -79,19 +85,41 @@ hr {
     border: 1px solid #fff;
 }
 
-.rating {
-    height: 30px;
-    width: 60%;
-    display: flex;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    justify-content: space-between;
-}
+
 .prestatieWrapper {
     width: 30%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    /* background-color: blue; */
 }
+
+.prestatieWrapper .rating{
+    width: 50%;
+}
+
+
+.ratingText{
+    width: auto;
+    /* background-color: red; */
+    width: 35%;
+}
+.rating {
+    /* height: 100%; */
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: yellow; */
+}
+
+.ratingInnerContainer{
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+
+
+}
+
 .red,
 .orange,
 .green {
@@ -195,8 +223,48 @@ input[type="radio"]:checked + .radioChecked {
     border-radius: 5px;
     /* position: relative */
 }
-/* .test::after{
 
+.mustHaveInput {
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    border: solid 1px;
+}
 
+.klasSelect {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    border: solid 1px;
+}
 
-} */
+.dateInput {
+    width: 96px;
+    height: 25px;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+::placeholder {
+    /* color: #74bbe8; */
+    color: black;
+}
+
+p {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+label {
+    display: flex;
+    /* justify-content:  */
+    /* background-color: red; */
+    align-items: center;
+}

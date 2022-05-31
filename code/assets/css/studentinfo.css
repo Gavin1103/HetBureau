@@ -2,15 +2,23 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
     /* background-color:#74BBE8; */
 }
-
+p {
+    font-size: 20px;
+}
+h2 {
+    font-size: 30px;
+}
+h1 {
+    font-size: 50px;
+}
 #container {
     width: 100%;
     height: 100vh;
     background-color: #74bbe8;
 }
-
 .terugKnop {
     color: black;
     position: absolute;
@@ -18,7 +26,6 @@
     font-size: 25px;
     left: 10px;
 }
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -28,7 +35,6 @@ nav {
     background-color: rgb(255, 255, 255);
     width: 100%;
 }
-
 .innerMenuLeft {
     width: 50%;
     height: 100%;
@@ -37,7 +43,6 @@ nav {
     justify-content: flex-start;
     align-items: center;
 }
-
 .innerMenuRight {
     width: 50%;
     height: 100%;
@@ -46,7 +51,6 @@ nav {
     align-items: center;
     /* background-color: blue; */
 }
-
 .logo {
     /* position: relative; */
     /* width: 600px; */
@@ -136,6 +140,10 @@ nav {
     /* background-color: purple; */
     width: 40%;
     height: 100%;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .semi {
     background-color: #74bbe8;
@@ -226,6 +234,8 @@ nav {
     margin-left: 19%;
     margin-top: 30px;
     border: 1px solid black;
+    background-color: black;
+    color: white;
 }
 
 @media screen and (min-width: 60px) {

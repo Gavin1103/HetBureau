@@ -62,21 +62,21 @@ $editFormFucntion = $editFormClass->editForm_AF1();
                 <p>
                     <?php echo $getFormF1["veld_student"]; ?>
                 </p>
-                <input value="<?php echo $showFormF1["student"] ?>" name="student_name_af1" type="text" />
+                <input class="mustHaveInput" value="<?php echo $showFormF1["student"] ?>" name="student_name_af1" type="text" />
                 <br />
                 <p>
                     <?php echo $getFormF1["veld_leerlingnummer"]; ?>
                 </p>
-                <input value="<?php echo $showFormF1["leerlingnummer"] ?>" disabled type="text" />
+                <input class="mustHaveInput" value="<?php echo $showFormF1["leerlingnummer"] ?>" disabled type="text" />
                 <p>
                     <?php echo $getFormF1["veld_coach"]; ?>
                 </p>
-                <input value="<?php echo $showFormF1["coach"] ?>" name="coach_name_af1" type="text" />
+                <input class="mustHaveInput" value="<?php echo $showFormF1["coach"] ?>" name="coach_name_af1" type="text" />
                 <br />
                 <h3>
                     <?php echo $getFormF1["veld_klas"] ?> <?php echo $showFormF1["klas"] ?>
                 </h3>
-                <input value="<?php echo $showFormF1["klas"] ?>" disabled type="text" />
+                <input class="mustHaveInput" value="<?php echo $showFormF1["klas"] ?>" disabled type="text" />
 
                 <h3>Aanmaak datum: <?php echo $showFormF1["datum"]; ?></h3>
                 <div class="gay">
@@ -102,10 +102,10 @@ $editFormFucntion = $editFormClass->editForm_AF1();
                     <p><?php echo $getFormF1["vormgeven_beoordeling"] ?></p>
                     <div class="rating">
                         <label class="red"><input value="rood" name="veld_1_rating" type="radio" <?php
-                                                                                                if ($showFormF1["veld_1_rating"] === "rood") {
-                                                                                                    echo "checked";
-                                                                                                }
-                                                                                                ?>><span class="radioChecked"></span></label>
+                                                                                                    if ($showFormF1["veld_1_rating"] === "rood") {
+                                                                                                        echo "checked";
+                                                                                                    }
+                                                                                                    ?>><span class="radioChecked"></span></label>
                         <label class="orange"><input value="geel" name="veld_1_rating" type="radio" <?php
                                                                                                     if ($showFormF1["veld_1_rating"] === "geel") {
                                                                                                         echo "checked";
@@ -125,10 +125,10 @@ $editFormFucntion = $editFormClass->editForm_AF1();
                     <p><?php echo $getFormF1["techniek_beoordeling"] ?></p>
                     <div class="rating">
                         <label class="red"><input value="rood" name="veld_2_rating" type="radio" <?php
-                                                                                                if ($showFormF1["veld_2_rating"] === "rood") {
-                                                                                                    echo "checked";
-                                                                                                }
-                                                                                                ?>><span class="radioChecked"></span></label>
+                                                                                                    if ($showFormF1["veld_2_rating"] === "rood") {
+                                                                                                        echo "checked";
+                                                                                                    }
+                                                                                                    ?>><span class="radioChecked"></span></label>
                         <label class="orange"><input value="geel" name="veld_2_rating" type="radio" <?php
                                                                                                     if ($showFormF1["veld_2_rating"] === "geel") {
                                                                                                         echo "checked";
@@ -235,96 +235,88 @@ $editFormFucntion = $editFormClass->editForm_AF1();
                 <input value="<?php echo $showFormF1["evtKwaliteiten_veld"] ?>" name="evt_name_af1" type="textarea" />
                 <br />
                 <div id="terugKoppeling">
-                    <p>
+                    <h2>
                         <?php echo $getFormF1["terug_koppelingsfase_1"] ?>
-                    </p>
+                    </h2>
                     <hr>
                 </div>
             </div>
+
             <div id="container_3">
-                <div class="innerContainer">
-                    <div class="prestatieWrapper">
-                        <p><?php echo $getFormF1["deel_c_tekst_1"] ?></p>
-                        <div class="rating">
-                            <label class="red"><input value="rood" name="veld_a_beoordeling" type="radio" <?php
-                                                                                                            if ($showFormF1["veld_a_beoordeling"] === "rood") {
-                                                                                                                echo "checked";
-                                                                                                            }
-                                                                                                            ?>><span class="radioChecked"></span></label>
-                            <label class="orange"><input value="geel" name="veld_a_beoordeling" type="radio" <?php
-                                                                                                                if ($showFormF1["veld_a_beoordeling"] === "geel") {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                                ?>><span class="radioChecked"></span></label>
-                            <label class="green"><input value="groen" name="veld_a_beoordeling" type="radio" <?php
 
-                                                                                                                if ($showFormF1["veld_a_beoordeling"] === "groen") {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                                ?>><span class="radioChecked"></span></label>
+                <div class="innerContainer">
+                    <div class="ratingInnerContainer">
+                        <div class="ratingInnerContainer">
+                            <div class="ratingText"><?php echo $getFormF1["deel_c_tekst_1"] ?></div>
+                            <div class="rating">
+                                <label class="red"><input <?php
+                                                            if ($showFormF1["veld_a_beoordeling"] === "rood") {
+                                                                echo "checked";
+                                                            }
+                                                            ?> value="rood" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                                <label class="orange"><input <?php
+                                                                if ($showFormF1["veld_a_beoordeling"] === "geel") {
+                                                                    echo "checked";
+                                                                }
+                                                                ?> value="geel" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                                <label class="green"><input <?php
+
+                                                            if ($showFormF1["veld_a_beoordeling"] === "groen") {
+                                                                echo "checked";
+                                                            }
+                                                            ?> value="groen" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                            </div>
                         </div>
                     </div>
-                    <br />
-                </div>
-                <div class="innerContainer">
-                    <div class="prestatieWrapper">
-                        <p><?php echo $getFormF1["deel_c_tekst_2"] ?></p>
+                    <div class="ratingInnerContainer">
+                        <div class="ratingText"><?php echo $getFormF1["deel_c_tekst_2"] ?></div>
                         <div class="rating">
-                            <label class="red"><input value="rood" name="veld_b_beoordeling" type="radio" <?php
-                                                                                                            if ($showFormF1["veld_b_beoordeling"]   === "rood") {
-                                                                                                                echo "checked";
-                                                                                                            }
-                                                                                                            ?>><span class="radioChecked"></span></label>
-                            <label class="orange"><input value="geel" name="veld_b_beoordeling" type="radio" <?php
+                            <label class="red"><input <?php
+                                                        if ($showFormF1["veld_b_beoordeling"]   === "rood") {
+                                                            echo "checked";
+                                                        }
+                                                        ?> value="rood" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
+                            <label class="orange"><input <?php
+                                                            if ($showFormF1["veld_b_beoordeling"] === "geel") {
+                                                                echo "checked";
+                                                            }
+                                                            ?> value="geel" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
+                            <label class="green"><input <?php
 
-                                                                                                                if ($showFormF1["veld_b_beoordeling"] === "geel") {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                                ?>><span class="radioChecked"></span></label>
-                            <label class="green"><input value="groen" name="veld_b_beoordeling" type="radio" <?php
-
-                                                                                                                if ($showFormF1["veld_b_beoordeling"] === "groen") {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                                ?>><span class="radioChecked"></span></label>
+                                                        if ($showFormF1["veld_b_beoordeling"] === "groen") {
+                                                            echo "checked";
+                                                        }
+                                                        ?> value="groen" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
                         </div>
-                        <br />
                     </div>
-                </div>
-                <div class="innerContainer">
-                    <div class="prestatieWrapper">
-                        <p><?php echo $getFormF1["deel_c_tekst_3"] ?></p>
+                    <div class="ratingInnerContainer">
+                        <div class="ratingText"><?php echo $getFormF1["deel_c_tekst_3"] ?></div>
                         <div class="rating">
-                            <label class="red"><input value="rood" name="veld_c_beoordeling" type="radio" <?php
-                                                                                                            if ($showFormF1["veld_c_beoordeling"] === "rood") {
-                                                                                                                echo "checked";
-                                                                                                            } ?>><span class="radioChecked"></span>
-                            </label>
-                            <label class="orange"><input value="geel" name="veld_c_beoordeling" type="radio" <?php
+                            <label class="red"><input <?php
+                                                        if ($showFormF1["veld_c_beoordeling"] === "rood") {
+                                                            echo "checked";
+                                                        } ?> value="rood" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></span></label>
+                            <label class="orange"><input <?php
 
-                                                                                                                if ($showFormF1["veld_c_beoordeling"] === "geel") {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                                ?>><span class="radioChecked"></span>
-                            </label>
-                            <label class="green"><input value="groen" name="veld_c_beoordeling" type="radio" <?php
+                                                            if ($showFormF1["veld_c_beoordeling"] === "geel") {
+                                                                echo "checked";
+                                                            }
+                                                            ?> value="geel" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></label>
+                            <label class="green"><input <?php
 
-                                                                                                                if ($showFormF1["veld_c_beoordeling"] === "groen") {
-                                                                                                                    echo "checked";
-                                                                                                                }
-                                                                                                                ?>><span class="radioChecked"></span>
-                            </label>
+                                                        if ($showFormF1["veld_c_beoordeling"] === "groen") {
+                                                            echo "checked";
+                                                        }
+                                                        ?> value="groen" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></label>
                         </div>
-                        <br />
                     </div>
+
 
                     <h2><?php echo $getFormF1["doorgroei_advies"] ?></h2>
+                    <input value="<?php echo $showFormF1["doorgroei_advies"] ?>" name="doorgroeiAdvies_af1" type="textarea" />
                 </div>
             </div>
             <footer>
-                <div class="footer-block">
-                    <input value="<?php echo $showFormF1["doorgroei_advies"] ?>" name="doorgroeiAdvies_af1" type="textarea" />
-                </div>
                 <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div>
             </footer>
             <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->

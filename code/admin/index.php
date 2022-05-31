@@ -168,7 +168,6 @@ $count = new countstudent("studenten");
                 <!-- </form> -->
                 <div id="resultContainer">
                 </div>
-
             </div>
         </div>
         <div class="containerRight">

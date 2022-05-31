@@ -13,17 +13,10 @@ $getCheckboxFunction = new checkboxen();
 $FormClass = new Formulier();
 $addStudentClass = new StudentUser();
 $sendFormClass = new sendForms();
-
-
 $getFormF1 = $FormClass->getFormF1();
 $errorFunction = $FormClass->errorMelding();
-
 $sendFormFunction = $sendFormClass->checkIfStudentExistF1();
-// $editFormFunction = $editFormClass->editForm_AF1();
-
 $getKlassen = new getKlassen();
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +28,10 @@ $getKlassen = new getKlassen();
     <title>AssesmentForm</title>
     <link rel="stylesheet" href="css/form.css" />
     <script src="https://kit.fontawesome.com/75e233cba8.js" crossorigin="anonymous"></script>
+    <!-- lettertype -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -57,51 +54,49 @@ $getKlassen = new getKlassen();
                     <p> <?php echo $getFormF1["tekst_intro"]; ?></p>
                 </header>
                 <div id="checklist">
-                    <h2>
-                        <h2><?php echo $getFormF1["checklist_titel"]; ?></h2>
-                        <p>samen met coach invullen.</p>
-                    </h2>
+
+                    <h2><?php echo $getFormF1["checklist_titel"]; ?></h2>
+                    <p>samen met coach invullen.</p>
+
                     <hr>
                 </div>
                 <!-- <form action="formulieren_fase_1.php" action="POST"> -->
                 <p>
                     <?php echo $getFormF1["veld_student"]; ?>
                 </p>
-                <input name="student_name_af1" type="text" />
+                <input class="mustHaveInput" name="student_name_af1" type="text" />
                 <br />
                 <p>
                     <?php echo $getFormF1["veld_leerlingnummer"]; ?>
                 </p>
-                <input name="leerlingNummer_af1" type="text" />
+                <input class="mustHaveInput" name="leerlingNummer_af1" type="text" />
                 <br />
                 <p>
                     <?php echo $getFormF1["veld_coach"]; ?>
                 </p>
-                <input name="coach_name_af1" type="text" />
+                <input class="mustHaveInput" name="coach_name_af1" type="text" />
                 <br />
-
                 <p>
                     <?php echo $getFormF1["veld_klas"] ?>
                 </p>
-                <select name="klas_name_af1" id="klas">
+                <select class="klasSelect" name="klas_name_af1" id="klas">
                     <?php
                     $getKlassenFunction = $getKlassen->selectKlas();
                     ?>
                 </select>
                 <br />
-
                 <p>
                     <?php echo $getFormF1["datum"]; ?>
                 </p>
-                <input name="datum_name_af1" type="date" />
+                <input class="dateInput" name="datum_name_af1" type="date" />
                 <br />
+                <br>
                 <div class="gay">
                     <ul>
                         <?php
                         $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
                         ?>
                     </ul>
-                    <br>
                 </div>
                 <div id="prestaties">
                     <h2>
@@ -117,57 +112,53 @@ $getKlassen = new getKlassen();
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["vormgeven_beoordeling"] ?></p>
                     <div class="rating">
-                    <label class="red"><input value="rood" name="veld_1_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="red"><input value="rood" name="veld_1_rating" type="radio"><span class="radioChecked"></label>
                         <label class="orange"><input value="geel" name="veld_1_rating" type="radio"><span class="radioChecked"></label>
                         <label class="green"><input value="groen" name="veld_1_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
-                <input name="vormgeven_name_af1" type="textarea" />
+                <input placeholder="type hier..." name="vormgeven_name_af1" type="textarea" />
                 <br />
-
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["techniek_beoordeling"] ?></p>
                     <div class="rating">
-                    <label class="red"><input value="rood" name="veld_2_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="red"><input value="rood" name="veld_2_rating" type="radio"><span class="radioChecked"></label>
                         <label class="orange"><input value="geel" name="veld_2_rating" type="radio"><span class="radioChecked"></label>
                         <label class="green"><input value="groen" name="veld_2_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
-                <input name="techniek_name_af1" type="textarea" />
+                <input placeholder="type hier..." name="techniek_name_af1" type="textarea" />
                 <br />
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["ondernemend_beoordeling"] ?></p>
                     <div class="rating">
-                    <label class="red"><input value="rood" name="veld_3_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="red"><input value="rood" name="veld_3_rating" type="radio"><span class="radioChecked"></label>
                         <label class="orange"><input value="geel" name="veld_3_rating" type="radio"><span class="radioChecked"></label>
                         <label class="green"><input value="groen" name="veld_3_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
-                <input name="ondernemend_name_af1" type="textarea" />
+                <input placeholder="type hier..." name="ondernemend_name_af1" type="textarea" />
                 <br />
-
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["softskills_beoordeling"] ?></p>
                     <div class="rating">
-                    <label class="red"><input value="rood" name="veld_4_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="red"><input value="rood" name="veld_4_rating" type="radio"><span class="radioChecked"></label>
                         <label class="orange"><input value="geel" name="veld_4_rating" type="radio"><span class="radioChecked"></label>
                         <label class="green"><input value="groen" name="veld_4_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
-                <input name="softskills_name_af1" type="textarea" />
+                <input placeholder="type hier..." name="softskills_name_af1" type="textarea" />
                 <br />
-
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["avo_beoordeling"] ?></p>
                     <div class="rating">
-                    <label class="red"><input value="rood" name="veld_5_rating" type="radio"><span class="radioChecked"></label>
+                        <label class="red"><input value="rood" name="veld_5_rating" type="radio"><span class="radioChecked"></label>
                         <label class="orange"><input value="geel" name="veld_5_rating" type="radio"><span class="radioChecked"></label>
                         <label class="green"><input value="groen" name="veld_5_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
-                <input name="avo_name_af1" type="textarea" />
+                <input placeholder="type hier..." name="avo_name_af1" type="textarea" />
                 <br />
-
                 <div class="prestatieWrapper">
                     <p><?php echo $getFormF1["bijzondere_kwaliteiten"] ?></p>
                     <div class="rating">
@@ -176,78 +167,61 @@ $getKlassen = new getKlassen();
                         <label class="green"><input value="groen" name="veld_6_rating" type="radio"><span class="radioChecked"></label>
                     </div>
                 </div>
-                <input name="evt_name_af1" type="textarea" />
+                <input placeholder="type hier..." name="evt_name_af1" type="textarea" />
                 <br />
 
 
                 <div id="terugKoppeling">
-                    <p>
+                    <h2>
                         <?php echo $getFormF1["terug_koppelingsfase_1"] ?>
-                    </p>
+                    </h2>
                     <hr>
                 </div>
             </div>
 
-            <!-- 
-            <div style="background-color: red ;" id="container_3">
-            <div class="leftInnerContainer3">
-            </div>
-            <div class="rightInnerContainer3">
-            </div> -->
 
-            <div class="innerContainer">
-                <div class="prestatieWrapper">
-                    <p><?php echo $getFormF1["deel_c_tekst_1"] ?></p>
-                    <div class="rating">
-                        <label class="red"><input value="rood" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
-                        <label class="orange"><input value="geel" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
-                        <label class="green"><input value="groen" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+            <div id="container_3">
+
+                <div class="innerContainer">
+                    <div class="ratingInnerContainer">
+                        <div class="ratingInnerContainer">
+                            <div class="ratingText"><?php echo $getFormF1["deel_c_tekst_1"] ?></div>
+                            <div class="rating">
+                                <label class="red"><input value="rood" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                                <label class="orange"><input value="geel" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                                <label class="green"><input value="groen" name="veld_a_beoordeling" type="radio"><span class="radioChecked"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ratingInnerContainer">
+                        <div class="ratingText"><?php echo $getFormF1["deel_c_tekst_2"] ?></div>
+                        <div class="rating">
+                            <label class="red"><input value="rood" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
+                            <label class="orange"><input value="geel" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
+                            <label class="green"><input value="groen" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
+                        </div>
+                    </div>
+                    <div class="ratingInnerContainer">
+                        <div class="ratingText"><?php echo $getFormF1["deel_c_tekst_3"] ?></div>
+                        <div class="rating">
+                            <label class="red"><input value="rood" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></span></label>
+                            <label class="orange"><input value="geel" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></label>
+                            <label class="green"><input value="groen" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></label>
+                        </div>
                     </div>
                 </div>
-                <br />
             </div>
-            <div class="innerContainer">
-                <div class="prestatieWrapper">
-                    <p><?php echo $getFormF1["deel_c_tekst_2"] ?></p>
-                    <div class="rating">
-                        <label class="red"><input value="rood" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
-                        <label class="orange"><input value="geel" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
-                        <label class="green"><input value="groen" name="veld_b_beoordeling" type="radio"><span class="radioChecked"></label>
-                    </div>
-                    <br />
+
+
+
+
+            <footer>
+                <div class="footer-block">
+
                 </div>
-            </div>
-
-            <div class="innerContainer">
-                <div class="prestatieWrapper">
-                    <p><?php echo $getFormF1["deel_c_tekst_3"] ?></p>
-                    <div class="rating">
-                        <label class="red"><input value="rood" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></span></label>
-                        <label class="orange"><input value="geel" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></label>
-                        <label class="green"><input value="groen" name="veld_c_beoordeling" type="radio"><span class="radioChecked"></label>
-                    </div>
-                    <br />
-                </div>
-
-                <h2><?php echo $getFormF1["doorgroei_advies"] ?></h2>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-        <footer>
-            <div class="footer-block">
-                <input name="doorgroeiAdvies_af1" type="textarea" />
-            </div>
-            <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div>
-        </footer>
-        <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->
+                <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div>
+            </footer>
+            <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->
         </div>
     </form>
 
