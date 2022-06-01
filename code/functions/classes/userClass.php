@@ -156,7 +156,7 @@ class StudentUser extends User
                         <a href='studentInfo.php?leerlingNummer={$studentInfoArray['leerlingnummer']}'><div class='resultStudent'>
                         <div class='resultStudentLeft'>
                         <img src='../assets/Materiaal/img/foto2.png' alt=''>
-                        </div>
+                        </div>                                                                                                                              
                         <div class='resultStudentRight'>
                         <p>{$studentInfoArray['leerlingnummer']}</p>
                         <p>{$studentInfoArray['naam']}</p>

@@ -14,6 +14,7 @@ $showFormF1 = $FormClass->showFormF1();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/studentinfo.css">
+    <link rel="stylesheet" href="../assets/css/mediaqry.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Smooch+Sans:wght@100;200&display=swap" rel="stylesheet">
@@ -42,6 +43,10 @@ $showFormF1 = $FormClass->showFormF1();
                 <a class="terugKnop" href="<?php echo BASEURL; ?>admin/">Terug</a>
                 <div id="titleContainer">
                     <h2>Assesment Formulier Fase 1</h2>
+                </div>
+                <div class="zoekbar resZoekbar">
+                    <img src="../assets/Materiaal/img/Zoeken.png" class="zoeken">
+                    <input type="search" placeholder="Zoeken" class="search">
                 </div>
                 <div class="innerContainer">
                     <div class="innerContainerLeft">
@@ -86,10 +91,12 @@ $showFormF1 = $FormClass->showFormF1();
                     </div>
                     <img src="../assets/Materiaal/img/slideright.png" alt="slideright" class="slideright">
                 </div>
-                <img src="../assets/Materiaal/img/slideindicator.png" class="slide">
-                <hr class="hr3">
-                <div class="downloadbox"><img src="../assets/Materiaal/img/Downloaden.png" class="download">
-                    <div class="downloadboxtext">Downloaden</div>
+                <div class="semi2">
+                    <img src="../assets/Materiaal/img/slideindicator.png" class="slide">
+                    <hr class="hr3">
+                    <div class="downloadbox"><img src="../assets/Materiaal/img/Downloaden.png" class="download">
+                        <a href="../forms/formF1PDF.php?leerlingNummer=<?php echo $showFormF1["leerlingnummer"] ?>" class="downloadboxtext">Downloaden</a>
+                    </div>
                 </div>
             </div>
 

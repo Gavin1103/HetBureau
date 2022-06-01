@@ -130,7 +130,8 @@ nav {
     width: 30%;
     /* margin: 0; */
     height: 100%;
-    background-color: #74bbe8;
+    /* background-color: #74bbe8; */
+    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,15 +145,26 @@ nav {
     align-content: center;
     flex-direction: column;
     justify-content: center;
+    background-color: #74bbe8;
 }
 .semi {
-    background-color: #74bbe8;
+    /* background-color: #74bbe8; */
     width: 100%;
     height: auto;
     /* background-color: yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.semi2 {
+    width: 100%;
+    height: 150px;
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 .box {
     background-color: #74bbe8;
@@ -194,7 +206,7 @@ nav {
 .right {
     height: 100%;
     width: 30%;
-    background-color: #74bbe8;
+    /* background-color: #74bbe8; */
     /* background-color: red; */
 }
 
@@ -218,10 +230,7 @@ nav {
 }
 
 .hr3 {
-    width: 62.5%;
-    margin-top: 150px;
-    margin-left: 19%;
-    display: inline-block;
+    width: 65%;
 }
 
 .downloadbox {
@@ -231,10 +240,14 @@ nav {
     justify-content: space-between;
     align-items: center;
     display: flex;
-    margin-left: 19%;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     border: 1px solid black;
     background-color: black;
+    color: white;
+}
+
+.downloadbox a {
+    text-decoration: none;
     color: white;
 }
 
@@ -258,8 +271,12 @@ nav {
     justify-content: center;
     align-items: center;
     margin-top: 80px;
+    /* background-color: green; */
 }
 
+.resZoekbar {
+    display: none;
+}
 .zoeken {
     width: 4%;
     margin-left: 2%;
@@ -280,17 +297,63 @@ nav {
     background-color: rgb(255, 255, 255);
 }
 
-@media only screen and (max-width: 1000px) {
-    .background {
-        flex-direction: column;
+@media only screen and (max-width: 1500px) {
+    .right {
+        display: none;
     }
+
     .left {
-        width: 100%;
+        width: 50%;
+        /* justify-content: space-around; */
+        margin-bottom: 50px;
     }
     .middle {
-        width: 100%;
+        width: 50%;
     }
-    .right {
-        width: 100%;
+
+    .innerContainer {
+        /* background-color: red; */
+        /* height: 100px; */
+        margin-top: 10px;
+    }
+
+    .left #titleContainer {
+        /* background-color: red; */
+        margin-bottom: 10px;
+    }
+
+    .zoekbar {
+        margin-top: 0;
+        width: 90%;
+        /* background-color: beige; */
+        /* display: flex; */
+        justify-content: flex-start;
+    }
+    .zoeken {
+        width: 4%;
+        margin-left: 0%;
+        margin-right: 1%;
+    }
+
+    .resZoekbar {
+        display: flex;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .background {
+            flex-direction: column;
+        }
+        .left {
+            width: 100%;
+        }
+        .middle {
+            width: 100%;
+        }
+
+        .innerContainer {
+            /* background-color: red; */
+            height: 100px;
+            margin-top: 10px;
+        }
     }
 }
