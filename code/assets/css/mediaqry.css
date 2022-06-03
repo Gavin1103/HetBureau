@@ -1,25 +1,3 @@
-@media only screen and (max-width: 600px) {
-    .container {
-        flex-direction: column-reverse;
-        background-color: pink;
-
-    }
-    .containerLeft {
-        /* display: none; */
-        width: 100%;
-    }
-    .containerMiddle {
-        width: 100%;
-        /* justify-content: center; */
-    }
-    .containerRight {
-        display: none;
-    }
-    #resultContainer{
-        background-color: green;
-        height: 100%;
-    }
-}
 
 
 /* alles voor studentInfo.php */

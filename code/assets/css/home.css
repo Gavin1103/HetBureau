@@ -88,6 +88,7 @@ nav p {
     padding-top: 50px;
     display: flex;
     margin: auto;
+    /* background-color: red; */
 }
 
 .containerLeft {
@@ -408,3 +409,42 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* Right side end */
+
+@media only screen and (max-width: 1200px) {
+
+    .containerRight {
+        display: none;
+    }
+
+    .containerLeft {
+        /* display: none; */
+        width: 50%;
+    }
+    .containerMiddle {
+        width: 50%;
+        /* justify-content: center; */
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        flex-direction: column-reverse;
+        /* background-color: pink; */
+
+    }
+    .containerLeft {
+        /* display: none; */
+        width: 100%;
+    }
+    .containerMiddle {
+        width: 100%;
+        /* justify-content: center; */
+    }
+   
+    #resultContainer{
+        /* background-color: green; */
+        height: 100%;
+        margin-bottom: 20px;
+    }
+}

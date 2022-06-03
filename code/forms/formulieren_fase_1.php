@@ -8,7 +8,7 @@ include '../functions/classes/checkboxenClass.php';
 include '../functions/getklassen.php';
 include '../functions/classes/userClass.php';
 
-$database = new Database();
+$database = new Database();   
 $getCheckboxFunction = new checkboxen();
 $FormClass = new Formulier();
 $addStudentClass = new StudentUser();
