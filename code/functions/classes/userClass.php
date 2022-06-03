@@ -32,20 +32,26 @@ class User
     {
         $db = new Database();
 
-        $this->afkorting = $_POST["afkorting_admin"];
-        $this->wachtwoord = $_POST["ww_admin"];
+        $this->afkorting = $db->con->real_escape_string($_POST["afkorting_admin"]);
+        $this->wachtwoord = $db->con->real_escape_string($_POST["ww_admin"]);
 
         $hashwachtwoord = hash("sha256", $this->wachtwoord);
-        $verifyAdminUser = mysqli_query($db->con, "SELECT afkorting, wachtwoord FROM `admin_docent` WHERE afkorting = '$this->afkorting' AND wachtwoord = '$hashwachtwoord'");
-        $checkInDataBase = mysqli_fetch_array($verifyAdminUser);
+        $verifyAdminUser = $db->con->prepare("SELECT afkorting, wachtwoord FROM `admin_docent` WHERE afkorting = '$this->afkorting' AND wachtwoord = '$hashwachtwoord'");
+        // $checkInDataBase = mysqli_fetch_array($verifyAdminUser);
 
-        if (is_array($checkInDataBase)) {
-            $_SESSION["afkorting_admin"] = $checkInDataBase['afkorting'];
-            $_SESSION["wachtwoord"] = $checkInDataBase['wachtwoord'];
-            // exit();
-        } else {
-            // echo 'fout';
-            header("location: ../index.php?error=Incorrect");
+        if ($verifyAdminUser->execute()) {
+
+            $getResult = $verifyAdminUser->get_result();
+            $result = $getResult->fetch_assoc();
+
+            if (is_array($result)) {
+                $_SESSION["afkorting_admin"] = $result['afkorting'];
+                $_SESSION["wachtwoord"] = $result['wachtwoord'];
+                // exit();
+            } else {
+                // echo 'fout';
+                header("location: ../index.php?error=Incorrect");
+            }
         }
     }
     // account informatie ophalen
@@ -59,31 +65,39 @@ class User
             session_destroy();
             header("location: ../index.php?error=fout99");
         }
-        $getAdminInfo_sql = mysqli_query($db->con, "SELECT `id`, `naam`, `achternaam`, `email`,
+
+        $getAdminInfo_sql = $db->con->prepare("SELECT `id`, `naam`, `achternaam`, `email`,
         `wachtwoord`, `functie`, `afkorting` FROM `admin_docent` WHERE afkorting = '$this->afkorting'");
-        $results = mysqli_fetch_assoc($getAdminInfo_sql);
-        $result_array = [
-            "naam" => $results["naam"],
-            "afkorting" => $results["afkorting"],
-            "achternaam" => $results["achternaam"],
-            "email" => $results["email"],
-            "wachtwoord" => $results["wachtwoord"],
-            "functie" => $results["functie"],
-            "id" => $results["id"],
-        ];
-        return $result_array;
+        // $results = mysqli_fetch_assoc($getAdminInfo_sql);
+        if ($getAdminInfo_sql->execute()) {
+
+            $getResult = $getAdminInfo_sql->get_result();
+            $result = $getResult->fetch_assoc();
+
+            $result_array = [
+                "naam" => $result["naam"],
+                "afkorting" => $result["afkorting"],
+                "achternaam" => $result["achternaam"],
+                "email" => $result["email"],
+                "wachtwoord" => $result["wachtwoord"],
+                "functie" => $result["functie"],
+                "id" => $result["id"],
+            ];
+            return $result_array;
+        }
     }
+
     // account aanmaken
     function AddAdminUser()
     {
         $db = new Database();
-        $this->naam = $_POST["naam_admin"];
-        $this->achternaam = $_POST["achternaam_admin"];
-        $this->email = $_POST["email_admin"];
-        $this->wachtwoord = $_POST["wachtwoord_admin"];
-        $this->ww_opniew_admin = $_POST["ww_opniew_admin"];
-        $this->functie_admin = $_POST["functie_admin"];
-        $this->afkorting = $_POST["afkorting_admin"];
+        $this->naam = $db->con->real_escape_string($_POST["naam_admin"]);
+        $this->achternaam = $db->con->real_escape_string($_POST["achternaam_admin"]);
+        $this->email = $db->con->real_escape_string($_POST["email_admin"]);
+        $this->wachtwoord = $db->con->real_escape_string($_POST["wachtwoord_admin"]);
+        $this->ww_opniew_admin = $db->con->real_escape_string($_POST["ww_opniew_admin"]);
+        $this->functie_admin = $db->con->real_escape_string($_POST["functie_admin"]);
+        $this->afkorting = $db->con->real_escape_string($_POST["afkorting_admin"]);
         if (
             !empty($this->naam) &&
             !empty($this->achternaam) &&
@@ -96,9 +110,9 @@ class User
             $this->existUser();
             $this->verifyPwd();
             $this->hashwachtwoord_admin = hash("sha256", $this->ww_opniew);
-            $addAdmin_sql = mysqli_query($db->con, "INSERT INTO `admin_docent`(`naam`, `achternaam`, `email`, `wachtwoord`, `functie`, `afkorting`) VALUES
+            $addAdmin_sql = $db->con->prepare("INSERT INTO `admin_docent`(`naam`, `achternaam`, `email`, `wachtwoord`, `functie`, `afkorting`) VALUES
             ('$this->naam','$this->achternaam','$this->email','$this->hashedwachtwoord','$this->functieUser','$this->afkorting')");
-            if ($addAdmin_sql) {
+            if ($addAdmin_sql->exexute()) {
                 echo "Admin/Docent $this->naam toegevoegd";
             }
         } else {
@@ -119,7 +133,7 @@ class User
     {
         $db = new Database();
         $this->afkorting = $_POST["afkorting_admin"];
-        $verifyAfkorting = mysqli_query($db->con, "SELECT afkorting FROM `admin_docent` WHERE afkorting = '$this->afkorting' ");
+        $verifyAfkorting = $db->con->prepare("SELECT afkorting FROM `admin_docent` WHERE afkorting = '$this->afkorting' ");
         $checkInDataBase = mysqli_fetch_array($verifyAfkorting);
         if (is_array($checkInDataBase)) {
             $this->afkorting = $checkInDataBase['afkorting'];
@@ -131,7 +145,7 @@ class User
 class StudentUser extends User
 {
     public $leerlingNummer;
-   
+
 
     public function searchStudent()
     {
@@ -173,4 +187,3 @@ class StudentUser extends User
         }
     }
 }
-

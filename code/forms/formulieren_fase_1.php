@@ -8,7 +8,7 @@ include '../functions/classes/checkboxenClass.php';
 include '../functions/getklassen.php';
 include '../functions/classes/userClass.php';
 
-$database = new Database();   
+$database = new Database();
 $getCheckboxFunction = new checkboxen();
 $FormClass = new Formulier();
 $addStudentClass = new StudentUser();
@@ -169,8 +169,6 @@ $getKlassen = new getKlassen();
                 </div>
                 <input placeholder="type hier..." name="evt_name_af1" type="textarea" />
                 <br />
-
-
                 <div id="terugKoppeling">
                     <h2>
                         <?php echo $getFormF1["terug_koppelingsfase_1"] ?>
@@ -178,8 +176,6 @@ $getKlassen = new getKlassen();
                     <hr>
                 </div>
             </div>
-
-
             <div id="container_3">
 
                 <div class="innerContainer">

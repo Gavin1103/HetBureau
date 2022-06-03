@@ -121,9 +121,7 @@ class Formulier
     public function showFormF1()
     {
         if (isset($_GET["leerlingNummer"])) {
-
             $this->_leerlingnummer = $_GET["leerlingNummer"];
-            // echo "p".$this->_leerlingnummer;
         } else {
             header("location: ../admin/");
         }
@@ -202,13 +200,19 @@ class sendForms extends Formulier
         if (isset($_POST["submit_form_AF1"])) {
             if (!empty($_POST["student_name_af1"]) && !empty($_POST["coach_name_af1"]) && !empty($_POST["leerlingNummer_af1"]) && !empty($_POST["klas_name_af1"]) && !empty($_POST["datum_name_af1"])) {
                 $this->leerlingNummer = $_POST["leerlingNummer_af1"];
-                $verifyStudent = mysqli_query($db->con, "SELECT leerlingnummer FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->leerlingNummer'");
-                $checkInDataBase = mysqli_fetch_array($verifyStudent);
-                if (is_array($checkInDataBase)) {
-                    $this->afkorting_admin = $checkInDataBase['leerlingnummer'];
-                    header("location: ../forms/formulieren_fase_1.php?formNumber=form1&&error=studentExist");
-                } else {
-                    $this->sendForm_AF1();
+                $verifyStudent = $db->con->prepare("SELECT leerlingnummer FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->leerlingNummer'");
+
+
+                if ($verifyStudent->execute()) {
+                    $checkInDataBase = $verifyStudent->get_result();
+                    // $checkInDataBase = mysqli_fetch_array($verifyStudent);
+                    $result = $checkInDataBase->fetch_assoc();
+                    if (is_array($result)) {
+                        $this->afkorting_admin = $result['leerlingnummer'];
+                        header("location: ../forms/formulieren_fase_1.php?formNumber=form1&&error=studentExist");
+                    } else {
+                        $this->sendForm_AF1();
+                    }
                 }
             } else {
                 echo "niet alles ingevuld";
@@ -218,30 +222,31 @@ class sendForms extends Formulier
 
     private function sendForm_AF1()
     {
+        $db = new Database();
         $this->existStudent();
-        $this->student = $_POST["student_name_af1"];
-        $this->coach = $_POST["coach_name_af1"];
-        $this->leerlingNummer = $_POST["leerlingNummer_af1"];
-        $this->datum = $_POST["datum_name_af1"];
-        $this->klas = $_POST["klas_name_af1"];
-        $this->vormgeven = $_POST["vormgeven_name_af1"];
-        $this->techniek = $_POST["techniek_name_af1"];
-        $this->ondernemend = $_POST["ondernemend_name_af1"];
-        $this->softskills = $_POST["softskills_name_af1"];
-        $this->AVO = $_POST["avo_name_af1"];
-        $this->evt_kwaliteiten = $_POST["evt_name_af1"];
-        $this->doorgroei_advies = $_POST["doorgroeiAdvies_af1"];
+        $this->student = $db->con->real_escape_string($_POST['student_name_af1']);
+        $this->coach = $db->con->real_escape_string($_POST["coach_name_af1"]);
+        $this->leerlingNummer = $db->con->real_escape_string($_POST["leerlingNummer_af1"]);
+        $this->datum = $db->con->real_escape_string($_POST["datum_name_af1"]);
+        $this->klas = $db->con->real_escape_string($_POST["klas_name_af1"]);
+        $this->vormgeven = $db->con->real_escape_string($_POST["vormgeven_name_af1"]);
+        $this->techniek = $db->con->real_escape_string($_POST["techniek_name_af1"]);
+        $this->ondernemend = $db->con->real_escape_string($_POST["ondernemend_name_af1"]);
+        $this->softskills = $db->con->real_escape_string($_POST["softskills_name_af1"]);
+        $this->AVO = $db->con->real_escape_string($_POST["avo_name_af1"]);
+        $this->evt_kwaliteiten = $db->con->real_escape_string($_POST["evt_name_af1"]);
+        $this->doorgroei_advies = $db->con->real_escape_string($_POST["doorgroeiAdvies_af1"]);
 
-        $veld_1_rating = $_POST["veld_1_rating"];
-        $veld_2_rating = $_POST["veld_2_rating"];
-        $veld_3_rating = $_POST["veld_3_rating"];
-        $veld_4_rating = $_POST["veld_4_rating"];
-        $veld_5_rating = $_POST["veld_5_rating"];
-        $veld_6_rating = $_POST["veld_6_rating"];
+        $veld_1_rating = $db->con->real_escape_string($_POST["veld_1_rating"]);
+        $veld_2_rating = $db->con->real_escape_string($_POST["veld_2_rating"]);
+        $veld_3_rating = $db->con->real_escape_string($_POST["veld_3_rating"]);
+        $veld_4_rating = $db->con->real_escape_string($_POST["veld_4_rating"]);
+        $veld_5_rating = $db->con->real_escape_string($_POST["veld_5_rating"]);
+        $veld_6_rating = $db->con->real_escape_string($_POST["veld_6_rating"]);
 
-        $veld_a_beoordeling = $_POST["veld_a_beoordeling"];
-        $veld_b_beoordeling = $_POST["veld_b_beoordeling"];
-        $veld_c_beoordeling = $_POST["veld_c_beoordeling"];
+        $veld_a_beoordeling = $db->con->real_escape_string($_POST["veld_a_beoordeling"]);
+        $veld_b_beoordeling = $db->con->real_escape_string($_POST["veld_b_beoordeling"]);
+        $veld_c_beoordeling = $db->con->real_escape_string($_POST["veld_c_beoordeling"]);
         // exit();
         $this->checkboxen = $_POST["checkbox_vakken"];
         $this->checkboxen_json = json_encode($this->checkboxen);
@@ -249,8 +254,8 @@ class sendForms extends Formulier
 
         $db = new Database();
 
-        $this->mysqliQRY = mysqli_query($db->con, "INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`,  `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`, `doorgroei_advies`, `veld_a_beoordeling`, `veld_b_beoordeling`, `veld_c_beoordeling` , `veld_1_rating`, `veld_2_rating`, `veld_3_rating`, `veld_4_rating`, `veld_5_rating`, `veld_6_rating`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->klas','$this->datum',' $trimArray','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten', '$this->doorgroei_advies', '$veld_a_beoordeling', '$veld_b_beoordeling', '$veld_c_beoordeling' ,'$veld_1_rating','$veld_2_rating','$veld_3_rating','$veld_4_rating','$veld_5_rating','$veld_6_rating' )");
-        if ($this->mysqliQRY) {
+        $this->mysqliQRY = $db->con->prepare("INSERT INTO `opgeslagen_form_af1`(`student`, `leerlingnummer`, `coach`,  `klas`, `datum`, `checkboxen`, `vormgeven_veld`, `techniek_veld`, `ondernemend_veld`, `AVO_veld`, `softskills_veld`, `evtKwaliteiten_veld`, `doorgroei_advies`, `veld_a_beoordeling`, `veld_b_beoordeling`, `veld_c_beoordeling` , `veld_1_rating`, `veld_2_rating`, `veld_3_rating`, `veld_4_rating`, `veld_5_rating`, `veld_6_rating`) VALUES ('$this->student','$this->leerlingNummer','$this->coach','$this->klas','$this->datum',' $trimArray','$this->vormgeven','$this->techniek','$this->ondernemend','$this->AVO','$this->softskills','$this->evt_kwaliteiten', '$this->doorgroei_advies', '$veld_a_beoordeling', '$veld_b_beoordeling', '$veld_c_beoordeling' ,'$veld_1_rating','$veld_2_rating','$veld_3_rating','$veld_4_rating','$veld_5_rating','$veld_6_rating' )");
+        if ($this->mysqliQRY->execute()) {
             echo "Formulier opgeslagen";
             header("location: ../admin/studentInfo.php?leerlingNummer={$this->leerlingNummer}");
         }
@@ -260,26 +265,31 @@ class sendForms extends Formulier
         $db = new Database();
         // $_POST["leerlingNummer_af1"];
 
-        $this->leerlingNummer_af1 = $_POST["leerlingNummer_af1"];
-        $checkStudent = mysqli_query($db->con, "SELECT leerlingnummer FROM `studenten` WHERE leerlingnummer = '$this->leerlingNummer'");
-        $checkInDataBase = mysqli_fetch_array($checkStudent);
-        if (is_array($checkInDataBase)) {
-            $this->leerlingNummer = $checkInDataBase['leerlingnummer'];
-            echo "student bestaat al";
-        } else {
-            $this->addStudent();
+        $this->leerlingNummer_af1 = $db->con->real_escape_string($_POST["leerlingNummer_af1"]);
+        $checkStudent = $db->con->prepare("SELECT leerlingnummer FROM `studenten` WHERE leerlingnummer = '$this->leerlingNummer'");
+        // $checkInDataBase = mysqli_fetch_array($checkStudent);
+        if ($checkStudent->execute()) {
+
+            $getResult = $checkStudent->get_result();
+            $result = $getResult->fetch_assoc();
+
+            if (is_array($result)) {
+                $this->leerlingNummer = $$result['leerlingnummer'];
+                echo "student bestaat al";
+            } else {
+                $this->addStudent();
+            }
         }
     }
     private function addStudent()
     {
-
-
-        $this->leerlingNummer = $_POST["leerlingNummer_af1"];
-        $this->naam = $_POST["student_name_af1"];
+        $db = new Database();
+        $this->leerlingNummer = $db->con->real_escape_string($_POST["leerlingNummer_af1"]);
+        $this->naam = $db->con->real_escape_string($_POST["student_name_af1"]);
         // $this->existStudent();
         $db = new Database();
-        $addStudentQRY = mysqli_query($db->con, "INSERT INTO `studenten`( `leerlingnummer`, `naam`) VALUES ('$this->leerlingNummer','$this->naam')");
-        if ($addStudentQRY) {
+        $addStudentQRY = $db->con->prepare("INSERT INTO `studenten`( `leerlingnummer`, `naam`) VALUES ('$this->leerlingNummer','$this->naam')");
+        if ($addStudentQRY->execute()) {
             echo "leerling toegevoegd";
         } else {
             "leerling niet toegevoegd";
@@ -288,26 +298,26 @@ class sendForms extends Formulier
 }
 
 
-class editForms extends Formulier{
-
-    
+class editForms extends Formulier
+{
     function editForm_AF1()
     {
+        $db = new Database();
         if (isset($_POST["edit_form_AF1"])) {
             // echo 1;
             $_leerlingNummer = $_GET["leerlingNummer"];
-            $this->student = $_POST["student_name_af1"];
-            $this->coach = $_POST["coach_name_af1"];
-            // $this->leerlingNummer = $_POST["leerlingNummer"];
-            // $this->datum = $_POST["datum_name_af1"];
-            // $this->klas = $_POST["klas_name"];
-            $this->vormgeven = $_POST["vormgeven_name_af1"];
-            $this->techniek = $_POST["techniek_name_af1"];
-            $this->ondernemend = $_POST["ondernemend_name_af1"];
-            $this->softskills = $_POST["softskills_name_af1"];
-            $this->AVO = $_POST["avo_name_af1"];
-            $this->evt_kwaliteiten = $_POST["evt_name_af1"];
-            $this->doorgroei_advies = $_POST["doorgroeiAdvies_af1"];
+            $this->student = $db->con->real_escape_string($_POST["student_name_af1"]);
+            $this->coach = $db->con->real_escape_string($_POST["coach_name_af1"]);
+            // $this->leerlingNummer = $db->con->real_escape_string($_POST["leerlingNummer"]);
+            // $this->datum = $db->con->real_escape_string($_POST["datum_name_af1"]);
+            // $this->klas = $db->con->real_escape_string($_POST["klas_name"]);
+            $this->vormgeven = $db->con->real_escape_string($_POST["vormgeven_name_af1"]);
+            $this->techniek = $db->con->real_escape_string($_POST["techniek_name_af1"]);
+            $this->ondernemend = $db->con->real_escape_string($_POST["ondernemend_name_af1"]);
+            $this->softskills = $db->con->real_escape_string($_POST["softskills_name_af1"]);
+            $this->AVO = $db->con->real_escape_string($_POST["avo_name_af1"]);
+            $this->evt_kwaliteiten = $db->con->real_escape_string($_POST["evt_name_af1"]);
+            $this->doorgroei_advies = $db->con->real_escape_string($_POST["doorgroeiAdvies_af1"]);
 
 
             $this->checkboxen = $_POST["checkbox_vakken"];
@@ -327,8 +337,8 @@ class editForms extends Formulier{
             $veld_c_beoordeling = $_POST["veld_c_beoordeling"];
 
             $db = new Database();
-            $this->mysqliQRY = mysqli_query($db->con, "UPDATE `opgeslagen_form_af1` SET `student`='$this->student',`coach`='$this->coach',`checkboxen`='$trimArray',`vormgeven_veld`='$this->vormgeven',`techniek_veld`='$this->techniek',`ondernemend_veld`='$this->ondernemend',`AVO_veld`='$this->AVO',`softskills_veld`=' $this->softskills',`evtKwaliteiten_veld`='$this->evt_kwaliteiten',`doorgroei_advies`='$this->doorgroei_advies',`veld_a_beoordeling`='$veld_a_beoordeling',`veld_b_beoordeling`='$veld_b_beoordeling',`veld_c_beoordeling`='$veld_c_beoordeling' ,`veld_1_rating`='$veld_1_rating',`veld_2_rating`='$veld_2_rating',`veld_3_rating`='$veld_3_rating',`veld_4_rating`='$veld_4_rating',`veld_5_rating`='$veld_5_rating',`veld_6_rating`='$veld_6_rating' WHERE leerlingnummer = '$_leerlingNummer'");
-            if ($this->mysqliQRY) {
+            $this->mysqliQRY = $db->con->prepare("UPDATE `opgeslagen_form_af1` SET `student`='$this->student',`coach`='$this->coach',`checkboxen`='$trimArray',`vormgeven_veld`='$this->vormgeven',`techniek_veld`='$this->techniek',`ondernemend_veld`='$this->ondernemend',`AVO_veld`='$this->AVO',`softskills_veld`=' $this->softskills',`evtKwaliteiten_veld`='$this->evt_kwaliteiten',`doorgroei_advies`='$this->doorgroei_advies',`veld_a_beoordeling`='$veld_a_beoordeling',`veld_b_beoordeling`='$veld_b_beoordeling',`veld_c_beoordeling`='$veld_c_beoordeling' ,`veld_1_rating`='$veld_1_rating',`veld_2_rating`='$veld_2_rating',`veld_3_rating`='$veld_3_rating',`veld_4_rating`='$veld_4_rating',`veld_5_rating`='$veld_5_rating',`veld_6_rating`='$veld_6_rating' WHERE leerlingnummer = '$_leerlingNummer'");
+            if ($this->mysqliQRY->execute()) {
                 echo "Formulier bewerkt";
                 // header("location: ../admin/studentInfo.php?leerlingNummer={$this->leerlingNummer}");
             } else {
@@ -336,6 +346,4 @@ class editForms extends Formulier{
             }
         }
     }
-
 }
-

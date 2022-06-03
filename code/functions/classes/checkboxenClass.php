@@ -10,21 +10,24 @@ class checkboxen
 
             $this->formID = $_GET['formNumber'];
             $db = new Database();
-            $checkboxenQRY = mysqli_query($db->con, " SELECT checkboxen.label, checkboxen.type ,checkboxen.name ,checkboxen_koppeling.checkboxen_id, checkboxen.id , checkboxen_koppeling.id FROM `checkboxen` INNER JOIN checkboxen_koppeling on checkboxen_koppeling.checkboxen_id = checkboxen.id WHERE checkboxen_koppeling.formulier_id = '$this->formID';");
-            while ($checkboxen = mysqli_fetch_array($checkboxenQRY)) {
-                // echo '<li>';
-                echo "<label for=" . 'c' . $checkboxen["id"] . ">";
-                echo "<input id=" . 'c' . $checkboxen['id'] . " name=" . 'checkbox_vakken[' . $checkboxen["id"] . ']' . " class='checkBox' type=" . $checkboxen["type"];
+            $checkboxenQRY = $db->con->prepare(" SELECT checkboxen.label, checkboxen.type ,checkboxen.name ,checkboxen_koppeling.checkboxen_id, checkboxen.id , checkboxen_koppeling.id FROM `checkboxen` INNER JOIN checkboxen_koppeling on checkboxen_koppeling.checkboxen_id = checkboxen.id WHERE checkboxen_koppeling.formulier_id = '$this->formID';");
+            if ($checkboxenQRY->execute()) {
+                $getResult = $checkboxenQRY->get_result();
+                while ($result = $getResult->fetch_assoc()) {
+                    // echo '<li>';
+                    echo "<label for=" . 'c' . $result["id"] . ">";
+                    echo "<input id=" . 'c' . $result['id'] . " name=" . 'checkbox_vakken[' . $result["id"] . ']' . " class='checkBox' type=" . $result["type"];
 
-                if (isset($checkboxen_input) && in_array($checkboxen["id"], $checkboxen_input)) {
-                    echo " checked";
+                    if (isset($checkboxen_input) && in_array($result["id"], $checkboxen_input)) {
+                        echo " checked";
+                    }
+                    echo ">";
+                    echo "<span class='checkmark'></span>";
+                    echo $result["label"] . "</label>";
+                    // echo '</li>';
+                    echo '<br>';
+                    echo '<br>';
                 }
-                echo ">";
-                echo "<span class='checkmark'></span>";
-                echo $checkboxen["label"] . "</label>";
-                // echo '</li>';
-                echo '<br>';
-                echo '<br>';
             }
         } else {
             echo 'er gaat iets fout bij de checkboxen';
