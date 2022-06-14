@@ -17,6 +17,9 @@ class Formulier
     private $_softskills;
     private $_evtKwaliteiten_veld;
 
+
+
+    // melding als student al een formulier heeft in die fase
     public function errorMelding()
     {
         if (isset($_GET["error"])) {
@@ -24,13 +27,14 @@ class Formulier
         }
     }
 
+
+
+    // formulier fase 1 ophalen
     public function getFormF1()
     {
 
         $db = new Database();
-        // Query
-        $selectQuery = $db->con->prepare("
-        
+        $selectQuery = $db->con->prepare(" 
         SELECT `id`, `AF1`, `tekst_intro`, `checklist_titel`, `veld_student`, `veld_leerlingnummer`, `veld_coach`, `veld_klas`, `datum`, `checkboxen_id`, `review_fase_1`, `titel_docent_invullen`, `review_fase_1_tekst`,
          `vormgeven_beoordeling`, `techniek_beoordeling`, `ondernemend_beoordeling`, `softskills_beoordeling`, `avo_beoordeling`, `bijzondere_kwaliteiten`, `terug_koppelingsfase_1`, `deel_c_tekst_1`, 
          `deel_c_tekst_2`, `deel_c_tekst_3`, `doorgroei_advies`, `handtekening_assessor`, `handtekening_student` FROM `assesment_form1` ");
@@ -81,7 +85,7 @@ class Formulier
         }
     }
     // checken of formulier van deze leerling bestaat
-    public function CheckFormF1()
+    public function showStudentBlockF1()
     {
         if (isset($_GET["leerlingNummer"])) {
             // $db = new Database();
@@ -92,7 +96,18 @@ class Formulier
         }
     }
 
-    public function CheckFormF2()
+
+
+
+
+
+    // formulier fase 2 ophalen
+    public function getFormF2()
+    {
+        echo 'word nog aan gewerkt 2';
+    }
+    // checken of formulier van deze leerling bestaat
+    public function showStudentBlockF2()
     {
         if (isset($_GET["leerlingNummer"])) {
             // $db = new Database();
@@ -103,21 +118,44 @@ class Formulier
         }
     }
 
-    public function getFormF2()
-    {
-        echo 'word nog aan gewerkt 2';
-    }
+
+
     public function getFormF3()
     {
         echo 'word nog aan gewerkt 3';
     }
 
+    public function showStudentBlockF3()
+    {
+        if (isset($_GET["leerlingNummer"])) {
+            // $db = new Database();
+            $this->_leerlingnummer = $_GET["leerlingNummer"];
+            echo "<div class='boxtext F3'><a href='../forms/fulledInForm_F3.php?formNumber=form2&leerlingNummer={$this->_leerlingnummer}'>Fase 3 Assessmentformulier</a></div>";
+        } else {
+            header("location: ../admin/?error=geenstudentNummer");
+        }
+    }
+
+
     public function getFormF4()
     {
         echo 'word nog aan gewerkt 4';
     }
-    // ingevulde formulieren ophalen
+    public function showStudentBlockF4()
+    {
+        if (isset($_GET["leerlingNummer"])) {
+            // $db = new Database();
+            $this->_leerlingnummer = $_GET["leerlingNummer"];
+            echo "<div class='boxtext F4'><a href='../forms/fulledInForm_F4.php?formNumber=form2&leerlingNummer={$this->_leerlingnummer}'>Fase 4 Assessmentformulier</a></div>";
+        } else {
+            header("location: ../admin/?error=geenstudentNummer");
+        }
+    }
 
+
+
+
+    // ingevulde formulieren ophalen
     public function showFormF1()
     {
         if (isset($_GET["leerlingNummer"])) {
@@ -201,7 +239,6 @@ class sendForms extends Formulier
             if (!empty($_POST["student_name_af1"]) && !empty($_POST["coach_name_af1"]) && !empty($_POST["leerlingNummer_af1"]) && !empty($_POST["klas_name_af1"]) && !empty($_POST["datum_name_af1"])) {
                 $this->leerlingNummer = $_POST["leerlingNummer_af1"];
                 $verifyStudent = $db->con->prepare("SELECT leerlingnummer FROM `opgeslagen_form_af1` WHERE leerlingnummer = '$this->leerlingNummer'");
-
 
                 if ($verifyStudent->execute()) {
                     $checkInDataBase = $verifyStudent->get_result();

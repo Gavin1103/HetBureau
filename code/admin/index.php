@@ -52,7 +52,7 @@ $count = new countstudent("studenten");
             <div class="innerLeftContainer">
                 <div class="block blue">
                     <div class="block_left">
-                        <h2>Fase 1 Formulier</h2>
+                        <h2 class="blockTitle">Fase 1 Formulier</h2>
                     </div>
                     <div class="block_right">
                         <a href="../forms/formCRUD/editform.php">
@@ -67,7 +67,7 @@ $count = new countstudent("studenten");
                 </div>
                 <div class="block green">
                     <div class="block_left">
-                        <h2>Fase 2 Formulier</h2>
+                        <h2 class="blockTitle">Fase 2 Formulier</h2>
                     </div>
                     <div class="block_right">
                         <a href="#">
@@ -80,7 +80,7 @@ $count = new countstudent("studenten");
                 </div>
                 <div class="block purple">
                     <div class="block_left">
-                        <h2>Fase 3 Formulier</h2>
+                        <h2 class="blockTitle">Fase 3 Formulier</h2>
                     </div>
                     <div class="block_right">
                         <a href="#">
@@ -93,7 +93,7 @@ $count = new countstudent("studenten");
                 </div>
                 <div class="block yellow">
                     <div class="block_left">
-                        <h2>Fase 4 Formulier</h2>
+                        <h2 class="blockTitle">Fase 4 Formulier</h2>
                     </div>
                     <div class="block_right">
                         <a href="#">
@@ -106,7 +106,7 @@ $count = new countstudent("studenten");
                 </div>
                 <div class="block grey">
                     <div class="block_left">
-                        <h2>Fase 5 Formulier</h2>
+                        <h2 class="blockTitle">Fase 5 Formulier</h2>
                     </div>
                     <div class="block_right">
                         <a href="#">
@@ -119,7 +119,7 @@ $count = new countstudent("studenten");
                 </div>
                 <div class="block red">
                     <div class="block_left">
-                        <h2>Fase 6 Formulier</h2>
+                        <h2 class="blockTitle">Fase 6 Formulier</h2>
                     </div>
                     <div class="block_right">
                         <a href="#">

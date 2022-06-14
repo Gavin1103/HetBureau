@@ -11,12 +11,12 @@ $FormCLass = new Formulier();
 $getKlassen = new getKlassen();
 $getCheckboxFunction = new checkboxen();
 
-
 $getFormF1 = $FormCLass->getFormF1();
 $showFormF1 = $FormCLass->showFormF1();
 
 $editFormClass = new editForms();
 $editFormFucntion = $editFormClass->editForm_AF1();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

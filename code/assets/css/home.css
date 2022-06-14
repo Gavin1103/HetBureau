@@ -158,6 +158,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+
+.blockTitle{
+    margin-left: 10px;
+}
 /* block colors  */
 .blue {
     background-color: #74bbe8;
