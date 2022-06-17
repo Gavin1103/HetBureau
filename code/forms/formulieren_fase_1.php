@@ -37,15 +37,15 @@ $getKlassen = new getKlassen();
 <body>
     <form id="pdf">
         <div id="container_1">
-            <!-- <nav>
+            <nav>
                 <a href="<?php echo BASEURL; ?>admin/"><i class="fa-solid fa-chevron-left"></i> terug</a>
                 <div class="save">
-                    <!-- <div class="dowloadIcon">
-                        <img src="../assets/Materiaal/icoonset/opslaan.svg" alt="">
-                    </div> -->
+                  <!-- <div class="dowloadIcon"> -->
+                        <!-- <img src="../assets/Materiaal/icoonset/opslaan.svg" alt=""> -->
+                    <!-- </div> -->
                     <input value="Opslaan" class="createFormButton" type="submit" name="submit_form_AF1">
                 </div>
-            </nav> -->
+            </nav>
             <div class="innerContainer">
                 <div>
                     <h1>

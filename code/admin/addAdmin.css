@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Oswald", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+#container {
+    height: 100vh;
+    width: 100%;
+    /* max-width: 920px; */
+    display: flex;
+}
+
+#innerContainerLeft {
+    height: 100%;
+    width: 40%;
+    /* background-color: red; */
+    background-image: url(../assets/Materiaal/img/registratie.png);
+    /* background-position: center; */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#innerContainerRight {
+    height: 100%;
+    width: 70%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: auto;
+    height: auto;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+input {
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid 2.5px;
+    margin-top: 20px;
+    padding-left: 1%;
+}
+
+.error {
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid 2.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    /* color: #38DDA1; */
+    background-color: #38dda1;
+}
+
+select {
+    width: 125px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 2.5px;
+    margin-top: 20px;
+}

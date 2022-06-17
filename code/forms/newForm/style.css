@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  width: 80%;
+  height: auto;
+}
+#container form {
+  height: auto;
+  width: 100%;
+}
+#container form .innerContainer {
+  width: 100%;
+  background-color: yellow;
+  margin-bottom: 10px;
+  display: flex;
+}
+#container form .innerContainer .content {
+  width: 70%;
+  height: 100%;
+  background-color: green;
+}
+#container form .innerContainer .spacing {
+  width: 5%;
+  height: 100%;
+  background-color: purple;
+}
+#container form #innerContainerIntro {
+  height: 100px;
+}
+#container form #innerContainer1 {
+  height: 400px;
+}
+#container form #innerContainer2 {
+  height: 400px;
+}
+#container form #innerContainer3 {
+  height: 400px;
+}
+#container form #innerContainer4 {
+  height: 400px;
+}
+#container form #innerContainer5 {
+  height: 400px;
+}
+
+/*# sourceMappingURL=style.css.map */

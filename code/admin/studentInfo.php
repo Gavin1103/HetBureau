@@ -39,8 +39,6 @@ $showFormF1 = $FormClass->showFormF1();
         </nav>
         <div class="background">
             <div class="left">
-
-
                 <a class="terugKnop" href="<?php echo BASEURL; ?>admin/">Terug</a>
                 <div id="titleContainer">
                     <h2>Assesment Formulier Fase 1</h2>
@@ -106,27 +104,13 @@ $showFormF1 = $FormClass->showFormF1();
                 </div>
             </div>
             <div class="right">
-                <!-- <div class="zoekbar">
-                    <img src="../assets/Materiaal/img/Zoeken.png" class="zoeken">
-                    <input type="search" placeholder="Zoeken" class="search">
-                </div> -->
                 <div id="innerContainerMiddle">
-                    <!-- <form id="searchForm" action="index.php" method="post"> -->
-
-                    <!-- <div class="searchIcon"><img src="../assets/Materiaal/icoonset/Zoeken.svg" alt="search"></div> -->
-
-
                     <input type="number" class="search" placeholder="leerlingnummer" number name="studentNumber" id="searchStudentInput" onkeyup="showHint(this.value)">
-                    <!-- <div id="resultContainer" class="searchresults">test </div> -->
-                    <!-- </form> -->
                     <div id="resultContainer">
                     </div>
                 </div>
                 <div id="resultContainer">
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -137,11 +121,9 @@ $showFormF1 = $FormClass->showFormF1();
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
-
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
-
         function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("boxtext");
@@ -162,7 +144,6 @@ $showFormF1 = $FormClass->showFormF1();
             dots[slideIndex - 1].className += " active";
         }
     </script>
-
     <script type="text/javascript">
         function showHint(str) {
             if (str.length == 0) {
@@ -180,7 +161,6 @@ $showFormF1 = $FormClass->showFormF1();
             }
         }
     </script>
-
 </body>
 
 </html>
