@@ -1,9 +1,18 @@
 <?php
 include "../core/databaseConnection.php";
-include '../functions/classes/formClass.php';
-$FormClass = new Formulier();
-$showFormF1 = $FormClass->showFormF1();
+include '../functions/classes/formFunctions/formClass.php';
 
+include '../functions/classes/formFunctions/formF1.php';
+include '../functions/classes/formFunctions/formF2.php';
+include '../functions/classes/formFunctions/formF3.php';
+include '../functions/classes/formFunctions/formF4.php';
+
+$FormClass = new Formulieren();
+$FormF1Class = new FormulierF1();
+$FormF2Class = new FormulierF2();
+$FormF3Class = new FormulierF3();
+$FormF4Class = new FormulierF4();
+$showFormF1 = $FormF1Class->showFormF1();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,10 +88,10 @@ $showFormF1 = $FormClass->showFormF1();
                     <div class="box">
                         <div class="innerBox">
                             <?php
-                            $checkForm = $FormClass->showStudentBlockF1();
-                            $checkForm = $FormClass->showStudentBlockF2();
-                            $checkForm = $FormClass->showStudentBlockF3();
-                            $checkForm = $FormClass->showStudentBlockF4();
+                            $checkForm = $FormF1Class->showStudentBlockF1();
+                            $checkForm = $FormF2Class->showStudentBlockF2();
+                            $checkForm = $FormF3Class->showStudentBlockF3();
+                            $checkForm = $FormF4Class->showStudentBlockF4();
                             ?>
                         </div>
                     </div>
@@ -99,7 +108,7 @@ $showFormF1 = $FormClass->showFormF1();
 
                     <hr class="hr3">
                     <div class="downloadbox"><img src="../assets/Materiaal/img/Downloaden.png" class="download">
-                        <a href="../forms/formF1PDF.php?leerlingNummer=<?php echo $showFormF1["leerlingnummer"] ?>" class="downloadboxtext">Downloaden</a>
+                        <button class="downloadboxtext" id="PDF">Downloaden</button>
                     </div>
                 </div>
             </div>
@@ -121,9 +130,11 @@ $showFormF1 = $FormClass->showFormF1();
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
+
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
+
         function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("boxtext");

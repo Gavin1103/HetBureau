@@ -26,24 +26,97 @@ body {
 #container form .innerContainer .content {
   width: 70%;
   height: 100%;
-  background-color: green;
+  background-color: blue;
 }
 #container form .innerContainer .spacing {
-  width: 5%;
+  width: 60px;
   height: 100%;
   background-color: purple;
 }
+#container form .innerContainer .spacing figure {
+  width: 60px;
+  height: 60px;
+  background-color: #246aff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+}
 #container form #innerContainerIntro {
-  height: 100px;
+  height: 150px;
+  margin-top: 10px;
+}
+#container form #innerContainerIntro .content .contentInner {
+  margin-left: 10px;
 }
 #container form #innerContainer1 {
-  height: 400px;
+  height: 150px;
+  display: flex;
+}
+#container form #innerContainer1 .contentInner {
+  width: 100%;
+  height: 50%;
+  background-color: pink;
+  display: flex;
+}
+#container form #innerContainer1 .contentInner .inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 200px;
+  height: 100%;
+  background-color: green;
+}
+#container form #innerContainer1 .contentInner .inputWrapper input {
+  height: 35px;
+  width: 200px;
 }
 #container form #innerContainer2 {
-  height: 400px;
+  height: 425px;
+}
+#container form #innerContainer2 .content .contentInner {
+  height: auto;
+  width: auto;
+  margin-left: 10px;
 }
 #container form #innerContainer3 {
-  height: 400px;
+  height: 600px;
+}
+#container form #innerContainer3 .content .contentInner {
+  margin-left: 10px;
+  height: auto;
+  width: auto;
+}
+#container form #innerContainer3 .content .contentInner .ratingContainer {
+  height: 100%;
+  width: 100%;
+  background-color: darkblue;
+  display: flex;
+  flex-direction: column;
+}
+#container form #innerContainer3 .content .contentInner .ratingContainer .ratingContent {
+  height: 50px;
+  width: 70%;
+  background-color: aqua;
+  margin-top: 10px;
+  display: flex;
+}
+#container form #innerContainer3 .content .contentInner .ratingContainer .ratingContent .leftContainer {
+  width: 30%;
+  height: 100%;
+  background-color: navajowhite;
+  align-items: center;
+}
+#container form #innerContainer3 .content .contentInner .ratingContainer .ratingContent .rightContainer {
+  width: 70%;
+  height: 100%;
+  background-color: purple;
+}
+#container form #innerContainer3 .content .contentInner .ratingContainer input {
+  margin-top: 10px;
+  width: 70%;
+  height: 50px;
 }
 #container form #innerContainer4 {
   height: 400px;

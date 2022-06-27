@@ -27,29 +27,122 @@ body {
             .content {
                 width: 70%;
                 height: 100%;
-                background-color: green;
+                background-color: blue;
             }
 
             .spacing {
-                width: 5%;
+                width: 60px;
                 height: 100%;
                 background-color: purple;
+
+                figure {
+                    width: 60px;
+                    height: 60px;
+                    background-color: #246aff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    color: white;
+                }
             }
         }
 
         #innerContainerIntro {
-            height: 100px;
+            height: 150px;
+            margin-top: 10px;
+            .content {
+                .contentInner {
+                    margin-left: 10px;
+                }
+            }
         }
 
         #innerContainer1 {
-            height: 400px;
+            height: 150px;
+            display: flex;
+            // flex-direction: column;
+
+            .contentInner {
+                width: 100%;
+                height: 50%;
+                background-color: pink;
+                display: flex;
+                // align-items: center;
+
+                .inputWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 10px;
+                    width: 200px;
+                    height: 100%;
+                    background-color: green;
+
+                    input {
+                        height: 35px;
+                        width: 200px;
+                    }
+                }
+            }
         }
 
         #innerContainer2 {
-            height: 400px;
+            height: 425px;
+
+            .content {
+                .contentInner {
+                    // background-color: red;
+                    height: auto;
+                    width: auto;
+                    margin-left: 10px;
+                }
+            }
         }
         #innerContainer3 {
-            height: 400px;
+            height: 600px;
+            .content {
+                .contentInner {
+                    margin-left: 10px;
+                    height: auto;
+                    width: auto;
+
+                    .ratingContainer {
+                        height: 100%;
+                        width: 100%;
+                        background-color: darkblue;
+                        display: flex;
+                        // justify-content: flex-start;
+                        flex-direction: column;
+                        // align-items: flex-start;
+                        .ratingContent {
+                            height: 50px;
+                            width: 70%;
+                            background-color: aqua;
+                            margin-top: 10px;
+                            display: flex;
+
+                            .leftContainer{
+                                width: 30%;
+                                height: 100%;
+                                background-color: navajowhite;
+                                align-items: center;
+                            }
+
+                            .rightContainer{
+                                width: 70%;
+                                height: 100%;
+                                background-color: purple;
+                            }
+                        }
+
+                        input{
+                            margin-top: 10px;
+                            width: 70%;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
         }
         #innerContainer4 {
             height: 400px;

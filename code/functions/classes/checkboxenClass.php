@@ -3,7 +3,7 @@
 class checkboxen
 {
     private $formID;
-    public function getCheckboxenForm1($checkboxen_input = [])
+    public function getCheckboxenForm($checkboxen_input = [])
     {
         if (isset($_GET['formNumber'])) {
 

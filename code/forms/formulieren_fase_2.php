@@ -1,26 +1,28 @@
 <?php
 
 include("../core/databaseConnection.php");
-// include("./getForms/getFormFase1.php");
 include '../functions/classes/formClass.php';
 include '../functions/classes/checkboxenClass.php';
-include '../functions/sendForms.php';
 include '../functions/getklassen.php';
+include '../functions/classes/userClass.php';
 
 $database = new Database();
-$getCheckboxFunction = new checkboxen();
 
 $FormClass = new Formulier();
+$addStudentClass = new StudentUser();
+
 $getFormF1 = $FormClass->getFormF2();
+$errorFunction = $FormClass->errorMelding();
+
+// voor het versturen van het formulier
+$sendFormClass = new sendForms();
+$sendFormFunction = $sendFormClass->checkIfStudentExistF2();
 
 $getKlassen = new getKlassen();
-
-// $leerlingNummer = $_POST["leerlingnummer_name_af1"];
-
 ?>
 
-<select name="klas_name" id="klas">
-    <?php
-    $getKlassenFunction = $getKlassen->selectKlas();
-    ?>
-</select>
+<!-- checkboxen loop. Zet het op de goede plek zodra het formulier klaar is. -->
+<?php
+$getCheckboxFunction = new checkboxen();
+$executeCheckboxen = $getCheckboxFunction->getCheckboxenForm();
+?>

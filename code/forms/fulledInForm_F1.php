@@ -1,20 +1,19 @@
 <?php
 
-// include "../functions/showForm.php";
+// database verbinding
 include("../core/databaseConnection.php");
-include("../functions/classes/formClass.php");
-include '../functions/classes/checkboxenClass.php';
-include '../functions/getklassen.php';
-
 $database = new Database();
-$FormCLass = new Formulier();
-$getKlassen = new getKlassen();
-$getCheckboxFunction = new checkboxen();
 
-$getFormF1 = $FormCLass->getFormF1();
-$showFormF1 = $FormCLass->showFormF1();
+// voor de formulier
+include '../functions/classes/formFunctions/formClass.php';
+include '../functions/classes/formFunctions/formF1.php';
+$FormClass = new Formulieren();
+$errorFunction = $FormClass->errorMelding();
+$FormF1Class = new FormulierF1();
+$getFormF1 = $FormF1Class->getFormF1();
+$showFormF1 = $FormF1Class->showFormF1();
 
-$editFormClass = new editForms();
+$editFormClass = new editFormF1();
 $editFormFucntion = $editFormClass->editForm_AF1();
 
 ?>
@@ -79,8 +78,10 @@ $editFormFucntion = $editFormClass->editForm_AF1();
                 <div class="gay">
                     <ul>
                         <?php
+                        include '../functions/classes/checkboxenClass.php';
+                        $getCheckboxFunction = new checkboxen;
                         $checkboxen_true = (array) json_decode($showFormF1["checkboxen"]);
-                        $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1($checkboxen_true);
+                        $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm($checkboxen_true);
                         ?>
                     </ul>
                 </div>

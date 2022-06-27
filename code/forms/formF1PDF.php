@@ -6,17 +6,20 @@
 // include "../functions/showForm.php";
 include("../core/databaseConnection.php");
 include("../functions/classes/formClass.php");
+include '../functions/classes/formFunctions/formF1.php';
 include '../functions/classes/checkboxenClass.php';
 include '../functions/getklassen.php';
 
 $database = new Database();
-$FormCLass = new Formulier();
+$FormClass = new Formulieren();
+$FormClassF1 = new FormulierF1();
 $getKlassen = new getKlassen();
 $getCheckboxFunction = new checkboxen();
 
 
-$getFormF1 = $FormCLass->getFormF1();
-$showFormF1 = $FormCLass->showFormF1();
+
+$getFormF1 = $FormClassF1->getFormF1();
+$showFormF1 = $FormClassF1->showFormF1();
 
 
 // $getFormF1 = $FormCLass->getFormF1();

@@ -1,43 +1,18 @@
 <?php
 
-class Formulier
+// include "formClass.php";
+
+class FormulierF1 extends Formulieren
 {
-
-    private $_id;
-    private $_student;
-    private $_leerlingnummer;
-    private $_coach;
-    private $_klas;
-    private $_datum;
-    private $_checkboxen;
-    private $_vormgeven_veld;
-    private $_techniek_veld;
-    private $_ondernemend_veld;
-    private $_AVO_veld;
-    private $_softskills;
-    private $_evtKwaliteiten_veld;
-
-
-
-    // melding als student al een formulier heeft in die fase
-    public function errorMelding()
-    {
-        if (isset($_GET["error"])) {
-            echo "gebruiker heeft al een formulier in deze fase.";
-        }
-    }
-
-
 
     // formulier fase 1 ophalen
     public function getFormF1()
     {
-
         $db = new Database();
         $selectQuery = $db->con->prepare(" 
-        SELECT `id`, `AF1`, `tekst_intro`, `checklist_titel`, `veld_student`, `veld_leerlingnummer`, `veld_coach`, `veld_klas`, `datum`, `checkboxen_id`, `review_fase_1`, `titel_docent_invullen`, `review_fase_1_tekst`,
-         `vormgeven_beoordeling`, `techniek_beoordeling`, `ondernemend_beoordeling`, `softskills_beoordeling`, `avo_beoordeling`, `bijzondere_kwaliteiten`, `terug_koppelingsfase_1`, `deel_c_tekst_1`, 
-         `deel_c_tekst_2`, `deel_c_tekst_3`, `doorgroei_advies`, `handtekening_assessor`, `handtekening_student` FROM `assesment_form1` ");
+      SELECT `id`, `AF1`, `tekst_intro`, `checklist_titel`, `veld_student`, `veld_leerlingnummer`, `veld_coach`, `veld_klas`, `datum`, `checkboxen_id`, `review_fase_1`, `titel_docent_invullen`, `review_fase_1_tekst`,
+       `vormgeven_beoordeling`, `techniek_beoordeling`, `ondernemend_beoordeling`, `softskills_beoordeling`, `avo_beoordeling`, `bijzondere_kwaliteiten`, `terug_koppelingsfase_1`, `deel_c_tekst_1`, 
+       `deel_c_tekst_2`, `deel_c_tekst_3`, `doorgroei_advies`, `handtekening_assessor`, `handtekening_student` FROM `assesment_form1` ");
         if ($selectQuery === false) {
             echo mysqli_error($db->con);
         }
@@ -96,65 +71,6 @@ class Formulier
         }
     }
 
-
-
-
-
-
-    // formulier fase 2 ophalen
-    public function getFormF2()
-    {
-        echo 'word nog aan gewerkt 2';
-    }
-    // checken of formulier van deze leerling bestaat
-    public function showStudentBlockF2()
-    {
-        if (isset($_GET["leerlingNummer"])) {
-            // $db = new Database();
-            $this->_leerlingnummer = $_GET["leerlingNummer"];
-            echo "<div class='boxtext F2'><a href='../forms/fulledInForm_F2.php?formNumber=form2&leerlingNummer={$this->_leerlingnummer}'>Fase 2 Assessmentformulier</a></div>";
-        } else {
-            header("location: ../admin/?error=geenstudentNummer");
-        }
-    }
-
-
-
-    public function getFormF3()
-    {
-        echo 'word nog aan gewerkt 3';
-    }
-
-    public function showStudentBlockF3()
-    {
-        if (isset($_GET["leerlingNummer"])) {
-            // $db = new Database();
-            $this->_leerlingnummer = $_GET["leerlingNummer"];
-            echo "<div class='boxtext F3'><a href='../forms/fulledInForm_F3.php?formNumber=form2&leerlingNummer={$this->_leerlingnummer}'>Fase 3 Assessmentformulier</a></div>";
-        } else {
-            header("location: ../admin/?error=geenstudentNummer");
-        }
-    }
-
-
-    public function getFormF4()
-    {
-        echo 'word nog aan gewerkt 4';
-    }
-    public function showStudentBlockF4()
-    {
-        if (isset($_GET["leerlingNummer"])) {
-            // $db = new Database();
-            $this->_leerlingnummer = $_GET["leerlingNummer"];
-            echo "<div class='boxtext F4'><a href='../forms/fulledInForm_F4.php?formNumber=form2&leerlingNummer={$this->_leerlingnummer}'>Fase 4 Assessmentformulier</a></div>";
-        } else {
-            header("location: ../admin/?error=geenstudentNummer");
-        }
-    }
-
-
-
-
     // ingevulde formulieren ophalen
     public function showFormF1()
     {
@@ -209,9 +125,7 @@ class Formulier
         }
     }
 }
-
-
-class sendForms extends Formulier
+class sendFormF1 extends Formulieren
 {
     private $student;
     private $leerlingNummer;
@@ -232,6 +146,8 @@ class sendForms extends Formulier
     private $naam;
 
     // formulier f1 versturen
+
+    // eerst kijken of deze leerling al een formulier heeft in deze fase
     public function checkIfStudentExistF1()
     {
         $db = new Database();
@@ -248,6 +164,7 @@ class sendForms extends Formulier
                         $this->afkorting_admin = $result['leerlingnummer'];
                         header("location: ../forms/formulieren_fase_1.php?formNumber=form1&&error=studentExist");
                     } else {
+                        // heeft deze persoon nog geen formulier dan wordt deze functie uitgevoerd
                         $this->sendForm_AF1();
                     }
                 }
@@ -260,7 +177,9 @@ class sendForms extends Formulier
     private function sendForm_AF1()
     {
         $db = new Database();
+        // met deze functie word er gekeken of deze leerling ook toegevoegd is aan een appart tabel dat "studenten" heet. Die tabel is er voor om leerling op te zoeken. Als het goed is hoef je hier niks aan te doen. maar bij errors check altijd als je vast loopt
         $this->existStudent();
+
         $this->student = $db->con->real_escape_string($_POST['student_name_af1']);
         $this->coach = $db->con->real_escape_string($_POST["coach_name_af1"]);
         $this->leerlingNummer = $db->con->real_escape_string($_POST["leerlingNummer_af1"]);
@@ -334,8 +253,8 @@ class sendForms extends Formulier
     }
 }
 
-
-class editForms extends Formulier
+// CRUD systeem 
+class editFormF1 extends Formulieren
 {
     function editForm_AF1()
     {

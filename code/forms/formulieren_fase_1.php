@@ -1,22 +1,20 @@
 <?php
 
+// database verbinding
 include("../core/databaseConnection.php");
-// include("./getForms/getFormFase1.php");
-include '../functions/classes/formClass.php';
-include '../functions/classes/checkboxenClass.php';
-// include '../functions/sendForms.php';
-include '../functions/getklassen.php';
-include '../functions/classes/userClass.php';
-
 $database = new Database();
-$getCheckboxFunction = new checkboxen();
-$FormClass = new Formulier();
-$addStudentClass = new StudentUser();
-$sendFormClass = new sendForms();
-$getFormF1 = $FormClass->getFormF1();
+
+// voor de formulier
+include '../functions/classes/formFunctions/formClass.php';
+include '../functions/classes/formFunctions/formF1.php';
+$FormClass = new Formulieren();
 $errorFunction = $FormClass->errorMelding();
-$sendFormFunction = $sendFormClass->checkIfStudentExistF1();
-$getKlassen = new getKlassen();
+$FormF1Class = new FormulierF1();
+$getFormF1 = $FormF1Class->getFormF1();
+
+// Voor het versturen van het formulier
+$sendFormF1Class = new sendFormF1();
+$sendFormF1Function = $sendFormF1Class->checkIfStudentExistF1();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,13 +33,14 @@ $getKlassen = new getKlassen();
 </head>
 
 <body>
-    <form id="pdf">
+    <!-- <form id="pdf"> -->
+    <form action="formulieren_fase_1.php?formNumber=form1" method="POST">
         <div id="container_1">
             <nav>
                 <a href="<?php echo BASEURL; ?>admin/"><i class="fa-solid fa-chevron-left"></i> terug</a>
                 <div class="save">
-                  <!-- <div class="dowloadIcon"> -->
-                        <!-- <img src="../assets/Materiaal/icoonset/opslaan.svg" alt=""> -->
+                    <!-- <div class="dowloadIcon"> -->
+                    <!-- <img src="../assets/Materiaal/icoonset/opslaan.svg" alt=""> -->
                     <!-- </div> -->
                     <input value="Opslaan" class="createFormButton" type="submit" name="submit_form_AF1">
                 </div>
@@ -52,15 +51,13 @@ $getKlassen = new getKlassen();
                         <h1><?php echo $getFormF1["AF1"]; ?></h1>
                     </h1>
                     <p> <?php echo $getFormF1["tekst_intro"]; ?></p>
-</div>
+                </div>
                 <div id="checklist">
 
                     <h2><?php echo $getFormF1["checklist_titel"]; ?></h2>
                     <p>samen met coach invullen.</p>
-
                     <hr>
                 </div>
-                <!-- <form action="formulieren_fase_1.php" action="POST"> -->
                 <p>
                     <?php echo $getFormF1["veld_student"]; ?>
                 </p>
@@ -81,6 +78,8 @@ $getKlassen = new getKlassen();
                 </p>
                 <select class="klasSelect" name="klas_name_af1" id="klas">
                     <?php
+                    include '../functions/getklassen.php';
+                    $getKlassen = new getKlassen();
                     $getKlassenFunction = $getKlassen->selectKlas();
                     ?>
                 </select>
@@ -94,7 +93,10 @@ $getKlassen = new getKlassen();
                 <div class="gay">
                     <ul>
                         <?php
-                        $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm1();
+                        // voor de checkboxen
+                        include '../functions/classes/checkboxenClass.php';
+                        $getCheckboxFunction = new checkboxen();
+                        $executeCheckboxen = $getCheckboxFunction->getCheckboxenForm();
                         ?>
                     </ul>
                 </div>
@@ -177,7 +179,6 @@ $getKlassen = new getKlassen();
                 </div>
             </div>
             <div id="container_3">
-
                 <div class="innerContainer">
                     <div class="ratingInnerContainer">
                         <div class="ratingInnerContainer">
@@ -207,28 +208,19 @@ $getKlassen = new getKlassen();
                     </div>
                 </div>
             </div>
-
-
-
-
             <div>
                 <div class="footer-block">
-
                 </div>
-                <!-- <div class="footer-logo"><img src="assets/img/Faselogo.png" alt=""></div> -->
-</div>
-            <!-- <input class="createFormButton" type="submit" name="submit_form_AF1"> -->
+            </div>
         </div>
     </form>
-
     <div id="footerIMG">
         <img src="../assets/Materiaal/footer.png" alt="">
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.2.8/es6-promise.min.js" integrity="sha512-JMK7ImCd/9VxQM7FWvAT3njqo5iGKkWcOax6Bwzuq48xxFd7/jekKcgN+59ZRwBoEpZvv6Jkwh3fDGrBVWX5vA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../assets/js/form.js"></script>
 </body>
 
